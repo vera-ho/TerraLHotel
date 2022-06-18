@@ -32,7 +32,7 @@ export const logout = () => dispatch => (
 );
 
 export const signup = user => dispatch => (
-    UserUtil.signup(user)
+    UserUtil.createUser(user)
         .then( (user) => dispatch(receiveCurrentUser(user)),
                   err => dispatch(receiveErrors(err)))
 );
