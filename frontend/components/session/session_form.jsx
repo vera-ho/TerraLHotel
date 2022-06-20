@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import * as DemoUser from "./demo_user_login"
 
 export default class SessionForm extends React.Component {
     constructor(props) {
@@ -21,7 +22,14 @@ export default class SessionForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         const user = Object.assign( {}, this.state );
+        debugger
         this.props.processForm(user); 
+    }
+
+    handleDemoUser = e => {
+        e.preventDefault();
+        const user = DemoUser.setUser();
+        this.props.processForm(user);
     }
 
     render() {
@@ -51,6 +59,14 @@ export default class SessionForm extends React.Component {
                 </label>
             </>
         )   
+
+        const demoLogin = (
+            <button
+                className="session-demo-button"
+                onClick={this.handleDemoUser}>
+                    Sign In As Demo User
+            </button>
+        )
 
         return (
             <div className="session-form-container">
@@ -85,6 +101,8 @@ export default class SessionForm extends React.Component {
                         onClick={this.handleSubmit}>
                             {this.props.formType}
                     </button>
+
+                    { (this.props.formType === "Sign In") && demoLogin }
                 </form>
             </div>
         )
