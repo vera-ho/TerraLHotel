@@ -9,18 +9,17 @@ export function setUser() {
 
 // refactor to use async/await
 export function animateField(field, text) {
-    // console.log("Type out login information");
-
     let length = text.length;
+
     const animation = setInterval(() => {
         let subtext = text.slice(0, text.length - length)
-
         this.setState({ [field]: subtext })
-        if(length === 0) {
+
+        if(length === -1 && field === "email") {
             clearInterval(animation);
-            return true;
+            this.props.processForm(this.state);
+            return;
         }
         length--;
     }, 100);
-
 }

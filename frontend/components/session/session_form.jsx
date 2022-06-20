@@ -22,7 +22,6 @@ export default class SessionForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         const user = Object.assign( {}, this.state );
-        // debugger
         this.props.processForm(user); 
     }
 
@@ -32,9 +31,6 @@ export default class SessionForm extends React.Component {
         this.animateField = DemoUser.animateField.bind(this);
         this.animateField("email", user.email);
         this.animateField("password", user.password);
-        setTimeout(() => {
-            this.props.processForm(this.state);
-        }, 2250)
     }
 
     render() {
