@@ -1,15 +1,15 @@
 class User < ApplicationRecord
     attr_reader :password
 
-    validates :username, :email, :session_token, :password_digest, presence: true
+    validates :fname, :lname, :email, :session_token, :password_digest, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }
-    validates :username, :email, :session_token, uniqueness: true
+    validates :email, :session_token, uniqueness: true
     
     before_validation :ensure_session_token
 
     # SPIRE
-    def self.find_by_credentials(username, password)
-        user = User.find_by(username: username)
+    def self.find_by_credentials(email, password)
+        user = User.find_by(email: email)
         return nil unless user
         user.is_password?(password) ? user : nil
     end

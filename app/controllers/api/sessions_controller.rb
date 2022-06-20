@@ -1,13 +1,13 @@
 class Api::SessionsController < ApplicationController
     def create
         @user = User.find_by_credentials(
-            params[:user][:username], 
+            params[:user][:email], 
             params[:user][:password]
         )
 
         if @user.nil?
             # debugger
-            flash.now[:errors] = ['Invalid username or password.']
+            flash.now[:errors] = ['Invalid email or password.']
         else
             # debugger
             login!(@user)

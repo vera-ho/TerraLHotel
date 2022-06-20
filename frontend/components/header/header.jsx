@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header = ({ currentUser, logout }) => {
     const display = currentUser ? (               // a current user exists
         <div>
-            <p>Hello, {currentUser.username}</p>
+            <p>Hello, {currentUser.fname}</p>
             <button onClick={logout}>Logout</button>
         </div>
             ) : (                                           // no users logged in
