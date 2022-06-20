@@ -24,10 +24,10 @@ export default class SessionForm extends React.Component {
     }
 
     render() {
-        const otherFormType = (this.props.formType === "Login") ? ("Sign Up") : ("Login");
-        const otherFormLink = (this.props.formType === "Login") ? ("signup") : ("login");
+        const otherFormType = (this.props.formType === "Sign In") ? ("Register") : ("Sign In");
+        const otherFormLink = (this.props.formType === "Sign In") ? ("register") : ("signin");
 
-        const email = (this.props.formType === "Sign Up") ? (
+        const email = (this.props.formType === "Register") ? (
             <label>Email:
                 <input 
                     type="text"

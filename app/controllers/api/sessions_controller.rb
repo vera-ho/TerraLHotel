@@ -11,9 +11,7 @@ class Api::SessionsController < ApplicationController
         else
             # debugger
             login!(@user)
-            debugger
             render "/api/users/show"
-            # render '/api/users/#{@user.id}'
             # render 'api/account'
             # render the last page they were on prior to login?
         end

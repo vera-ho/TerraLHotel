@@ -11,12 +11,12 @@ const App = () => (
   <div>
     <header>
       <HeaderContainer />
-      <h1>Welcome to Terra l'Hotel</h1>
+      {/* <h1>Welcome to Terra l'Hotel - App</h1> */}
     </header>
 
     {/* Need auth and protected routes to prevent these from rendering when logged in */}
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
+    <AuthRoute path="/signin" component={LoginFormContainer} />
+    <AuthRoute path="/register" component={SignupFormContainer} />
     <br></br>
     {/* <Route exact path="/" component={SearchContainer} /> */}
   </div>
