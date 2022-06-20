@@ -1,11 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client"
 import Root from "./components/root";
 import configureStore from "./store/store";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const root = document.getElementById("root");
-  // const store = configureStore();
+  const rootElement = document.getElementById("root");
+  const root = createRoot(rootElement);
 
   let store;
   if (window.currentUser) {
@@ -26,6 +26,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
 
   // Render Application
-  // ReactDOM.render(<h1>Terra L'hotel</h1>, root);
-  ReactDOM.render(<Root store={store} />, root);
+  root.render(<Root store={store} />)
 });
