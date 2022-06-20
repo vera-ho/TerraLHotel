@@ -21,10 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
 
-  // for testing only
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-
   // Render Application
   root.render(<Root store={store} />)
 });
