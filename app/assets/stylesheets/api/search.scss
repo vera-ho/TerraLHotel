@@ -1,0 +1,33 @@
+.search-container {
+    height: 700px;
+}
+
+.search-background {
+    background-image: url("search_background_narrow.jpg");
+    /// background-image: url("search_background_full.jpeg");
+    /// background-image: url("search_background_mobile.jpeg");
+    background-color: #FFF;
+    background-size: cover;
+    background-position: center;
+    height: inherit;
+}
+
+.search-greeting {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    top: 29%;
+    left: 20%;
+}
+
+.explore-question {
+    position: relative;
+    top: 60%;
+}
+
+.browse {
+    position: relative;
+    top: 65%;
+    left: -45%;
+}
