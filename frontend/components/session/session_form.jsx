@@ -95,7 +95,7 @@ export default class SessionForm extends React.Component {
                     { (this.props.formType === "Register") && name }
 
                     <label className="password-label">Password
-                        {/* <span className="password-field"> */}
+                        <span className="password-field">
                             <input 
                                 className="password-input"
                                 type={this.pwFieldType}
@@ -106,7 +106,7 @@ export default class SessionForm extends React.Component {
                                 src="https://d1xyolhen8fnqh.cloudfront.net/media/ecs/global/icons/password-eye-off.svg"
                                 onClick={this.handleToggleEye}
                             />
-                        {/* </span> */}
+                        </span>
                     </label>
 
                     <button 
