@@ -59,10 +59,10 @@ label > input,
 .password-toggle-eye {
     ///background-image: url("password-eye-off.svg");
     background-color: #ccc;
-    background-size: 30px;
+    /// background-size: 30px;
     background-repeat: no-repeat;
-    width: 25px;
+    width: 30px;
 
     cursor: pointer;
-    padding: 20px 10px;
+    padding: 0px 10px;
 }

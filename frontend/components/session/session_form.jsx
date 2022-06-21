@@ -35,11 +35,13 @@ export default class SessionForm extends React.Component {
     }
 
     handleToggleEye = () => {
-        console.log("click click")
+        const eye = document.getElementById("password-toggle-eye");
         if(this.pwFieldType === "password") {
             this.pwFieldType = "text"
+            eye.style.opacity = 0.9;
         } else {
             this.pwFieldType = "password"
+            eye.style.opacity = 1;
         }   
         this.setState(this.state);
     }
@@ -103,6 +105,7 @@ export default class SessionForm extends React.Component {
                                 onChange={this.handleInput("password")}
                             />
                             <img className="password-toggle-eye"
+                                id="password-toggle-eye"
                                 src="https://d1xyolhen8fnqh.cloudfront.net/media/ecs/global/icons/password-eye-off.svg"
                                 onClick={this.handleToggleEye}
                             />
