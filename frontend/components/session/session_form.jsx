@@ -11,6 +11,7 @@ export default class SessionForm extends React.Component {
             email: "",
             password: "",
         };
+        this.pwFieldType = "password";
     }
 
     handleInput = type => {
@@ -31,6 +32,16 @@ export default class SessionForm extends React.Component {
         this.animateField = DemoUser.animateField.bind(this);
         this.animateField("email", user.email);
         this.animateField("password", user.password);
+    }
+
+    handleToggleEye = () => {
+        console.log("click click")
+        if(this.pwFieldType === "password") {
+            this.pwFieldType = "text"
+        } else {
+            this.pwFieldType = "password"
+        }   
+        this.setState(this.state);
     }
 
     render() {
@@ -84,12 +95,18 @@ export default class SessionForm extends React.Component {
                     { (this.props.formType === "Register") && name }
 
                     <label className="password-label">Password
-                        <input 
-                            className="password-input"
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handleInput("password")}
-                        />
+                        {/* <span className="password-field"> */}
+                            <input 
+                                className="password-input"
+                                type={this.pwFieldType}
+                                value={this.state.password}
+                                onChange={this.handleInput("password")}
+                            />
+                            <img className="password-toggle-eye"
+                                src="https://d1xyolhen8fnqh.cloudfront.net/media/ecs/global/icons/password-eye-off.svg"
+                                onClick={this.handleToggleEye}
+                            />
+                        {/* </span> */}
                     </label>
 
                     <button 

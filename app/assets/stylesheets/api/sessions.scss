@@ -22,7 +22,8 @@ label {
     color: inherit;
 }
 
-label > input {
+label > input,
+.password-input {
     width: 100%;
     box-sizing: border-box;
     padding: 10px 14px;
@@ -30,7 +31,6 @@ label > input {
     background-color: #fcfcfc;
     border: 1px solid #ccc;
     margin-bottom: 20px;
-
 }
 
 .session-form-button, 
@@ -44,5 +44,22 @@ label > input {
     border-radius: 30px;
     margin-top: 20px;
     border: 1px solid #333;
+}
 
+.password-field {
+    background-color: #ccc;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.password-toggle-eye {
+    ///background-image: url("password-eye-off.svg");
+    background-color: #ccc;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    width: 30px;
+
+    cursor: pointer;
+    padding: 20px 10px;
 }
