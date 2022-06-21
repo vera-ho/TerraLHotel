@@ -1,13 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Hotel() {
+class Hotel extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-    return (
-        <section className="hotel-container">
-            
-        </section>
-    )
+    componentDidMount() {
+        console.log("component mounted");
+        this.props.receiveAllHotels();
+        debugger
+    }
+
+    render() {
+        return (
+            <section className="">
+
+            </section>
+        )
+    }
 }
 
 export default Hotel;
