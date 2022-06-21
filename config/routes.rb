@@ -8,11 +8,14 @@ Rails.application.routes.draw do
 #     api_user GET    /api/users/:id(.:format)       api/users#show {:default=>{:format=>:json}}
 #              PATCH  /api/users/:id(.:format)       api/users#update {:default=>{:format=>:json}}
 #              PUT    /api/users/:id(.:format)       api/users#update {:default=>{:format=>:json}}
+#   api_hotels GET    /api/hotels(.:format)          api/hotels#index {:default=>{:format=>:json}}
+#    api_hotel GET    /api/hotels/:id(.:format)      api/hotels#show {:default=>{:format=>:json}}
 #  api_session DELETE /api/session(.:format)         api/sessions#destroy {:default=>{:format=>:json}}
 #              POST   /api/session(.:format)         api/sessions#create {:default=>{:format=>:json}}
 
   namespace :api, default: { format: :json } do
     resources :users, only: [:show, :create, :update]
+    resources :hotels, only: [:index, :show]
     resource :session, only: [:create, :destroy]
   end
 

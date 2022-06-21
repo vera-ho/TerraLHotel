@@ -1,0 +1,1 @@
+json.extract! hotel, :id, :name, :email, :phone_number, :country, :city, :address, :rooms
