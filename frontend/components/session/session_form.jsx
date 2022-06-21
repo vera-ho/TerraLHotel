@@ -39,8 +39,7 @@ export default class SessionForm extends React.Component {
         
         const name = (
             <>
-                <br></br>
-                <label className="fname-label">First Name:
+                <label className="fname-label">First Name
                     <input 
                         className="fname-input"
                         type="text"
@@ -48,9 +47,8 @@ export default class SessionForm extends React.Component {
                         onChange={this.handleInput("fname")}
                     />
                 </label>
-                <br></br>
 
-                <label className="lname-label">Last Name:
+                <label className="lname-label">Last Name
                     <input
                         className="lname-input" 
                         type="text"
@@ -72,11 +70,9 @@ export default class SessionForm extends React.Component {
         return (
             <div className="session-form-container">
                 <h1 className="session-form-header">{this.props.formType}</h1>
-                <Link to={`/${otherFormLink}`}>{`or Click to ${otherFormType}`}</Link>
-                <br></br><br></br>
 
                 <form className="session-form">
-                    <label className="email-label">Email:
+                    <label className="email-label">Email
                         <input
                             className="email-input"
                             type="text"
@@ -87,8 +83,7 @@ export default class SessionForm extends React.Component {
 
                     { (this.props.formType === "Register") && name }
 
-                    <br></br>
-                    <label className="password-label">Password:
+                    <label className="password-label">Password
                         <input 
                             className="password-input"
                             type="password"
@@ -96,7 +91,7 @@ export default class SessionForm extends React.Component {
                             onChange={this.handleInput("password")}
                         />
                     </label>
-                    <br></br>
+
                     <button 
                         className="session-form-button"
                         onClick={this.handleSubmit}>
