@@ -6,6 +6,7 @@ import SearchContainer from "./search/search_container";
 
 import { Route } from 'react-router-dom';
 import { AuthRoute } from "../util/route_util";
+import HotelsContainer from "./hotel/hotels_container";
 
 const App = () => (
   <div>
@@ -18,6 +19,7 @@ const App = () => (
     <AuthRoute path="/signin" component={LoginFormContainer} />
     <AuthRoute path="/register" component={SignupFormContainer} />
     <br></br>
+    <Route path="/hotels" component={HotelsContainer} />
   </div>
 );
 

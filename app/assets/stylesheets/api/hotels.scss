@@ -1,0 +1,96 @@
+// Place all the styles related to the api/hotels controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hotel-listings {
+    padding-bottom: 20px;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.hotel-listings-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 20px 0px;
+    align-items: center;
+    box-sizing: inherit;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.hotel-listings-header > img {
+    width: 140px;
+    height: 140px;
+    cursor: pointer;
+}
+
+.hotel-filter {
+    display: inherit;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: center;
+    margin-top: 15px;
+    box-sizing: inherit;
+}
+
+.hotel-filter > span {
+    max-width: 360px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.hotel-filter > label {
+    font-size: 12px;
+    margin: 10px 0px;
+}
+
+.hotel-filter-input {
+    min-width: 360px;
+    padding: 10px 7px;
+    color: #f60;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.hotel-listing-description {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    max-height: 221px;
+    box-sizing: inherit;
+    padding: 30px 0px;
+    border-bottom: 1px solid #ddd;
+}
+
+.hotel-listing-item {
+    margin-left: 30px;
+    width: 100%;
+    box-sizing: inherit;
+}
+
+.hotel-listing-name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.hotel-listing-item > p {
+    color: #333;
+    font-size: 0.875rem;
+    font-weight: 200;
+    padding: 3px 0px;
+}
+
+.hotel-listing-description > img {
+    padding-top: 30px;
+    cursor: pointer;
+}

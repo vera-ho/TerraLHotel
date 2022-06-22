@@ -1,5 +1,4 @@
 export function setUser() {
-    // console.log("Setting Demo User");
     const user = {
         email: "demo@terralhotel.com",
         password: "welcomeToTerra"
