@@ -6,10 +6,8 @@ class Api::SessionsController < ApplicationController
         )
 
         if @user.nil?
-            # debugger
-            flash.now[:errors] = ['Invalid email or password.']
+            render json: ['Your email or password was incorrect, please try again.'], status: 422
         else
-            # debugger
             login!(@user)
             render "/api/users/show"
             # render 'api/account'
@@ -23,7 +21,6 @@ class Api::SessionsController < ApplicationController
             render json: {}
             # render '/'
         else
-            # No user to log out
             render json: @user.errors.full_messages, status: 404
         end
     end

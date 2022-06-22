@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import ErrorItem from './error_item';
 import * as DemoUser from "./demo_user_login"
 
 export default class SessionForm extends React.Component {
@@ -12,6 +13,10 @@ export default class SessionForm extends React.Component {
             password: "",
         };
         this.pwFieldType = "password";
+    }
+
+    componentDidMount() {
+        this.props.clearErrors();
     }
 
     handleInput = type => {
@@ -79,6 +84,13 @@ export default class SessionForm extends React.Component {
                     Sign In As Demo User
             </button>
         )
+        
+        let errors;
+        if(this.props.errors.responseJSON) {
+            errors = this.props.errors.responseJSON.map( (error, idx) => (
+                <ErrorItem key={idx} error={error} />
+            )
+        )}
 
         return (
             <div className="session-form-container">
@@ -119,6 +131,11 @@ export default class SessionForm extends React.Component {
                     </button>
 
                     { (this.props.formType === "Sign In") && demoLogin }
+
+                    <ul>
+                        { (this.props.errors.responseJSON != null) && errors }
+                    </ul>
+
                 </form>
             </div>
         )
