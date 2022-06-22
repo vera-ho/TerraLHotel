@@ -1,0 +1,71 @@
+.header {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    width: 100%;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.nav-bar {
+    display: inherit;
+    justify-content: space-between;
+    align-items: center;
+    height: 83px;
+    width: 94%;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: inherit;
+    flex-direction: row;
+    color: inherit;
+    font-size: 14px;
+}
+
+.btn {
+    margin: 0px 10px;
+}
+
+.nav-menu {
+    display: inherit;
+    flex-direction: row;
+    width: 110px;
+    align-items: center;
+    justify-content: right;
+}
+
+.nav-user-icon {
+    // background-image: url("https://static.prod.r53.tablethotels.com/media/ecs/app/userimages/large/tablet_default_profile_image.png");
+    background-image: url("default_profile_image.png");
+    background-color: #FFF;
+    background-size: cover;
+
+    border-radius: 80px;
+    box-sizing: border-box;
+    width: 56px;
+    height: 56px;
+    margin: 0 14px 0 0;
+
+    box-shadow: 0 0 6px #aaa;
+}
+
+.nav-menu-icon {
+    background-image: url("icons8-menu-100.png");
+    background-color: #FFF;
+    background-size: cover;
+    box-sizing: border-box;
+
+    width: 22px;
+    height: 22px;
+}
+
+.btn {
+    font-size: 14px;
+    text-decoration: inherit;
+    color: inherit;
+}
