@@ -23,7 +23,9 @@ const HotelListing = props => {
                 <div id='hotel-card-2'></div>
             </Link>
             <li className='hotel-listing-item'>
-                <p>{name}</p>
+                <Link to={`/${urlName}`} className='hotel-listing-name'>
+                    {name}
+                </Link>
                 <p>{city}, {country}</p>
                 <p>Total Rooms: {rooms}</p>
                 <br></br>
