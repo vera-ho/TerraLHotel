@@ -30,6 +30,11 @@ const HotelListing = props => {
                 <p>Total Rooms: {rooms}</p>
                 <br></br>
             </li>
+            <img src='https://cdn.discordapp.com/attachments/862515957842706475/989278866285678642/unknown.png'
+                width='40px'
+                height='40px'
+            />
+            {/* <FontAwesomeIcon icon="fa-solid fa-heart" /> */}
         </section>
 
     )
