@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import ErrorItem from './error_item';
 import * as DemoUser from "./demo_user_login"
 
 export default class SessionForm extends React.Component {
@@ -11,6 +12,11 @@ export default class SessionForm extends React.Component {
             email: "",
             password: "",
         };
+        this.pwFieldType = "password";
+    }
+
+    componentDidMount() {
+        this.props.clearErrors();
     }
 
     handleInput = type => {
@@ -33,14 +39,25 @@ export default class SessionForm extends React.Component {
         this.animateField("password", user.password);
     }
 
+    handleToggleEye = () => {
+        const eye = document.getElementById("password-toggle-eye");
+        if(this.pwFieldType === "password") {
+            this.pwFieldType = "text"
+            eye.style.opacity = 0.9;
+        } else {
+            this.pwFieldType = "password"
+            eye.style.opacity = 1;
+        }   
+        this.setState(this.state);
+    }
+
     render() {
         const otherFormType = (this.props.formType === "Sign In") ? ("Register") : ("Sign In");
         const otherFormLink = (this.props.formType === "Sign In") ? ("register") : ("signin");
         
         const name = (
             <>
-                <br></br>
-                <label className="fname-label">First Name:
+                <label className="fname-label">First Name
                     <input 
                         className="fname-input"
                         type="text"
@@ -48,9 +65,8 @@ export default class SessionForm extends React.Component {
                         onChange={this.handleInput("fname")}
                     />
                 </label>
-                <br></br>
 
-                <label className="lname-label">Last Name:
+                <label className="lname-label">Last Name
                     <input
                         className="lname-input" 
                         type="text"
@@ -68,15 +84,20 @@ export default class SessionForm extends React.Component {
                     Sign In As Demo User
             </button>
         )
+        
+        let errors;
+        if(this.props.errors.responseJSON) {
+            errors = this.props.errors.responseJSON.map( (error, idx) => (
+                <ErrorItem key={idx} error={error} />
+            )
+        )}
 
         return (
             <div className="session-form-container">
                 <h1 className="session-form-header">{this.props.formType}</h1>
-                <Link to={`/${otherFormLink}`}>{`or Click to ${otherFormType}`}</Link>
-                <br></br><br></br>
 
                 <form className="session-form">
-                    <label className="email-label">Email:
+                    <label className="email-label">Email
                         <input
                             className="email-input"
                             type="text"
@@ -87,16 +108,22 @@ export default class SessionForm extends React.Component {
 
                     { (this.props.formType === "Register") && name }
 
-                    <br></br>
-                    <label className="password-label">Password:
-                        <input 
-                            className="password-input"
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handleInput("password")}
-                        />
+                    <label className="password-label">Password
+                        <span className="password-field">
+                            <input 
+                                className="password-input"
+                                type={this.pwFieldType}
+                                value={this.state.password}
+                                onChange={this.handleInput("password")}
+                            />
+                            <img className="password-toggle-eye"
+                                id="password-toggle-eye"
+                                src="https://d1xyolhen8fnqh.cloudfront.net/media/ecs/global/icons/password-eye-off.svg"
+                                onClick={this.handleToggleEye}
+                            />
+                        </span>
                     </label>
-                    <br></br>
+
                     <button 
                         className="session-form-button"
                         onClick={this.handleSubmit}>
@@ -104,6 +131,11 @@ export default class SessionForm extends React.Component {
                     </button>
 
                     { (this.props.formType === "Sign In") && demoLogin }
+
+                    <ul>
+                        { (this.props.errors.responseJSON != null) && errors }
+                    </ul>
+
                 </form>
             </div>
         )
