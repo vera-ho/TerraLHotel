@@ -23,7 +23,6 @@ const HotelsIndex = props => {
         <div className="hotel-listings">
             <header className="hotel-listings-header">
                 <img src="https://d1xyolhen8fnqh.cloudfront.net/media/ecs/tma/TMA-small-en.svg"/>
-                {/* <h2 className='hotel-listings-title'>Take Me Away</h2> */}
                 <section className='hotel-filter'>
                     <span>{Object.values(props.hotels).length} hotels recommended.</span>
                     <label>Filter the list by: 
@@ -38,7 +37,6 @@ const HotelsIndex = props => {
                 </section>
             </header>
 
-            {/* <label>Hotel Listings:</label> */}
             <ul className='hotel-listing'>
                 {hotelsList}
             </ul>
