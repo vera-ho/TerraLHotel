@@ -14,6 +14,7 @@
 }
 
 .session-form-header {
+    font-size: 1.95rem;
     margin-bottom: 15px;
 }
 
@@ -44,6 +45,8 @@ label > input,
     border-radius: 30px;
     margin-top: 20px;
     border: 1px solid #333;
+
+    cursor: pointer;
 }
 
 .password-field {
