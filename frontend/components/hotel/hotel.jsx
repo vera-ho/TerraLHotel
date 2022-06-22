@@ -1,10 +1,11 @@
 import React from "react";
+import HotelItem from "./hotel_item";
 import { Link } from "react-router-dom";
 
 class Hotel extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.hotels
+        this.state = this.props.hotel
     }
 
     componentDidMount() {
@@ -13,17 +14,11 @@ class Hotel extends React.Component {
     }
 
     render() {
-        const hotels = Object.values(this.props.hotels).map( (hotel) => {
+        const hotels = Object.values(this.props.hotels).map( (hotel, index) => {
             return (
-                <li>
-                    <p>{hotel.name}</p>
-                    <p>{hotel.city}, {hotel.country}</p>
-                    <p>Total Rooms: {hotel.rooms}</p>
-                    <br></br>
-                </li>
+                <HotelItem key={index} hotel={hotel} />
             )
         })
-
 
         return (
             <section className="hotels-container">

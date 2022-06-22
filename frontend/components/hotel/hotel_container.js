@@ -1,18 +1,17 @@
 import { connect } from "react-redux";
-import { requestAllHotels, receiveHotel } from "../../actions/hotel_actions";
+import { requestHotel } from "../../actions/hotel_actions";
 import Hotel from "./hotel"
 
 const mSTP = state => {
     
     return {
-        hotels: state.entities.hotels
+        hotel: state.entities.hotel
     }
 }
 
 const mDTP = dispatch => {
     return {
-        requestAllHotels: () => dispatch(requestAllHotels()),
-        receiveHotel: hotel => dispatch(receiveHotel(hotel))
+        requestHotel: () => dispatch(requestHotel()),
     }
 }
 
