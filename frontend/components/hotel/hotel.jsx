@@ -4,15 +4,17 @@ import { Link } from "react-router-dom";
 class Hotel extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.hotel
     }
 
-    // componentDidMount() {
-    //     this.props.requestHotel(hotel);
-    // }
+    componentDidMount() {
+        // debugger
+        this.props.requestHotel(this.props.match.params.hotelId);
+    }
 
     render() {
-        // const hotel = this.props.hotel;
+        const hotel = this.props.hotel;
+
+        // debugger
 
         // const rooms = Object.values(this.props.rooms).map( (room, index) => {
         //     return (

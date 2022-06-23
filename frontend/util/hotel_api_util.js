@@ -5,9 +5,16 @@ export const fetchAllHotels = () => {
     })
 }
 
-export const fetchHotel = hotel => {
+// export const fetchHotel = hotel => {
+//     return $.ajax({
+//         method: "GET",
+//         url: `/api/hotels/${hotel.id}`,
+//     })
+// }
+
+export const fetchHotel = hotelId => {
     return $.ajax({
         method: "GET",
-        url: `/api/hotels/${hotel.id}`,
+        url: `/api/hotels/${hotelId}`,
     })
 }

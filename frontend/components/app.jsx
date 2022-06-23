@@ -19,13 +19,11 @@ const App = () => (
     <Route exact path="/" component={SearchContainer} />
     <AuthRoute path="/signin" component={LoginFormContainer} />
     <AuthRoute path="/register" component={SignupFormContainer} />
-
     <Switch>
       <Route exact path="/hotels" component={HotelsContainer} />
-      <Route path="/hotels/:hotel_name" component={HotelContainer} />
+      <Route path="/hotels/:hotelId" component={HotelContainer} />
+      {/* <Route path="/:hotel_name" component={HotelContainer} /> */}
     </Switch>
-    {/* <Route exact path="/hotels" component={HotelsContainer} />
-    <Route path="/hotels/*" component={HotelContainer} /> */}
   </div>
 );
 

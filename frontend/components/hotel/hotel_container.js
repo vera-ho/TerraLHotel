@@ -2,10 +2,11 @@ import { connect } from "react-redux";
 import { requestHotel } from "../../actions/hotel_actions";
 import Hotel from "./hotel"
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
+    debugger
     return {
-        hotel: state.entities.hotel,
-        rooms: state.entities.rooms
+        hotel: state.entities.hotels[ownProps.match.params.hotelId],
+        // rooms: state.entities.rooms[???]
     }
 }
 

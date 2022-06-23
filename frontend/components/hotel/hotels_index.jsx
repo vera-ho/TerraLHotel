@@ -14,7 +14,7 @@ const HotelsIndex = props => {
            hotel.city.toLowerCase().includes(filter) ||
            hotel.country.toLowerCase().includes(filter)) {
             return (
-                <HotelListing key={index} hotel={hotel} />
+                <HotelListing key={index} hotel={hotel} banana="TEST" />
             )
         }
     })
