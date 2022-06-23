@@ -1,5 +1,4 @@
 import React from "react";
-import HotelItem from "./hotel_item";
 import { Link } from "react-router-dom";
 
 class Hotel extends React.Component {
@@ -8,21 +7,25 @@ class Hotel extends React.Component {
         this.state = this.props.hotel
     }
 
-    componentDidMount() {
-        this.props.requestAllHotels();
-    }
+    // componentDidMount() {
+    //     this.props.requestHotel(hotel);
+    // }
 
     render() {
-        const hotels = Object.values(this.props.hotels).map( (hotel, index) => {
-            return (
-                <HotelItem key={index} hotel={hotel} />
-            )
-        })
+        // const hotel = this.props.hotel;
+
+        // const rooms = Object.values(this.props.rooms).map( (room, index) => {
+        //     return (
+        //         <Room key={index} room={room} />
+        //     )
+        // })
 
         return (
-            <section className="hotels-container">
+            <section className="hotel-container">
+                <h1>Hotel Listing Details Page</h1>
+                {/* <h2>{hotel.name}</h2> */}
                 <ul>
-                    {hotels}
+                    {/* {hotel} */}
                 </ul>
             </section>
         )

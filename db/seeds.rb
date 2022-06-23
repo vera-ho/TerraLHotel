@@ -36,3 +36,8 @@ h5 = Hotel.create({
     name: "Mint House", email: "minthouse@terralhotels.com" , phone_number: "212-001-0001", country: "USA",
     city: "New York City", address: "25 W 39th Street, Suite 700, New York, NY" , rooms: 155
 })
+
+# Room.destroy_all
+# r1 = Room.create({
+#     name: "", bed_type: "", num_beds: 
+# })

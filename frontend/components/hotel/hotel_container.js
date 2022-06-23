@@ -3,15 +3,15 @@ import { requestHotel } from "../../actions/hotel_actions";
 import Hotel from "./hotel"
 
 const mSTP = state => {
-    
     return {
-        hotel: state.entities.hotel
+        hotel: state.entities.hotel,
+        rooms: state.entities.rooms
     }
 }
 
 const mDTP = dispatch => {
     return {
-        requestHotel: () => dispatch(requestHotel()),
+        requestHotel: (hotel) => dispatch(requestHotel(hotel)),
     }
 }
 

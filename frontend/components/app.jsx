@@ -3,8 +3,9 @@ import HeaderContainer from "./header/header_container";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import SearchContainer from "./search/search_container";
+import HotelContainer from "./hotel/hotel_container"
 
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { AuthRoute } from "../util/route_util";
 import HotelsContainer from "./hotel/hotels_container";
 
@@ -18,8 +19,13 @@ const App = () => (
     <Route exact path="/" component={SearchContainer} />
     <AuthRoute path="/signin" component={LoginFormContainer} />
     <AuthRoute path="/register" component={SignupFormContainer} />
-    <br></br>
-    <Route path="/hotels" component={HotelsContainer} />
+
+    <Switch>
+      <Route exact path="/hotels" component={HotelsContainer} />
+      <Route path="/hotels/:hotel_name" component={HotelContainer} />
+    </Switch>
+    {/* <Route exact path="/hotels" component={HotelsContainer} />
+    <Route path="/hotels/*" component={HotelContainer} /> */}
   </div>
 );
 
