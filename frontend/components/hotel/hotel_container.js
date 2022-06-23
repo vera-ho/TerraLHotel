@@ -3,7 +3,7 @@ import { requestHotel } from "../../actions/hotel_actions";
 import Hotel from "./hotel"
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         hotel: state.entities.hotels[ownProps.match.params.hotelId],
         // rooms: state.entities.rooms[???]

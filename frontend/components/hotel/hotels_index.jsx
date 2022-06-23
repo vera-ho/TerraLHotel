@@ -24,7 +24,9 @@ const HotelsIndex = props => {
             <header className="hotel-listings-header">
                 <img src="https://d1xyolhen8fnqh.cloudfront.net/media/ecs/tma/TMA-small-en.svg"/>
                 <section className='hotel-filter'>
-                    <span>{Object.values(props.hotels).length} hotels recommended.</span>
+                    {/* <span>{Object.values(props.hotels).length} hotels recommended.</span> */}
+                    <span>{props.hotels.length} hotels recommended.</span>
+
                     <label>Filter the list by: 
                         <input 
                             className='hotel-filter-input'
