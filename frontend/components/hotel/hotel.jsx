@@ -52,8 +52,6 @@ class Hotel extends React.Component {
                     </ul>
                 </div>
 
-                
-
                 <aside className="rooms-index-container">
                     <h3>Rooms</h3>
                     <p>Best price guaranteed.</p>

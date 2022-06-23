@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_20_194643) do
+ActiveRecord::Schema.define(version: 2022_06_23_201522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,21 @@ ActiveRecord::Schema.define(version: 2022_06_20_194643) do
     t.index ["country"], name: "index_hotels_on_country"
     t.index ["email"], name: "index_hotels_on_email"
     t.index ["name"], name: "index_hotels_on_name"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.string "type", null: false
+    t.integer "occupancy", null: false
+    t.string "size"
+    t.string "beds", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "building_id"
+    t.index ["beds"], name: "index_rooms_on_beds"
+    t.index ["building_id"], name: "index_rooms_on_building_id"
+    t.index ["occupancy"], name: "index_rooms_on_occupancy"
+    t.index ["type"], name: "index_rooms_on_type"
   end
 
   create_table "users", force: :cascade do |t|
