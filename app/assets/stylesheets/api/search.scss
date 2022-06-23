@@ -12,22 +12,91 @@
     height: inherit;
 }
 
+.search-input-container {
+    max-width: 580px;
+    margin: 0 auto;
+    box-sizing: inherit;
+    border: 1px solid black;
+
+    position: relative;
+    top: 20%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.search-input-container > span {
+    border: 1px black dotted;
+}
+
+.search-button {
+    border: 1px black dotted;
+    background-color: #000;
+    text-decoration: none;
+    color: #eee;
+    height: 40px;
+    width: 100px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 15px;
+}
+
 .search-greeting {
     color: #fff;
     font-size: 18px;
     font-weight: 600;
+    text-align: center;
+
     position: relative;
-    top: 29%;
-    left: 20%;
+    top: -20px;
+    border: 1px black dotted;
+}
+
+.search-input-field {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    height: 64px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+
+    position: inherit;
+    top: 0px;
+}
+
+.search-input-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    margin: 2px 15px;
+    padding-top: 5px;
+
+    position: inherit;
+    top: 5px;
+}
+
+.search-input {
+
+    width: 100%;
+    padding: 10px 14px;
+    background-color: #fcfcfc;
+
+    margin-top: 2px;
+    font-size: 1rem;
+    margin-bottom: 0;
+    border: 0px;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .explore-question {
-    position: relative;
-    top: 60%;
+    ///position: relative;
+    ///top: 60%;
 }
 
 .browse {
-    position: relative;
-    top: 65%;
-    left: -45%;
+    ///position: relative;
+    ///top: 65%;
+    ///left: -45%;
 }
