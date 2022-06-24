@@ -1,4 +1,5 @@
 import React from "react";
+import RoomsIndex from "../hotel_room/room_index";
 // import { Link } from "react-router-dom";
 
 class Hotel extends React.Component {
@@ -13,13 +14,6 @@ class Hotel extends React.Component {
 
     render() {
         const hotel = this.props.hotel;
-
-        const rooms = Object.values(this.props.rooms).map( (room, index) => {
-            return (
-                // <Room key={index} room={room} />
-                <li>{room.roomType}</li>
-            )
-        })
 
         if(!hotel) return (<h2 className="loading">Loading...</h2>)
         return (
@@ -54,13 +48,14 @@ class Hotel extends React.Component {
                     </ul>
                 </div>
 
-                <aside className="rooms-index-container">
+                <RoomsIndex rooms={this.props.rooms} />
+                {/* <aside className="rooms-index-container">
                     <h3>Rooms</h3>
                     <p>Best price guaranteed.</p>
                     <ul>
                         {rooms}
                     </ul>
-                </aside>
+                </aside> */}
                 
             </section>
         )
