@@ -13,13 +13,15 @@ class Hotel extends React.Component {
 
     render() {
         const hotel = this.props.hotel;
-
-        // const rooms = Object.values(this.props.rooms).map( (room, index) => {
+        // const rooms = Object.values(this.props.hotel.hotel_rooms).map( (room, index) => {
         //     return (
-        //         <Room key={index} room={room} />
+        //         // <Room key={index} room={room} />
+        //         <li>room.type</li>
         //     )
         // })
+
         if(!hotel) return (<h2 className="loading">Loading...</h2>)
+        debugger
         return (
             <section className="hotel-details-container">
                 {/* <h1>Hotel Listing Details Page</h1> */}
