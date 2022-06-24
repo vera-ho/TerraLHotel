@@ -62,8 +62,9 @@ class Hotel extends React.Component {
                             </ul>
                         </div>
                     </section>
-                    
-                    <RoomsIndex rooms={this.props.rooms} />
+                    <section className="hotel-content-right">
+                        <RoomsIndex rooms={this.props.rooms} />
+                    </section>
                 </main>
             </section>
         )

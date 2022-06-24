@@ -5,7 +5,6 @@
 // ******* Room Index ********* //
 .rooms-index-container {
     box-shadow: 0 1px 6px #666;
-    width: 40%;
     box-sizing: border-box;
 }
 
@@ -33,6 +32,7 @@
 
 .room-type {
     font-size: 28px;
+    font-weight: 600;
     text-transform: uppercase;
     line-height: 1.7rem;
     word-wrap: break-word;
@@ -64,7 +64,6 @@ div.room-info > button {
 
     padding: 8px 45px;
     margin: 15px 0px;
-
 }
 
 section.room-photo > img {
