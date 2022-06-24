@@ -21,7 +21,7 @@ class Hotel extends React.Component {
         // })
 
         if(!hotel) return (<h2 className="loading">Loading...</h2>)
-        debugger
+        // debugger
         return (
             <section className="hotel-details-container">
                 {/* <h1>Hotel Listing Details Page</h1> */}

@@ -6,7 +6,7 @@ import { combineReducers } from 'redux';
 const entitiesReducer = combineReducers({
     users: usersReducer,
     hotels: hotelsReducer,
-    rooms: roomsReducer
+    // rooms: roomsReducer
 })
 
 export default entitiesReducer;
