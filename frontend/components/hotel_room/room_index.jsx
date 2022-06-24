@@ -8,10 +8,20 @@ const RoomsIndex = props => {
         )
     })
 
+    let datesSelected = null;
+    const roomsHeader = (datesSelected) ? (
+        <></>
+    ) : (
+        <h3>Rooms</h3>
+    )
+
     return (
         <aside className="rooms-index-container">
-            <h3>Rooms</h3>
-            <p>Best price guaranteed.</p>
+            <header>
+                {roomsHeader}
+                <p>Best price guaranteed.</p>
+            </header>
+           
             <ul>
                 {rooms}
             </ul>

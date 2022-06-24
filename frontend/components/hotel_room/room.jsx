@@ -4,10 +4,24 @@ const RoomItem = props => {
 
     return (
         <div className="room-item-container">
-            <p>{props.room.roomType}</p>
-            <p>Amenities</p>
-            <p>Fits {props.room.occupancy} people</p>
-            <p>{props.room.size}</p>
+            <section className="room-info">
+                <header>
+                    <h4 className="room-type">{props.room.roomType}</h4>
+                </header>
+
+                <div className="room-info">
+                    <p>Amenities</p>
+                    <ul>
+                        <li>Fits {props.room.occupancy} people</li>
+                        <li>{props.room.beds}</li>
+                        <li>{props.room.size}</li>
+                    </ul>
+
+                </div>
+            </section>
+
+            <section className="room-photo">
+            </section>
         </div>
     )
 }

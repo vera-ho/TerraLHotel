@@ -1,6 +1,5 @@
 import React from "react";
 import RoomsIndex from "../hotel_room/room_index";
-// import { Link } from "react-router-dom";
 
 class Hotel extends React.Component {
     constructor(props) {
@@ -33,7 +32,7 @@ class Hotel extends React.Component {
                 </header>
                 
                 <main className="hotel-details-content">
-                    <div className="hotel-content-left">
+                    <section className="hotel-content-left">
                         <section className="hotel-details-images">
                         </section>
 
@@ -62,7 +61,7 @@ class Hotel extends React.Component {
                                 {amentities}
                             </ul>
                         </div>
-                    </div>
+                    </section>
                     
                     <RoomsIndex rooms={this.props.rooms} />
                 </main>

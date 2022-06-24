@@ -44,11 +44,8 @@
     box-sizing: inherit;
 }
 
-.hotel-details-description {
-    // width: 95%;
-    // margin: 20px auto 20px;
-    // line-height: 1.625rem;
-    box-sizing: inherit;
+.hotel-details-description p::first-letter {
+    font-size: 35px;
 }
 
 .hotel-details-bullets p {
