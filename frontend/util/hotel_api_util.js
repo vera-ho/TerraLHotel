@@ -13,7 +13,6 @@ export const fetchAllHotels = () => {
 // }
 
 export const fetchHotel = hotelId => {
-    debugger
     return $.ajax({
         method: "GET",
         url: `/api/hotels/${hotelId}`,
