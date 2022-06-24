@@ -45,3 +45,29 @@ div.room-info > p {
     margin-top: 10px;
 }
 
+div.room-info > ul {
+    list-style-type: square;
+    margin-left: -3px;
+    padding: 10px 10px 0px 20px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+div.room-info > button {
+    background-color: #333;
+    font-size: 14px;
+    color: #fff;
+
+    border: #333 solid 1px;
+    border-radius: 30px;
+    cursor: pointer;
+
+    padding: 8px 45px;
+    margin: 15px 0px;
+
+}
+
+section.room-photo > img {
+    width: 110px;
+    height: 110px;
+}
