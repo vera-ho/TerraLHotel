@@ -18,10 +18,11 @@ export const receiveAllHotels = hotels => {
 //     }
 // }
 
-export const receiveHotel = hotel => {
+export const receiveHotel = hotel_info => {
+    // debugger
     return {
         type: RECEIVE_HOTEL,
-        hotel
+        hotel_info
     }
 }
 
@@ -45,7 +46,8 @@ export const requestAllHotels = () => dispatch => {
 // }
 
 export const requestHotel = hotelId => dispatch => {
+    // debugger
     return HotelUtil.fetchHotel(hotelId)
-        .then( hotel => dispatch(receiveHotel(hotel)), 
+        .then( hotel_info => dispatch(receiveHotel(hotel_info)), 
                  err => dispatch(receiveHotelErrors(err)))
 }

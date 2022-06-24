@@ -37,58 +37,58 @@ h5 = Hotel.create({
     city: "New York City", address: "25 W 39th Street, Suite 700, New York, NY" , rooms: 155
 })
 
-# Room.destroy_all
-# r1 = Room.create({
-#     name: "", type: "Deluxe Room", beds: "1 double/full bed" , occupancy: 2, 
-#     size: "215 ft²/20 m²", building_id: 1
-# })
+Room.destroy_all
+r1 = Room.create({
+    name: "", room_type: "Deluxe Room", beds: "1 double/full bed" , occupancy: 2, 
+    size: "215 ft²/20 m²", building_id: 1
+})
 
-# r2 = Room.create({
-#     name: "", type: "Standard Room", beds: "2 Single Beds or 1 King Bed", occupancy: 2, 
-#     size: "215 ft²/20 m²", building_id: 1
-# })
+r2 = Room.create({
+    name: "", room_type: "Standard Room", beds: "2 Single Beds or 1 King Bed", occupancy: 2, 
+    size: "215 ft²/20 m²", building_id: 1
+})
 
-# r3 = Room.create({
-#     name: "", type: "Prestige Suite with Private Pool", beds: "1 King Bed", occupancy: 2, 
-#     size: "807 ft²/75 m²", building_id: 2
-# })
+r3 = Room.create({
+    name: "", room_type: "Prestige Suite with Private Pool", beds: "1 King Bed", occupancy: 2, 
+    size: "807 ft²/75 m²", building_id: 2
+})
 
-# r4 = Room.create({
-#     name: "", type: "Muse", beds: "1 Queen Bed", occupancy: 2, 
-#     size: "215 ft²/20 m²", building_id: 3
-# })
+r4 = Room.create({
+    name: "", room_type: "Muse", beds: "1 Queen Bed", occupancy: 2, 
+    size: "215 ft²/20 m²", building_id: 3
+})
 
-# r5 = Room.create({
-#     name: "", type: "Goddess Suite", beds: "2 double beds", occupancy: 4, 
-#     size: "269 ft²/25 m²", building_id: 3
-# })
+r5 = Room.create({
+    name: "", room_type: "Goddess Suite", beds: "2 double beds", occupancy: 4, 
+    size: "269 ft²/25 m²", building_id: 3
+})
 
-# r6 = Room.create({
-#     name: "", type: "Suite with Terrace", beds: "1 Double/Full Bed" , occupancy: 2, 
-#     size: "430 ft²/40 m²", building_id: 3
-# })
+r6 = Room.create({
+    name: "", room_type: "Suite with Terrace", beds: "1 Double/Full Bed" , occupancy: 2, 
+    size: "430 ft²/40 m²", building_id: 3
+})
 
-# r7 = Room.create({
-#     name: "", type: "Glass Cottage", beds: "1 Queen Bed", occupancy: 2, 
-#     size: "139 ft²/13 m²", building_id: 4
-# })
+r7 = Room.create({
+    name: "", room_type: "Glass Cottage", beds: "1 Queen Bed", occupancy: 2, 
+    size: "139 ft²/13 m²", building_id: 4
+})
 
-# r8 = Room.create({
-#     name: "", type: "Deluxe Suite Grove View", beds: "1 King Bed", occupancy: 2, 
-#     size: "678 ft²/63 m²", building_id: 4
-# })
+r8 = Room.create({
+    name: "", room_type: "Deluxe Suite Grove View", beds: "1 King Bed", occupancy: 2, 
+    size: "678 ft²/63 m²", building_id: 4
+})
 
-# r9 = Room.create({
-#     name: "", type: "Premium", beds: "2 Single Beds or 1 King Bed", occupancy: 2, 
-#     size: "161 ft²/15 m²", building_id: 5
-# })
+r9 = Room.create({
+    name: "", room_type: "Premium", beds: "2 Single Beds or 1 King Bed", occupancy: 2, 
+    size: "161 ft²/15 m²", building_id: 5
+})
 
-# r10 = Room.create({
-#     name: "", type: "Superior", beds: "2 Single Beds or 1 King Bed", occupancy: 2, 
-#     size: "193 ft²/18 m²", building_id: 5
-# })
+r10 = Room.create({
+    name: "", room_type: "Superior", beds: "2 Single Beds or 1 King Bed", occupancy: 2, 
+    size: "193 ft²/18 m²", building_id: 5
+})
 
-# r11 = Room.create({
-#     name: "", type: "Superior Triple", beds: "3 Single Beds or 1 Double & 1 Single Bed", occupancy: 3, 
-#     size: "258 ft²/24 m²", building_id: 5
-# })
+r11 = Room.create({
+    name: "", room_type: "Superior Triple", beds: "3 Single Beds or 1 Double & 1 Single Bed", occupancy: 3, 
+    size: "258 ft²/24 m²", building_id: 5
+})

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_23_201522) do
+ActiveRecord::Schema.define(version: 2022_06_24_144915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2022_06_23_201522) do
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"
-    t.string "type", null: false
+    t.string "room_type", null: false
     t.integer "occupancy", null: false
     t.string "size"
     t.string "beds", null: false
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2022_06_23_201522) do
     t.index ["beds"], name: "index_rooms_on_beds"
     t.index ["building_id"], name: "index_rooms_on_building_id"
     t.index ["occupancy"], name: "index_rooms_on_occupancy"
-    t.index ["type"], name: "index_rooms_on_type"
+    t.index ["room_type"], name: "index_rooms_on_room_type"
   end
 
   create_table "users", force: :cascade do |t|

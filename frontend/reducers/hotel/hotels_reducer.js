@@ -9,7 +9,7 @@ const hotelsReducer = (state = {}, action) => {
             Object.assign(nextState, action.hotels);
             return nextState;
         case RECEIVE_HOTEL:
-            nextState[action.hotel.id] = action.hotel
+            nextState[action.hotel_info.hotel.id] = action.hotel_info.hotel
             return nextState;
         default:
             return state;
