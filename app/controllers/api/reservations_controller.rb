@@ -21,25 +21,27 @@ class Api::ReservationsController < ApplicationController
         if @reservation.save
             render :show
         else
-            render json: ['Room could not be reserved. Please check your reservation information and try again.'], status: 422
+            render json: ['Room could not be reserved. Please check your information and try again.'], status: 422
         end
     end
 
     def update
         @reservation = current_user.reservations.find_by(id: params[:id])
+
         if @reservation && @reservation.update(reservation_params)
             render :show
         else
-            render json: ['Reservation coujld not be updated. Please check your reservation information and try again'], status: 422
+            render json: ['Reservation could not be updated. Please check your information and try again.'], status: 422
         end
     end
 
     def destroy
         @reservation = current_user.reservations.find_by(id: params[:id])
-        if @reservation && @reservation.destroy
+
+        if @reservation && @reservation.delete
             render :index
         else
-            render json: ['Something went wrong. Reservation could not be cancelled.'], status 422
+            render json: ['Something went wrong! Reservation could not be cancelled.'], status 422
         end
     end
 
