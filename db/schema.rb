@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_24_144915) do
+ActiveRecord::Schema.define(version: 2022_06_25_181347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,22 @@ ActiveRecord::Schema.define(version: 2022_06_24_144915) do
     t.index ["country"], name: "index_hotels_on_country"
     t.index ["email"], name: "index_hotels_on_email"
     t.index ["name"], name: "index_hotels_on_name"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "hotel_id", null: false
+    t.integer "room_id", null: false
+    t.integer "customer_id", null: false
+    t.datetime "checkin", null: false
+    t.datetime "checkout", null: false
+    t.string "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["checkin"], name: "index_reservations_on_checkin"
+    t.index ["checkout"], name: "index_reservations_on_checkout"
+    t.index ["customer_id"], name: "index_reservations_on_customer_id"
+    t.index ["hotel_id"], name: "index_reservations_on_hotel_id"
+    t.index ["room_id"], name: "index_reservations_on_room_id"
   end
 
   create_table "rooms", force: :cascade do |t|
