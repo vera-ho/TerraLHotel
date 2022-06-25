@@ -8,7 +8,9 @@ class Api::ReservationsController < ApplicationController
         # @reservations = current_user.reservations
     end
 
+    # ******* To Dos
     # NEST INDEX/SHOW UNDER USER???
+    # 
 
     def show
         @reservation = Reservation.find_by(id: params[:id])

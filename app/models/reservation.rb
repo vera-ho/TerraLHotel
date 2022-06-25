@@ -8,4 +8,7 @@ class Reservation < ApplicationRecord
     belongs_to :guest, 
         foreign_key: :customer_id,
         class_name: :User
+
+    # validate valid dates for a reservation? same room cannot be booked on overlapping dates
+    # assume room types for right now, not specific rooms (would need to add specific rooms seeds)
 end
