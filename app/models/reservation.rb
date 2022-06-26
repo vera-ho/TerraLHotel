@@ -3,7 +3,7 @@ class Reservation < ApplicationRecord
 
     belongs_to :hotel,
         foreign_key: :hotel_id,
-        class_name: Hotel
+        class_name: :Hotel
 
     belongs_to :guest, 
         foreign_key: :customer_id,

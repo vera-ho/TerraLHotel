@@ -4,7 +4,8 @@ class Api::ReservationsController < ApplicationController
     before_action :require_logged_in    # only: [:show, :create, :update, :destroy]
 
     def index
-        @reservations = Reservation.find_by(customer_id: params[:customer_id])
+        @reservations = Reservation.all
+        # @reservations = Reservation.find_by(customer_id: params[:customer_id])
         # @reservations = current_user.reservations
     end
 
