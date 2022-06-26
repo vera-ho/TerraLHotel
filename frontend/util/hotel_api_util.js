@@ -21,6 +21,8 @@ export const fetchHotel = hotelId => {
     })
 }
 
+//  For use with API calls
 export const generateHash = string => {
     return createHash.create(string).hex();
 }
+
