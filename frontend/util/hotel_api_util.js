@@ -26,3 +26,21 @@ export const generateHash = string => {
     return createHash.create(string).hex();
 }
 
+export const apiRequestHotels = () => {
+    const seconds = new Date().getTime() / 1000;
+    console.log(seconds)
+    console.log(ENV[HOTELBED_API_KEY])
+    console.log(ENV[HOTELBED_SECRET])
+    const xsignature = generateHash(ENV[HOTELBED_API_KEY] + ENV[HOTELBED_SECRET] + seconds);
+    console.log(xsignature)
+
+    return $.ajax({
+        method: "GET",
+        url: `https://api.test.hotelbeds.com/hotel-api/1.0/status`,
+        headers: {
+            "Accept": "application/json",
+            "Api-key": ENV[HOTELBED_API_KEY],
+            "X-Signature": xsignature
+        }
+    })
+}
