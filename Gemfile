@@ -54,6 +54,7 @@ group :development do
   gem 'figaro'
   gem 'pry-rails'
   gem 'rack-cors'
+  gem 'dotenv-rails'
 end
 
 group :test do
