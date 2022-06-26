@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client"
 import Root from "./components/root";
 import configureStore from "./store/store";
+import { generateHash } from "./util/hotel_api_util";
 
 document.addEventListener("DOMContentLoaded", () => {
   const rootElement = document.getElementById("root");
@@ -24,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // for testing only
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+
+  console.log(generateHash("hello hello"));
 
   // Render Application
   root.render(<Root store={store} />)

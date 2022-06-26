@@ -1,3 +1,5 @@
+import * as createHash from 'js-sha256';
+
 export const fetchAllHotels = () => {
     return $.ajax({
         method: "GET",
@@ -17,4 +19,8 @@ export const fetchHotel = hotelId => {
         method: "GET",
         url: `/api/hotels/${hotelId}`,
     })
+}
+
+export const generateHash = string => {
+    return createHash.create(string).hex();
 }
