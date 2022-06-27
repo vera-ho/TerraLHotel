@@ -8,13 +8,14 @@ const ReservationsIndex = props => {
 
     useEffect( () => {
         props.requestAllReservations();
+        // debugger
     }, [])
 
     const reservationsList = Object.values(props.reservations).map( (reservation, index) => {
         // let filter = filterValue.toLowerCase();
         return (
-            
-            <ReservationItem key={index} reservation={reservation} user={props.user}/>
+            <ReservationItem key={index} reservation={reservation} user={props.user}
+                requestHotel={props.requestHotel} hotels={props.hotels} />
         )
     })
 
