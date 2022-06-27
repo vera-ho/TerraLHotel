@@ -28,19 +28,27 @@ export const generateHash = string => {
 
 export const apiRequestHotels = () => {
     const seconds = new Date().getTime() / 1000;
-    console.log(seconds)
-    console.log(ENV[HOTELBED_API_KEY])
-    console.log(ENV[HOTELBED_SECRET])
-    const xsignature = generateHash(ENV[HOTELBED_API_KEY] + ENV[HOTELBED_SECRET] + seconds);
-    console.log(xsignature)
+    const key = window.HOTELBED_API_KEY + window.HOTELBED_SECRET + seconds;
+    const xsignature = generateHash(key);
 
     return $.ajax({
         method: "GET",
         url: `https://api.test.hotelbeds.com/hotel-api/1.0/status`,
         headers: {
             "Accept": "application/json",
-            "Api-key": ENV[HOTELBED_API_KEY],
+            "Api-key": window.HOTELBED_API_KEY,
             "X-Signature": xsignature
+        }
+    })
+}
+
+export const impalaRequestHotels = () => {
+    return $.ajax({
+        method: "GET",
+        url: `https://sandbox.impala.travel/v1/hotels`,
+        headers: {
+            "Content-Type": "application/json",
+            "x-api-key": window.IMPALA_API_KEY
         }
     })
 }
