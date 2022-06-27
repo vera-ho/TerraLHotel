@@ -93,6 +93,6 @@ r11 = Room.create({
     size: "258 ft²/24 m²", building_id: 5
 })
 
-# res = Reservation.new({
-#     hotel_id: 1, room_id: 1, customer_id: 1, checkin: "July 10, 2022", checkout: "July 15, 2022", status: "booked"
-# })
+res = Reservation.new({
+    hotel_id: 1, room_id: 1, customer_id: 1, checkin: "July 10, 2022", checkout: "July 15, 2022", status: "booked"
+})

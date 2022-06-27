@@ -3,14 +3,15 @@ class Api::ReservationsController < ApplicationController
     # User can only view their own reservations when logged in (=> current_user)
     before_action :require_logged_in    # only: [:show, :create, :update, :destroy]
 
+    # for testing. won't need all reservations usually (user only sees their own reservations)
     def index
         @reservations = Reservation.all
         # @reservations = Reservation.find_by(customer_id: params[:customer_id])
         # @reservations = current_user.reservations
     end
 
-    # ******* To Dos
-    # NEST INDEX/SHOW UNDER USER???
+    # 
+    # NEST INDEX/SHOW routes UNDER USER???
     # 
 
     def show
@@ -42,9 +43,10 @@ class Api::ReservationsController < ApplicationController
         @reservation = current_user.reservations.find_by(id: params[:id])
 
         if @reservation && @reservation.delete
-            render :index
+            # render :show
+            render json: ['Reservation successfully cancelled.'], status: 200
         else
-            render json: ['Something went wrong! Reservation could not be cancelled.'], status 422
+            render json: ['Something went wrong! Reservation could not be cancelled.'], status: 422
         end
     end
 

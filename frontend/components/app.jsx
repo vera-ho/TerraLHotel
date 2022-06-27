@@ -6,7 +6,7 @@ import SearchContainer from "./search/search_container";
 import HotelContainer from "./hotel/hotel_container"
 
 import { Route, Switch } from 'react-router-dom';
-import { AuthRoute } from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import HotelsContainer from "./hotel/hotels_container";
 
 const App = () => (
@@ -19,6 +19,8 @@ const App = () => (
     <Route exact path="/" component={SearchContainer} />
     <AuthRoute path="/signin" component={LoginFormContainer} />
     <AuthRoute path="/register" component={SignupFormContainer} />
+    {/* <ProtectedRoute path="/account/stays" component={ReservationsContainer} /> */}
+    
     <Switch>
       <Route exact path="/hotels" component={HotelsContainer} />
       <Route path="/hotels/:hotelId" component={HotelContainer} />
