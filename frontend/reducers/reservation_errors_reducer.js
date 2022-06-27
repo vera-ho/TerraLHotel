@@ -9,7 +9,7 @@ const reservationErrorsReducer = (state = {}, action) => {
             Object.assign(nextState, action.errors);
             return nextState;
         case RECEIVE_RESERVATION:
-            return {};
+            return [];
         default:
             return state;
     }

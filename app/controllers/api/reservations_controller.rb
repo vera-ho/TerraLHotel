@@ -3,16 +3,11 @@ class Api::ReservationsController < ApplicationController
     # User can only view their own reservations when logged in (=> current_user)
     before_action :require_logged_in    # only: [:show, :create, :update, :destroy]
 
-    # for testing. won't need all reservations usually (user only sees their own reservations)
     def index
-        @reservations = Reservation.all
+        # @reservations = Reservation.all
         # @reservations = Reservation.find_by(customer_id: params[:customer_id])
-        # @reservations = current_user.reservations
+        @reservations = current_user.reservations
     end
-
-    # 
-    # NEST INDEX/SHOW routes UNDER USER???
-    # 
 
     def show
         @reservation = Reservation.find_by(id: params[:id])

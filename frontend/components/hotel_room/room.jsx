@@ -2,8 +2,6 @@ import React from "react";
 
 const RoomItem = props => {
 
-
-
     return (
         <div className="room-item-container">
             <section className="room-info">

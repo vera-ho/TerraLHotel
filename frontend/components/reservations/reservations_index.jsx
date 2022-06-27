@@ -4,8 +4,12 @@ const ReservationsIndex = props => {
     useEffect( () => {
         // what is the best way to get all reservations for a single user?
         props.requestAllReservations();
+        console.log(props);
+        console.log(props.user.reservations);
+
     }, [])
 
+    
     return (
         <section className="reservations-index-container">
             <header>

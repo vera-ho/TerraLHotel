@@ -11,13 +11,6 @@ export const receiveAllHotels = hotels => {
     }
 }
 
-// export const receiveHotel = hotel => {
-//     return {
-//         type: RECEIVE_HOTEL,
-//         hotel
-//     }
-// }
-
 export const receiveHotel = hotel_info => {
     return {
         type: RECEIVE_HOTEL,
@@ -37,12 +30,6 @@ export const requestAllHotels = () => dispatch => {
         .then( hotels => dispatch(receiveAllHotels(hotels)), 
                   err => dispatch(receiveHotelErrors(err)))
 }
-
-// export const requestHotel = hotel => dispatch => {
-//     return HotelUtil.fetchHotel(hotel)
-//         .then( hotel => dispatch(receiveHotel(hotel)), 
-//                  err => dispatch(receiveHotelErrors(err)))
-// }
 
 export const requestHotel = hotelId => dispatch => {
     return HotelUtil.fetchHotel(hotelId)
