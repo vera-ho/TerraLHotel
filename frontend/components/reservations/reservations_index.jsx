@@ -1,23 +1,43 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import ReservationItem from "./reservation_item";
 
 const ReservationsIndex = props => {
-    useEffect( () => {
-        // what is the best way to get all reservations for a single user?
-        props.requestAllReservations();
-        console.log(props);
-        console.log(props.user.reservations);
 
+    const numReservations = Object.values(props.reservations).length;
+    const [filterValue, setFilterValue] = useState("");
+
+    useEffect( () => {
+        props.requestAllReservations();
     }, [])
 
-    
+    const reservationsList = Object.values(props.reservations).map( (reservation, index) => {
+        // let filter = filterValue.toLowerCase();
+        return (
+            
+            <ReservationItem key={index} reservation={reservation} user={props.user}/>
+        )
+    })
+
     return (
         <section className="reservations-index-container">
             <header>
-                <h3>Your Stays</h3>
+                <h3>Stays</h3>
+                <label>Type a keyword to filter for:
+                    <input 
+                        className=""
+                        type="text"
+                        value={filterValue}
+                        placeholder="Enter Name, Hotel, Status, etc."
+                        onChange={ (e) => setFilterValue(e.target.value) }
+                    />
+                </label>
             </header>
 
             <main>
-                {/* <p>You have {props.reservations.length} reservations.</p> */}
+                <p>You have {numReservations} reservations.</p>
+                <ul>
+                    {reservationsList}
+                </ul>
             </main>
         </section>
     )

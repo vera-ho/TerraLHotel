@@ -2,30 +2,9 @@ import { connect } from "react-redux";
 import { requestAllReservations, requestReservation } from "../../actions/reservation_actions";
 import ReservationsIndex from "./reservations_index";
 
-// path: /account/stays
-// const mSTP = (state) => {
-//     // use userId to find user? then reservations: user.reservations?
-    // let current_user;
-    // Object.values(state.entities.users).forEach( (user) => {
-    //     if(user.id === state.session.id) {
-    //         current_user = user
-    //     }
-    // })
-//     return {
-//         user: current_user,
-//         reservations: state.entities.reservations
-//     }
-// }
-
 const mSTP = (state = {}, ownProps) => {
-    // console.log("ownProps: " + ownProps)
-    // let current_user;
-    // Object.values(state.entities.users).forEach( (user) => {
-    //     if(user.id === state.session.id) {
-    //         current_user = user
-    //     }
-    // })
-
+    // console.log(state.entities.users[ownProps.match.params.userId])
+    // debugger
     return {
         user: state.entities.users[ownProps.match.params.userId],
         reservations: state.entities.reservations
@@ -35,7 +14,8 @@ const mSTP = (state = {}, ownProps) => {
 const mDTP = dispatch => {
     return {
         requestAllReservations: () => dispatch(requestAllReservations()),
-        requestReservation: reservationId => dispatch(requestReservation(reservationId))
+        requestReservation: reservationId => dispatch(requestReservation(reservationId)),
+        
     }
 }
 
