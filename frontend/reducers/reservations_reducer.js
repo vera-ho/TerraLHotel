@@ -1,4 +1,8 @@
-import { RECEIVE_ALL_RESERVATIONS, RECEIVE_RESERVATION } from "../actions/reservation_actions";
+import { 
+        RECEIVE_ALL_RESERVATIONS, 
+        RECEIVE_RESERVATION, 
+        REMOVE_RESERVATION 
+    } from "../actions/reservation_actions";
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
 const reservationsReducer = (state = {}, action) => {
@@ -11,6 +15,9 @@ const reservationsReducer = (state = {}, action) => {
             return nextState;
         case RECEIVE_ALL_RESERVATIONS:
             Object.assign(nextState, action.reservations);
+            return nextState;
+        case REMOVE_RESERVATION:
+            delete nextState[action.reservationId];
             return nextState;
         case RECEIVE_RESERVATION: 
             nextState[action.reservations.id] = action.reservations;

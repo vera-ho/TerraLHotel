@@ -21,7 +21,8 @@ export const receiveReservation = reservationId => {
 
 export const removeReservation = reservationId => {
     return {
-        type: REMOVE_RESERVATION
+        type: REMOVE_RESERVATION,
+        reservationId
     }
 }
 
