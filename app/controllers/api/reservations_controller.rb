@@ -38,8 +38,10 @@ class Api::ReservationsController < ApplicationController
         @reservation = current_user.reservations.find_by(id: params[:id])
 
         if @reservation && @reservation.delete
+            render json: [params[:id]], status: 200
+
             # render :show
-            render json: ['Reservation successfully cancelled.'], status: 200
+            # render json: ['Reservation successfully cancelled.'], status: 200
         else
             render json: ['Something went wrong! Reservation could not be cancelled.'], status: 422
         end
