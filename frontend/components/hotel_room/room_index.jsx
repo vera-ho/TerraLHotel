@@ -4,10 +4,16 @@ import RoomItem from "./room";
 const RoomsIndex = props => {
     const rooms = Object.values(props.rooms).map( (room, index) => {
         return (
-            <RoomItem key={index} room={room} />
+            <RoomItem key={index} room={room} 
+                makeReservation={props.makeReservation} 
+                reservation={props.reservation} 
+                loggedIn={props.loggedIn}
+                user={props.user} 
+            />
         )
     })
 
+    // Bonus functionality
     let datesSelected = null;
     const roomsHeader = (datesSelected) ? (
         <></>

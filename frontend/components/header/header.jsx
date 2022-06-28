@@ -14,6 +14,21 @@ const Header = ({ currentUser, logout }) => {
         </div>
     );
 
+    const icon = currentUser ? (
+        <Link to={`/user/${currentUser.id}`} className="nav-menu">
+            <div className="nav-user-icon"></div>
+            <div className="nav-menu-icon"></div>
+        </Link>
+    ) : (
+        <Link to={`/signin`} className="nav-menu">
+            <div className="nav-user-icon"></div>
+            <div className="nav-menu-icon"></div>
+        </Link>
+    );
+
+    // Bandaid
+    // currentUser ? currentUser : currentUser = {id: 0};
+
     return (
         <header className="nav-bar">
             <Link className="logo" to="/">Terra l'Hotels</Link>
@@ -24,10 +39,11 @@ const Header = ({ currentUser, logout }) => {
             </div>
             {/* <div className="nav-menu"> */}
             <div>
-                <Link to={`/user/${currentUser.id}`} className="nav-menu">
+                {icon}
+                {/* <Link to={`/user/${currentUser.id}`} className="nav-menu">
                     <div className="nav-user-icon"></div>
                     <div className="nav-menu-icon"></div>
-                </Link>
+                </Link> */}
             </div>
         </header>
     );
