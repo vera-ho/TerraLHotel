@@ -66,6 +66,7 @@ class Hotel extends React.Component {
                         <RoomsIndex rooms={this.props.rooms} />
                     </section>
                 </main>
+               
             </section>
         )
     }

@@ -18,8 +18,8 @@ const mDTP = dispatch => {
         requestHotel: hotelId => dispatch(requestHotel(hotelId)),
         editReservation: reservation => dispatch(editReservation(reservation)),
         cancelReservation: reservationId => dispatch(cancelReservation(reservationId)),
-        pullReservation: reservationId => dispatch(pullReservation(reservationId)),
-        requestReservation: reservationId => dispatch(requestReservation(reservationId))
+        // pullReservation: reservationId => dispatch(pullReservation(reservationId)),
+        // requestReservation: reservationId => dispatch(requestReservation(reservationId))
     }
 }
 

@@ -5,6 +5,7 @@ const ReservationsIndex = props => {
 
     const numReservations = Object.values(props.reservations).length;
     const [filterValue, setFilterValue] = useState("");
+    
 
     useEffect( () => {
         props.requestAllReservations();

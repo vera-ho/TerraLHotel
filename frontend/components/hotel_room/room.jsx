@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 const RoomItem = props => {
+
+    let showCalendar = false;
+    const [checkinDate, setCheckinDate] = useState(new Date());
+    const [checkoutDate, setCheckoutDate] = useState(new Date());
+
+    const handleClick = e => {
+        e.preventDefault();
+        showCalendar ? showCalendar = false : showCalendar = true;
+    }
 
     return (
         <div className="room-item-container">
@@ -16,9 +25,11 @@ const RoomItem = props => {
                         <li>{props.room.beds}</li>
                         <li>{props.room.size}</li>
                     </ul>
-                    <button>Check Prices</button>
-
+                    {/* <button>Check Prices</button> */}
+                    <button onClick={handleClick}>Select Dates</button>
                 </div>
+
+                
             </section>
 
             <section className="room-photo">
@@ -26,6 +37,22 @@ const RoomItem = props => {
                     alt="hotel-room">
                 </img>
             </section>
+            <div className="daterange-picker">
+                <label>
+                    Check-in date
+                    <input type="date"
+                        value={checkinDate}
+                        onChange={ e => setCheckinDate(e.target.value) } 
+                    />
+                </label>
+                <label>
+                    Check-out date
+                    <input type="date"
+                        value={checkoutDate}
+                        onChange={ e => setCheckoutDate(e.target.value) } 
+                    />
+                </label>
+            </div>
         </div>
     )
 }
