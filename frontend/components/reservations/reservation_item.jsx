@@ -23,8 +23,6 @@ const ReservationItem = props => {
                 <button >Edit Reservation</button>
                 <button >Cancel Reservation</button>
             </div>
-
-            
         </li>
     )
 }
