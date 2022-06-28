@@ -8,14 +8,14 @@ const ReservationsIndex = props => {
 
     useEffect( () => {
         props.requestAllReservations();
-        // debugger
     }, [])
 
     const reservationsList = Object.values(props.reservations).map( (reservation, index) => {
         // let filter = filterValue.toLowerCase();
         return (
             <ReservationItem key={index} reservation={reservation} user={props.user}
-                requestHotel={props.requestHotel} hotels={props.hotels} />
+                requestHotel={props.requestHotel} hotels={props.hotels} editReservation={props.editReservation}
+                cancelReservation={props.cancelReservation} />
         )
     })
 
@@ -25,7 +25,7 @@ const ReservationsIndex = props => {
                 <h3>Stays</h3>
                 <label>Type a keyword to filter for:
                     <input 
-                        className=""
+                        className="reservation-filter"
                         type="text"
                         value={filterValue}
                         placeholder="Enter Name, Hotel, Status, etc."

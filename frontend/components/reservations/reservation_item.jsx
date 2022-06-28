@@ -9,6 +9,11 @@ const ReservationItem = props => {
     const hotel = props.hotels[props.reservation.hotelId];
     console.log("Hotel: " + hotel);
 
+    const handleCancelClick = e => {
+        e.preventDefault();
+        props.cancelReservation(props.reservation.id);
+    }
+
     if(!hotel) return <p>Loading...</p>
     return (
         <li>
@@ -21,7 +26,7 @@ const ReservationItem = props => {
             </div>
             <div>
                 <button >Edit Reservation</button>
-                <button >Cancel Reservation</button>
+                <button onClick={handleCancelClick}>Cancel Reservation</button>
             </div>
         </li>
     )
