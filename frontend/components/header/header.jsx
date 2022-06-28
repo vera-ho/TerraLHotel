@@ -22,9 +22,12 @@ const Header = ({ currentUser, logout }) => {
                 <Link className="btn" to="/hotelsyoulove">My Lists</Link>
                 {display}
             </div>
-            <div className="nav-menu">
-                <div className="nav-user-icon"></div>
-                <div className="nav-menu-icon"></div>
+            {/* <div className="nav-menu"> */}
+            <div>
+                <Link to={`/user/${currentUser.id}`} className="nav-menu">
+                    <div className="nav-user-icon"></div>
+                    <div className="nav-menu-icon"></div>
+                </Link>
             </div>
         </header>
     );
