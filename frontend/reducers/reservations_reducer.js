@@ -1,7 +1,7 @@
 import { 
         RECEIVE_ALL_RESERVATIONS, 
-        RECEIVE_RESERVATION, 
-        REMOVE_RESERVATION 
+        RECEIVE_RESERVATION,
+        REMOVE_RESERVATION
     } from "../actions/reservation_actions";
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
@@ -20,7 +20,8 @@ const reservationsReducer = (state = {}, action) => {
             delete nextState[action.reservationId];
             return nextState;
         case RECEIVE_RESERVATION: 
-            nextState[action.reservations.id] = action.reservations;
+            nextState[action.reservation.id] = action.reservation;
+            return nextState;
         default:
             return state;
     }

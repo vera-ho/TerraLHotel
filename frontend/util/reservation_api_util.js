@@ -22,7 +22,7 @@ export const createReservation = reservation => {
 
 export const updateReservation = reservation => {
     return $.ajax({
-        method: "POST",
+        method: "PATCH",
         url: `/api/reservations/${reservation.id}`,
         data: { reservation }
     })
@@ -30,7 +30,7 @@ export const updateReservation = reservation => {
 
 export const deleteReservation = reservationId => {
     return $.ajax({
-        method: "POST",
+        method: "DELETE",
         url: `/api/reservations/${reservationId}`
     })
 }

@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
 
   window.makeReservation = Reservation.makeReservation;
+  window.requestReservation = Reservation.requestReservation;
+  window.pullRes = Reservation.pullReservation;
   window.editReservation = Reservation.editReservation;
   window.cancelReservation = Reservation.cancelReservation;
 

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { requestAllReservations, requestReservation } from "../../actions/reservation_actions";
+import { pullReservation, requestAllReservations, requestReservation } from "../../actions/reservation_actions";
 import { requestHotel } from "../../actions/hotel_actions"
 import ReservationsIndex from "./reservations_index";
 
@@ -14,8 +14,9 @@ const mSTP = (state = {}, ownProps) => {
 const mDTP = dispatch => {
     return {
         requestAllReservations: () => dispatch(requestAllReservations()),
-        requestReservation: reservationId => dispatch(requestReservation(reservationId)),
-        requestHotel: hotelId => dispatch(requestHotel(hotelId))
+        requestReservation: reservation => dispatch(requestReservation(reservation)),
+        pullReservation: reservationId => dispatch(pullReservation(reservationId)),
+        requestHotel: hotelId => dispatch(requestHotel(hotelId)),
     }
 }
 

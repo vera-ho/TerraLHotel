@@ -12,10 +12,10 @@ export const receiveAllReservations = reservations => {
     }
 }
 
-export const receiveReservation = reservationId => {
+export const receiveReservation = reservation => {
     return {
         type: RECEIVE_RESERVATION,
-        reservationId
+        reservation
     }
 }
 
@@ -39,7 +39,13 @@ export const requestAllReservations = () => dispatch => {
             errors => dispatch(receiveReservationErrors(errors)))
 }
 
-export const requestReservation = reservationId => dispatch => {
+export const requestReservation = reservation => dispatch => {
+    return ReservationUtil.fetchReservation(reservation.id)
+        .then( reservation => dispatch(receiveReservation(reservation)),
+            errors => dispatch(receiveReservationErrors(errors)))
+}
+
+export const pullReservation = reservationId => dispatch => {
     return ReservationUtil.fetchReservation(reservationId)
         .then( reservation => dispatch(receiveReservation(reservation)),
             errors => dispatch(receiveReservationErrors(errors)))
