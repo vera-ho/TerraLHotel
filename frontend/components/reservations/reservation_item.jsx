@@ -6,8 +6,6 @@ const ReservationItem = props => {
         props.requestHotel(props.reservation.hotelId);
     }, [])
 
-
-
     const hotel = props.hotels[props.reservation.hotelId];
     console.log("Hotel: " + hotel);
 
