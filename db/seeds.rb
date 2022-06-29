@@ -6,8 +6,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 demo = User.create({
-    fname: "demo",
-    lname: "user",
+    fname: "Demo",
+    lname: "User",
     email: "demo@terralhotel.com",
     password: "welcomeToTerra"
 })
@@ -98,17 +98,17 @@ Reservation.create({
 })
 
 Reservation.create({
-    hotel_id: 2, room_id: 100, customer_id: 1, checkin: "July 22, 2022", checkout: "July 25, 2022", status: "booked"
+    hotel_id: 2, room_id: 3, customer_id: 1, checkin: "July 22, 2022", checkout: "July 25, 2022", status: "booked"
 })
 
 Reservation.create({
-    hotel_id: 3, room_id: 90, customer_id: 1, checkin: "July 7, 2022", checkout: "July 8, 2022", status: "booked"
+    hotel_id: 3, room_id: 5, customer_id: 1, checkin: "July 7, 2022", checkout: "July 8, 2022", status: "booked"
 })
 
 Reservation.create({
-    hotel_id: 4, room_id: 35, customer_id: 1, checkin: "July 30, 2022", checkout: "August 15, 2022", status: "booked"
+    hotel_id: 4, room_id: 7, customer_id: 1, checkin: "July 30, 2022", checkout: "August 15, 2022", status: "booked"
 })
 
 Reservation.create({
-    hotel_id: 5, room_id: 17, customer_id: 1, checkin: "July 15, 2022", checkout: "July 16, 2022", status: "booked"
+    hotel_id: 5, room_id: 11, customer_id: 1, checkin: "July 15, 2022", checkout: "July 16, 2022", status: "booked"
 })
