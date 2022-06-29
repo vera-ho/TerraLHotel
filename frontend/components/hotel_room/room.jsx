@@ -27,7 +27,6 @@ const RoomItem = props => {
             window.location = `/#/user/${props.user.id}`;
         } else {
             window.location = `/#/signin`
-            console.log("Log In");
         }
     }
         

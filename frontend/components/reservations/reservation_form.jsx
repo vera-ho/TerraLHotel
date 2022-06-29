@@ -22,14 +22,9 @@ const ReservationForm = props => {
             checkout: checkout,
             status: "updated"
         }
-        console.log(editedReservation);
         props.editReservation(editedReservation);
         window.location = `/#/user/${props.user.id}`
     }
-
-    useEffect( () => {
-        console.log(props);
-    }, [])
 
     let checkinDate, checkoutDate;
     const locale =  navigator.language || navigator.browserLanguage || (navigator.languages || ["en"])[0];

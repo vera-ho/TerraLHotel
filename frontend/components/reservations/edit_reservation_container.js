@@ -6,7 +6,6 @@ const mSTP = (state, ownProps) => {
     const reservationId = ownProps.match.params.reservationId;
     const reservation = state.entities.reservations[reservationId];
 
-    // debugger
     return ({
         hotel: state.entities.hotels[reservation.hotelId],
         room: state.entities.rooms[reservation.roomId],
