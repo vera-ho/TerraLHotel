@@ -49,7 +49,6 @@ const ReservationForm = props => {
                 Check-in date
                 <input type="date"
                     value={checkin}
-                    placeholder={checkinDate}
                     onChange={ e => setCheckin(e.target.value) } 
                 />
             </label>
