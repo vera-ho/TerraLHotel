@@ -26,15 +26,19 @@ const ReservationItem = props => {
  
     if(!hotel) return <p>Loading...</p>
     return (
-        <li>
+        <li className="reservation-item-container">
             <div>
-                <p>Name: {props.user.fname + " " + props.user.lname}</p>
-                <p>Hotel: {hotel.name}</p>
+                {/* <p>Name: {props.user.fname + " " + props.user.lname}</p> */}
+                <p>
+                    <Link to={`/hotels/${hotel.id}`} className="reservation-item-hotel">
+                        {hotel.name}
+                    </Link>
+                </p>
                 <p>Check-in: {checkin.toLocaleDateString(locale, options)}</p>
                 <p>Check-out: {checkout.toLocaleDateString(locale, options)}</p>
                 <p>Status: {props.reservation.status}</p>
             </div>
-            <div>
+            <div className="reservation-item-actions">
                 <Link to={`/reservation/edit/${props.reservation.id}`}
                     className="btn">Edit Reservation</Link>
                 <Link to={{}} onClick={handleCancelClick}
