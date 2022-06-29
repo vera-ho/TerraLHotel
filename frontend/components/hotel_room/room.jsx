@@ -33,7 +33,7 @@ const RoomItem = props => {
         
 
     const datePicker = (
-        <div className="daterange-picker">
+        <div className="room-daterange-picker">
             <label>
                 Check-in date
                 <input type="date"

@@ -68,33 +68,33 @@ const ReservationForm = props => {
         <div className="reservation-form-container">
              <section className="reservation-form-left">
                 <header>
-                    <h4>Welcome back {props.user.fname}</h4>
+                    <h4>Welcome back, {props.user.fname}</h4>
                 </header>
 
                 <div className="reservation-form-main">
                     <h4>Room & Guests</h4>
+                    <p>Please verify guest and reservation information.</p>
                     <div className="reservation-user-info">
-                        <h5>Room type </h5>
-                        <h5>Free cancellation</h5>
+                        {/* <h5>Room type </h5>
+                        <h5>Free cancellation</h5> */}
 
                         <p>Guest</p>
                         <p>{props.user.fname + " " + props.user.lname}</p>
                         <p>{props.user.email}</p>
                     </div>
-                    
-                    
+                    {/* <p>Number of nights</p>
+                    <p>Room type and pricing</p> */}
+                    <p>Total price: ${(Math.random()* 10000 + 500).toFixed(2)}</p>
                 </div>
             </section>
 
             <section className="reservation-form-right">
                 <h4>{props.hotel.name}</h4>
                 <p>{props.hotel.city + ", " + props.hotel.country}</p>
-                <p>Booked Dates:</p>
+                {/* <p>Booked Dates:</p> */}
                 <p>{checkinDate + " - " + checkoutDate}</p>
                 {datePicker}
-                <p>Number of nights</p>
-                <p>Room type and pricing</p>
-                <p>Total price: {Math.random()* 10000 + 500}</p>
+
             </section>
         </div>
     )
