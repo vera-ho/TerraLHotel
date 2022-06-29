@@ -13,6 +13,7 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
+
 class Hotel < ApplicationRecord
     validates :name, :email, :phone_number, :country, presence: true
     validates :city, :address, :rooms, presence: true
@@ -22,4 +23,8 @@ class Hotel < ApplicationRecord
         class_name: :Room, 
         foreign_key: :building_id,
         primary_key: :id
+
+    has_many :reservations,
+        foreign_key: :hotel_id,
+        class_name: :Reservation
 end

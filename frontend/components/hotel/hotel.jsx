@@ -23,6 +23,11 @@ class Hotel extends React.Component {
         })
 
         if(!hotel) return (<h2 className="loading">Loading...</h2>)
+
+        let reservation = {
+            hotel_id: hotel.id
+        }
+
         return (
             <section className="hotel-details-container">
                 <header>
@@ -34,6 +39,7 @@ class Hotel extends React.Component {
                 <main className="hotel-details-content">
                     <section className="hotel-content-left">
                         <section className="hotel-details-images">
+                            <img src="https://cdn.discordapp.com/attachments/862515957842706475/991821545553006752/hotel_image.jpeg" />
                         </section>
 
                         <section className="hotel-details-misc">
@@ -63,9 +69,14 @@ class Hotel extends React.Component {
                         </div>
                     </section>
                     <section className="hotel-content-right">
-                        <RoomsIndex rooms={this.props.rooms} />
+                        <RoomsIndex rooms={this.props.rooms} 
+                            makeReservation={this.props.makeReservation}
+                            reservation={reservation} loggedIn={this.props.loggedIn}
+                            user={this.props.user}
+                        />
                     </section>
                 </main>
+               
             </section>
         )
     }
