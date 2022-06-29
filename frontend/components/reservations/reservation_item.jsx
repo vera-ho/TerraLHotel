@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ReservationItem = props => {
 
@@ -34,8 +35,10 @@ const ReservationItem = props => {
                 <p>Status: {props.reservation.status}</p>
             </div>
             <div>
-                <button to={`/reservation/edit/${props.reservation.id}`}>Edit Reservation</button>
-                <button onClick={handleCancelClick}>Cancel Reservation</button>
+                <Link to={`/reservation/edit/${props.reservation.id}`}
+                    className="btn">Edit Reservation</Link>
+                <Link to={{}} onClick={handleCancelClick}
+                    className="btn">Cancel Reservation</Link>
             </div>
         </li>
     )

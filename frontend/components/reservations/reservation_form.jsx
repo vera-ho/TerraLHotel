@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const ReservationForm = props => {
     // expected props/information:
@@ -11,6 +10,15 @@ const ReservationForm = props => {
     // Set to previously selected dates from room item component
     const [checkin, setCheckin] = useState("");
     const [checkout, setCheckout] = useState("");
+
+    const handleSubmit = e => {
+        e.preventDefault();
+    }
+
+    useEffect( () => {
+        console.log(props);
+    }, [])
+
 
     return (
         <div className="reservation-form-container">

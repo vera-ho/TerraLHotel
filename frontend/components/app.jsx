@@ -6,6 +6,7 @@ import SearchContainer from "./search/search_container";
 import HotelContainer from "./hotel/hotel_container";
 import ReservationsContainer from "./reservations/reservations_container";
 import HotelsContainer from "./hotel/hotels_container";
+import EditReservationContainer from "./reservations/edit_reservation_container";
 
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
@@ -22,7 +23,8 @@ const App = () => (
     <AuthRoute path="/register" component={SignupFormContainer} />
     {/* <ProtectedRoute path="/account/stays" component={ReservationsContainer} /> */}
     <ProtectedRoute path="/user/:userId" component={ReservationsContainer} />
-    
+    <ProtectedRoute path="/reservation/edit/:reservationId" component={EditReservationContainer} />
+
     <Switch>
       <Route exact path="/hotels" component={HotelsContainer} />
       <Route path="/hotels/:hotelId" component={HotelContainer} />
