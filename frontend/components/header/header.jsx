@@ -30,7 +30,7 @@ const Header = ({ currentUser, logout }) => {
 
             <div className="nav-links">
                 <Link className="btn" to="/">Search Hotels</Link>
-                <Link className="btn" to="/hotelsyoulove">My Lists</Link>
+                {/* <Link className="btn" to="/hotelsyoulove">My Lists</Link> */}
                 {display}
             </div>
 

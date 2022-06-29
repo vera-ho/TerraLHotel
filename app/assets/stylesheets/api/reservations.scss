@@ -1,18 +1,50 @@
-// Place all the styles related to the api/reservations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.daterange-picker {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 400px;
-    max-width: 500px;
-    // width: 50%;
-    // height: 25%;
-    border: 1px solid coral;
+.reservations-index-container {
+    max-width: 960px;
+    padding: 60px 0px;
+    margin: 0 auto;
+}
 
-    background-color: #eee;
-    opacity: 1;
-    padding: 15px;
+section.reservations-index-container > header > h3 {
+    font-size: 1.75rem;
+    margin: 0 0 20px;
+    width: 90%;
+}
+
+.reservation-filter {
+    width: 300px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    padding: 10px 12px 8px;
+    margin: 8px 0px 50px;
+}
+
+.reservation-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0px;
+    border-bottom: 3px solid #ccc;
+}
+
+.reservation-item-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+li.reservation-item-container > div > p {
+    font-size: 14px;
+    line-height: 1.1rem;
+}
+
+.reservation-item-hotel {
+    font-size: 1.25rem;
+    line-height: 1.1rem;
+    text-decoration: none;
+    color: #333;
+}
+
+li.reservation-item-container > div > p:first-child {
+    padding: 5px 0px;
 }

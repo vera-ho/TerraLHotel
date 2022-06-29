@@ -54,7 +54,7 @@ div.room-info > ul {
 }
 
 div.room-info > button,
-div.daterange-picker > button {
+div.room-daterange-picker > button {
     background-color: #333;
     font-size: 14px;
     color: #fff;
@@ -70,4 +70,18 @@ div.daterange-picker > button {
 section.room-photo > img {
     width: 110px;
     height: 110px;
+}
+
+.room-daterange-picker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 400px;
+    max-width: 500px;
+    border: 1px solid coral;
+
+    background-color: #eee;
+    opacity: 1;
+    padding: 15px;
 }

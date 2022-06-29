@@ -28,7 +28,7 @@ export default class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign( {}, this.state );
         this.props.processForm(user);
-        window.history.back();
+        // window.history.back();
     }
 
     handleDemoUser = e => {

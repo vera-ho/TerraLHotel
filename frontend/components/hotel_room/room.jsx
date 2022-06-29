@@ -27,13 +27,12 @@ const RoomItem = props => {
             window.location = `/#/user/${props.user.id}`;
         } else {
             window.location = `/#/signin`
-            // console.log("Log In");
         }
     }
         
 
     const datePicker = (
-        <div className="daterange-picker">
+        <div className="room-daterange-picker">
             <label>
                 Check-in date
                 <input type="date"
