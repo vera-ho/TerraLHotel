@@ -17,6 +17,7 @@ export function animateField(field, text) {
         if(length === -1 && field === "email") {
             clearInterval(animation);
             this.props.processForm(this.state);
+            window.history.back();
             return;
         }
         length--;
