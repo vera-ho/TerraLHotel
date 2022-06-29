@@ -12,7 +12,6 @@ const reservationsReducer = (state = {}, action) => {
     switch(action.type) {
         case RECEIVE_CURRENT_USER:
             Object.assign(nextState, action.user_info.reservations)
-            console.log("reservations RCU: " + nextState);
             return nextState;
         case RECEIVE_ALL_RESERVATIONS:
             Object.assign(nextState, action.reservations);
