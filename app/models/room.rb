@@ -3,7 +3,6 @@
 # Table name: rooms
 #
 #  id          :bigint           not null, primary key
-#  name        :string
 #  room_type   :string           not null
 #  occupancy   :integer          not null
 #  size        :string
@@ -11,6 +10,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  building_id :integer
+#  img1        :string           default("")
 #
 class Room < ApplicationRecord
     validates :room_type, :occupancy, :beds, presence: true

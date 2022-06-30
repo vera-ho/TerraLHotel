@@ -105,6 +105,7 @@ Hotel.create({
 
 ## ************* ROOM SEEDS ************* ##
 Room.destroy_all
+
 # 1, 2
 Room.create({ room_type: "Deluxe Room", beds: "1 double/full bed" , occupancy: 2, size: "215 ft²/20 m²", building_id: 1 })
 Room.create({ room_type: "Standard Room", beds: "2 Single Beds or 1 King Bed", occupancy: 2, size: "215 ft²/20 m²", building_id: 1 })
@@ -151,7 +152,7 @@ Room.create({ room_type: "Eiffel Suite", beds: "1 King Bed", occupancy: 2, size:
 Room.create({ room_type: "Arno River View", beds: "1 Queen Bed", occupancy: 2, size: "484 ft²/44 m²", building_id: 11})
 Room.create({ room_type: "Superior Junior Suite", beds: "1 King Bed", occupancy: 4, size: "592 ft²/55 m²", building_id: 11})
 Room.create({ room_type: "Grand Premium with View", beds: "1 King Bed", occupancy: 3, size: "355 ft²/33 m²", building_id: 11})
-Room.create({ room_type: "Two Bedroom VIP Suite", beds: "1 Queen Bed", occupancy: , size: "914 ft²/85 m².", building_id: 11})
+Room.create({ room_type: "Two Bedroom VIP Suite", beds: "1 Queen Bed", occupancy: 2, size: "914 ft²/85 m².", building_id: 11})
 
 # 27, 28, 29
 Room.create({ room_type: "Standard Wide + Balcony", beds: "1 Double/Full Bed", occupancy: 2, size: "247 ft²/23 m²", building_id: 12})
@@ -180,7 +181,6 @@ Reservation.create({ hotel_id: 2, room_id: 3, customer_id: 1, checkin: "July 22,
 Reservation.create({ hotel_id: 3, room_id: 5, customer_id: 1, checkin: "July 7, 2022", checkout: "July 8, 2022", status: "booked" })
 Reservation.create({ hotel_id: 4, room_id: 7, customer_id: 1, checkin: "July 30, 2022", checkout: "August 15, 2022", status: "booked" })
 Reservation.create({ hotel_id: 5, room_id: 11, customer_id: 1, checkin: "July 15, 2022", checkout: "July 16, 2022", status: "booked" })
-
 Reservation.create({ hotel_id: 7, room_id: 14, customer_id: 2, checkin: "August 1, 2022", checkout: "August 5, 2022", status: "booked" })
 Reservation.create({ hotel_id: 8, room_id: 18, customer_id: 1, checkin: "August 1, 2022", checkout: "August 5, 2022", status: "booked" })
 Reservation.create({ hotel_id: 10, room_id: 21, customer_id: 2, checkin: "September 12, 2022", checkout: "September 30, 2022", status: "booked" })

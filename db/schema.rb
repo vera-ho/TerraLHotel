@@ -10,24 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_25_181347) do
+ActiveRecord::Schema.define(version: 2022_06_30_185913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "hotels", force: :cascade do |t|
     t.string "name", null: false
-    t.string "email", null: false
-    t.string "phone_number", null: false
     t.string "country", null: false
     t.string "city", null: false
     t.string "address", null: false
     t.integer "rooms", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "img1", default: ""
+    t.string "img2", default: ""
+    t.string "img3", default: ""
+    t.string "state", default: ""
     t.index ["city"], name: "index_hotels_on_city"
     t.index ["country"], name: "index_hotels_on_country"
-    t.index ["email"], name: "index_hotels_on_email"
     t.index ["name"], name: "index_hotels_on_name"
   end
 
@@ -48,7 +49,6 @@ ActiveRecord::Schema.define(version: 2022_06_25_181347) do
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.string "name"
     t.string "room_type", null: false
     t.integer "occupancy", null: false
     t.string "size"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2022_06_25_181347) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "building_id"
+    t.string "img1", default: ""
     t.index ["beds"], name: "index_rooms_on_beds"
     t.index ["building_id"], name: "index_rooms_on_building_id"
     t.index ["occupancy"], name: "index_rooms_on_occupancy"
