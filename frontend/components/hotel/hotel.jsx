@@ -1,6 +1,6 @@
 import React from "react";
 import RoomsIndex from "../hotel_room/room_index";
-import HotelMap from "../map";
+import HotelMap from "../map/map";
 
 class Hotel extends React.Component {
     constructor(props) {
