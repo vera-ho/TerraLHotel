@@ -3,13 +3,11 @@ import FooterIndex from "./footer";
 
 const mSTP = state => {
     return {
-
     }
 }
 
 const mDTP = dispatch => {
     return {
-
     }
 }
 
