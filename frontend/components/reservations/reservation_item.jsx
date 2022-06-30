@@ -14,7 +14,6 @@ const ReservationItem = props => {
     }
 
     const hotel = props.hotels[props.reservation.hotelId];
-
     const locale =  navigator.language || navigator.browserLanguage || (navigator.languages || ["en"])[0];
     const checkin = new Date(props.reservation.checkin);
     const checkout = new Date(props.reservation.checkout);

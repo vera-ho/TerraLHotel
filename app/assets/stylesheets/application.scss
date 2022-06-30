@@ -14,13 +14,18 @@
  *= require_self
  */
 
-body {
+body, 
+.body {
     background-color: #FFF;
     box-sizing: border-box;
 
     color: #333333;
     text-decoration: none;
     margin: 0 auto;
+
+    display: flexbox;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 div, form, input, section {
@@ -35,3 +40,4 @@ h4, h5, h6, input, li, p, span, ul {
     font-family: AvenirNext-Regular,HelveticaNeue-Regular,Helvetica Neue,Gill Sans MT,Arial,sans-serif;
     font-weight: 400;
 }
+

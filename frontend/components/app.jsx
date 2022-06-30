@@ -1,5 +1,6 @@
 import React from "react";
 import HeaderContainer from "./header/header_container";
+import FooterContainer from "./footer/footer_container";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import SearchContainer from "./search/search_container";
@@ -12,7 +13,7 @@ import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
-  <div>
+  <div className="body">
     <header className="header">
       <HeaderContainer />
     </header>
@@ -30,6 +31,10 @@ const App = () => (
       <Route path="/hotels/:hotelId" component={HotelContainer} />
       {/* <Route path="/:hotel_name" component={HotelContainer} /> */}
     </Switch>
+
+    <footer className="footer">
+      <FooterContainer />
+    </footer>
   </div>
 );
 
