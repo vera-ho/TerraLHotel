@@ -30,6 +30,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    padding-top: 1.25rem;
 }
 
 .hotel-content-left {
@@ -43,6 +44,12 @@
     margin: 20px auto 20px;
     line-height: 1.625rem;
     box-sizing: inherit;
+}
+
+.hotel-details-images > img {
+    width: 100%;
+    height: auto;
+    
 }
 
 .hotel-content-right {
