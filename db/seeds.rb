@@ -25,82 +25,82 @@ User.create({
 Hotel.destroy_all
 Hotel.create({      
     name: "The Whitby Hotel", country: "USA", state: "NY", city: "New York City", address: "18 W 56th Street" , rooms: 86,
-    img1: "", img2: ""
+    img1: "https://media.discordapp.net/attachments/862515957842706475/992186034106413086/hotel001_th.jpeg", img2: ""
 }) # building_id: 1
 
 Hotel.create({
     name: "Made Hotel", country: "USA", state: "NY", city: "New York City", address: "44 W 29th St" , rooms: 108,
-    img1: "", img2: ""
+    img1: "https://media.discordapp.net/attachments/862515957842706475/992186034446155827/hotel002_th.jpeg", img2: ""
 }) # building_id: 2
 
 Hotel.create({
     name: "Sixty Soho", country: "USA", state: "NY", city: "New York City", address: "60 Thompson Street" , rooms: 100,
-    img1: "", img2: ""
+    img1: "https://media.discordapp.net/attachments/862515957842706475/992186034769113118/hotel003_th.jpeg", img2: ""
 }) # building_id: 3
 
 Hotel.create({
     name: "The Carlyle", country: "USA", state: "NY", city: "New York City", address: "35 East 76th Street" , rooms: 190,
-    img1: "", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186036375535666/hotel009_th.jpeg", img2: ""
 }) # building_id: 4
 
 Hotel.create({
     name: "Mint House", country: "USA", state: "NY", city: "New York City", address: "25 W 39th Street, Suite 700" , rooms: 155,
-    img1: "", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186036375535666/hotel009_th.jpeg", img2: ""
 }) # building_id: 5
 
 Hotel.create({
     name: "Shonai Hotel Suiden Terrasse", country: "Japan", state: "", city: "Yamagata", address: "Kitakyoden Shimotorinosu 23-1", rooms: 135,
-    img1: "", img2: ""
+    img1: "https://media.discordapp.net/attachments/862515957842706475/992186035016581130/hotel004_th.jpeg", img2: ""
 }) # building_id: 6
 
 Hotel.create({
     name: "The Edwin Hotel", country: "USA", state: "NY", city: "Chattanooga", address: "102 Walnut Street, Chattanooga, TN", rooms: 90,
-    img1: "", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186036023209994/hotel008_th.jpeg", img2: ""
 }) # building_id: 7
 
 Hotel.create({
-    name: "San Canzian Villiage & Hotel", country: "Croatia", state: "", city: "Buje", address: "Mužolini Donji 7, Buje", rooms: 24,
-    img1: "", img2: ""
+    name: "San Canzian Village & Hotel", country: "Croatia", state: "", city: "Buje", address: "Mužolini Donji 7, Buje", rooms: 24,
+    img1: "https://media.discordapp.net/attachments/862515957842706475/992186035226292244/hotel005_th.jpeg", img2: ""
 }) # building_id: 8
 
 Hotel.create({
     name: "Cervo Mountain Resort", country: "Switzerland", state: "", city: "Zermatt", address: "Riedweg 156, Postfach 388", rooms: 54,
-    img1: "", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186035486334976/hotel006_th.jpeg", img2: ""
 }) # building_id: 9
 
 Hotel.create({
     name: "Hotel des Trois Vallees", country: "France", state: "", city: "Courchevel", address: "Rue Park City", rooms: 31,
-    img1: "", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186081028087808/hotel012_th.jpeg", img2: ""
 }) # building_id: 10
 
 Hotel.create({
     name: "Forestis Dolomites", country: "Italy", state: "", city: "Plose", address: "39042 Bressanone Bolzano, ", rooms: 60,
-    img1: "", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186035721211955/hotel007_th.jpeg", img2: ""
 }) # building_id: 11
 
 Hotel.create({
     name: "Higashiyama Niseko Village", country: "Japan", state: "", city: "Niseko", address: "Aza Soga 919-28", rooms: 50,
-    img1: "", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186082332524604/hotel015_th.jpeg", img2: ""
 }) # building_id: 12
 
 Hotel.create({
     name: "Esiweni Luxury Safari Lodge", country: "South Africa", state: "", city: "Ladysmith", address: "Memorial Gate, Nambiti Game Reserve, ", rooms: 5,
-    img1: "", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186082034720819/hotel014_th.jpeg", img2: ""
 }) # building_id: 13
 
 Hotel.create({
     name: "Las Casitas, Colca Canyon", country: "Peru", state: "Arequipa", city: "Yanque", address: "Parque Curiña s/n (Desvío carretera Yanque a Achoma)", rooms: 20,
-    img1: "", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186080709328987/hotel011_th.jpeg", img2: ""
 }) # building_id: 14
 
 Hotel.create({
     name: "Hotel Awa", country: "Chile", state: "", city: "Puerto Varas", address: "Ruta 225, Km. 27", rooms: 16,
-    img1: "", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186036677521448/hotel010_th.jpeg", img2: ""
 }) # building_id: 15
 
 Hotel.create({
     name: "Zannier Hotels Omaanda", country: "Namibia", state: "", city: "Windhoek East", address: "Omaanda Lodge, Farm n° 78", rooms: 10,
-    img1: "", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186081028087808/hotel012_th.jpeg", img2: ""
 }) # building_id: 16
 
 ## ************* ROOM SEEDS ************* ##
@@ -178,14 +178,14 @@ Room.create({ room_type: "Backyward Winetank Suite", beds: "1 King Bed", occupan
 Reservation.destroy_all
 Reservation.create({ hotel_id: 1, room_id: 1, customer_id: 1, checkin: "July 1, 2022", checkout: "July 3, 2022", status: "booked" })
 Reservation.create({ hotel_id: 2, room_id: 3, customer_id: 1, checkin: "July 22, 2022", checkout: "July 25, 2022", status: "booked" })
-Reservation.create({ hotel_id: 3, room_id: 5, customer_id: 1, checkin: "July 7, 2022", checkout: "July 8, 2022", status: "booked" })
-Reservation.create({ hotel_id: 4, room_id: 7, customer_id: 1, checkin: "July 30, 2022", checkout: "August 15, 2022", status: "booked" })
+Reservation.create({ hotel_id: 3, room_id: 5, customer_id: 1, checkin: "July 7, 2022", checkout: "July 8, 2022", status: "updated" })
+Reservation.create({ hotel_id: 4, room_id: 7, customer_id: 1, checkin: "July 30, 2022", checkout: "August 15, 2022", status: "updated" })
 Reservation.create({ hotel_id: 5, room_id: 11, customer_id: 1, checkin: "July 15, 2022", checkout: "July 16, 2022", status: "booked" })
-Reservation.create({ hotel_id: 7, room_id: 14, customer_id: 2, checkin: "August 1, 2022", checkout: "August 5, 2022", status: "booked" })
+Reservation.create({ hotel_id: 7, room_id: 14, customer_id: 2, checkin: "August 1, 2022", checkout: "August 5, 2022", status: "updated" })
 Reservation.create({ hotel_id: 8, room_id: 18, customer_id: 1, checkin: "August 1, 2022", checkout: "August 5, 2022", status: "booked" })
 Reservation.create({ hotel_id: 10, room_id: 21, customer_id: 2, checkin: "September 12, 2022", checkout: "September 30, 2022", status: "booked" })
 Reservation.create({ hotel_id: 12, room_id: 29, customer_id: 2, checkin: "January 1, 2023", checkout: "January 6, 2023", status: "booked" })
 Reservation.create({ hotel_id: 13, room_id: 30, customer_id: 2, checkin: "January 19, 2023", checkout: "February 14, 2023", status: "booked" })
 Reservation.create({ hotel_id: 15, room_id: 33, customer_id: 1, checkin: "January 12, 2023", checkout: "January 19, 2023", status: "booked" })
-Reservation.create({ hotel_id: 16, room_id: 35, customer_id: 2, checkin: "May 5, 2023", checkout: "December 12, 2023", status: "booked" })
+Reservation.create({ hotel_id: 16, room_id: 35, customer_id: 2, checkin: "May 5, 2023", checkout: "December 12, 2023", status: "updated" })
 

@@ -31,12 +31,15 @@ class Hotel extends React.Component {
             hotel_id: hotel.id
         }
 
+        let state;
+        hotel.state ? state = `${hotel.state} / ` : state = "";
+
         return (
             <section className="hotel-details-container">
                 <header>
-                    <p className="hotel-details-location">{hotel.country + " / " + hotel.city}</p>
+                    <p className="hotel-details-location">{hotel.country + " / " + state + hotel.city}</p>
                     <h2 className="hotel-details-name">{hotel.name}</h2>
-                    <p>{hotel.address}, {hotel.country}</p>
+                    <p>{hotel.address}, {hotel.city}, {hotel.country}</p>
                 </header>
                 
                 <main className="hotel-details-content">
@@ -44,9 +47,9 @@ class Hotel extends React.Component {
                         <section className="hotel-details-images">
                             <img src="https://cdn.discordapp.com/attachments/862515957842706475/991821545553006752/hotel_image.jpeg" />
                         </section>
-
-                        <section className="hotel-details-misc">
-                        </section>
+                    
+                        {/* <section className="hotel-details-misc">
+                        </section> */}
 
                         <div className="hotel-details-description">
                             <p>Praesent feugiat nisl cursus, bibendum ligula id, dignissim lacus. Sed vel facilisis justo. Aliquam tincidunt lorem eget congue dictum. Nullam non est at nisi vulputate feugiat. Morbi sit amet massa a diam malesuada pulvinar. Phasellus elementum, ante ut pharetra pellentesque, augue odio commodo risus, eu feugiat quam neque eget elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut finibus dignissim ex, nec egestas lacus tempus sed. Pellentesque tincidunt vulputate fermentum. Donec convallis ligula condimentum massa accumsan, quis bibendum quam condimentum. Ut dictum enim vel libero venenatis feugiat.</p>
@@ -70,6 +73,7 @@ class Hotel extends React.Component {
                             </ul>
                         </div>
                     </section>
+                    
                     <section className="hotel-content-right">
                         <RoomsIndex rooms={this.props.rooms} 
                             makeReservation={this.props.makeReservation}
