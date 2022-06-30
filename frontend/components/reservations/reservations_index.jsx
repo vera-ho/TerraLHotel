@@ -5,19 +5,27 @@ const ReservationsIndex = props => {
 
     const numReservations = Object.values(props.reservations).length;
     const [filterValue, setFilterValue] = useState("");
-    
 
     useEffect( () => {
         props.requestAllReservations();
     }, [])
 
     const reservationsList = Object.values(props.reservations).map( (reservation, index) => {
-        // let filter = filterValue.toLowerCase();
-        return (
-            <ReservationItem key={index} reservation={reservation} user={props.user}
-                requestHotel={props.requestHotel} hotels={props.hotels} editReservation={props.editReservation}
-                cancelReservation={props.cancelReservation} />
-        )
+        let filter = filterValue.toLowerCase();
+        let hotel = props.hotels[reservation.hotelId];
+
+        if(reservation.status.toLowerCase().includes(filter) ||
+            props.user.fname.toLowerCase().includes(filter) ||
+            props.user.lname.toLowerCase().includes(filter) ||
+            hotel.name.toLowerCase().includes(filter)
+        ) {
+            return (
+                <ReservationItem key={index} reservation={reservation} user={props.user}
+                    requestHotel={props.requestHotel} hotels={props.hotels} 
+                    editReservation={props.editReservation}
+                    cancelReservation={props.cancelReservation} />
+            )
+        }
     })
 
     return (
