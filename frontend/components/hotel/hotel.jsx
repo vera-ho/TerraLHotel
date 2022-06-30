@@ -9,6 +9,12 @@ class Hotel extends React.Component {
 
     componentDidMount() {
         this.props.requestHotel(this.props.match.params.hotelId);
+        const mapOptions = {
+            center: { lat:37, lng: -122 },
+            zoom: 13
+        }
+
+        this.map = new google.maps.Map(this.mapNode, mapOptions);
     }
 
     render() {
@@ -55,7 +61,12 @@ class Hotel extends React.Component {
                             <p>Atmosphere: Quiet</p>
                         </div>
 
-                        <div className="hotel-details-map">
+                        {/* <div className="hotel-details-map" id="map-container" ref="map"> */}
+                        <div className="hotel-details-map" id="map-container" 
+                            ref={ map => this.mapNode = map }>
+
+                            
+
                         </div>
 
                         <div className="hotel-details-reviews">
