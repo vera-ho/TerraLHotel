@@ -15,10 +15,13 @@ class Hotel extends React.Component {
         }
 
         this.map = new google.maps.Map(this.mapNode, mapOptions);
+
+        // why is maps throwing errors?
     }
 
     render() {
         const hotel = this.props.hotel;
+
         let amentities = ["100% non-smoking hotel", "24 hour front desk", 
             "Central air conditioning", "Free wi-fi", "Lounge", "Luggage Storage", 
             "Multi-lingual Staff", "Restaurant", "Room service", "Shopping nearby", 
@@ -33,6 +36,14 @@ class Hotel extends React.Component {
         let reservation = {
             hotel_id: hotel.id
         }
+
+        const geocodeBase = "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=";
+        const geocodeSuffix = "&benchmark=2020&format=json";
+        const addressURL = hotel.address.slice(0, hotel.address.indexOf(',')).replaceAll(" ", "+");
+        const cityURL = hotel.city.replaceAll(" ", "+");
+        const geocodeURL = geocodeBase + addressURL + "%2C" + cityURL + "%2C" + hotel.address.slice(-2) + geocodeSuffix;
+
+        // ajax call in hotel util? change this to use hooks . when lat/long is not null or "", can update map with marker
 
         return (
             <section className="hotel-details-container">
@@ -64,8 +75,6 @@ class Hotel extends React.Component {
                         {/* <div className="hotel-details-map" id="map-container" ref="map"> */}
                         <div className="hotel-details-map" id="map-container" 
                             ref={ map => this.mapNode = map }>
-
-                            
 
                         </div>
 
