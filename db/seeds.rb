@@ -114,41 +114,41 @@ Room.create({ room_type: "Premium", beds: "2 Single Beds or 1 King Bed", occupan
 Room.create({ room_type: "Superior", beds: "2 Single Beds or 1 King Bed", occupancy: 2, size: "193 ft²/18 m²", building_id: 5 })
 Room.create({ room_type: "Superior Triple", beds: "3 Single Beds or 1 Double & 1 Single Bed", occupancy: 3, size: "258 ft²/24 m²", building_id: 5 })
 
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 6})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 6})
+Room.create({ room_type: "Maisonette", beds: "2 Single Beds", occupancy: 4, size: "462 ft²/43 m²", building_id: 6})
+Room.create({ room_type: "Triple Room", beds: "3 Single Beds", occupancy: 4, size: "312 ft²/29 m²", building_id: 6})
 
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 7})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 7})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 7})
+Room.create({ room_type: "Athena Suite", beds: "1 King Bed & 2 Double Beds", occupancy: 6, size: "1345 ft²/124 m²", building_id: 7})
+Room.create({ room_type: "Hoyt House Deluxe Suite", beds: "1 King Bed", occupancy: 2, size: "635 ft²/58 m²", building_id: 7})
+Room.create({ room_type: "Hoyt House Grand Suite", beds: "1 King Bed", occupancy: 2, size: "1228 ft²/114 m²", building_id: 7})
 
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 8})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 8})
+Room.create({ room_type: "Club Room", beds: "1 King Bed", occupancy: 2, size: "365 ft²/34 m²", building_id: 8})
+Room.create({ room_type: "Club Suite", beds: "1 King Bed", occupancy: 2, size: "731 ft²/68 m²", building_id: 8})
 
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 9})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 9})
+Room.create({ room_type: "Volkshaus", beds: "1 King Bed", occupancy: 3, size: "355 ft²/33 m²", building_id: 9})
+Room.create({ room_type: "Corvatsch Room", beds: "2 Single Beds or 1 King Bed", occupancy: 2, size: "269 ft²/25 m²", building_id: 9})
 
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 10})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 10})
+Room.create({ room_type: "Marquis Suite", beds: "1 King Bed", occupancy: 2, size: "861 ft²/79 m²", building_id: 10})
+Room.create({ room_type: "Eiffel Suite", beds: "1 King Bed", occupancy: 2, size: "650 ft²/60 m²", building_id: 10})
 
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 11})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 11})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 11})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 11})
+Room.create({ room_type: "Arno River View", beds: "1 Queen Bed", occupancy: 2, size: "484 ft²/44 m²", building_id: 11})
+Room.create({ room_type: "Superior Junior Suite", beds: "1 King Bed", occupancy: 4, size: "592 ft²/55 m²", building_id: 11})
+Room.create({ room_type: "Grand Premium with View", beds: "1 King Bed", occupancy: 3, size: "355 ft²/33 m²", building_id: 11})
+Room.create({ room_type: "Two Bedroom VIP Suite", beds: "1 Queen Bed", occupancy: , size: "914 ft²/85 m².", building_id: 11})
 
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 12})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 12})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 12})
+Room.create({ room_type: "Standard Wide + Balcony", beds: "1 Double/Full Bed", occupancy: 2, size: "247 ft²/23 m²", building_id: 12})
+Room.create({ room_type: "Deluxe Palace Garden View", beds: "1 King Bed", occupancy: 2, size: "764 ft²/70 m²", building_id: 12})
+Room.create({ room_type: "Susuki King", beds: "1 King Bed", occupancy: 2, size: "646 ft²/60 m²", building_id: 12})
 
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 13})
+Room.create({ room_type: "Alcoba", beds: "1 Queen Bed", occupancy: 2, size: "204 ft²/19 m²", building_id: 13})
 
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 14})
+Room.create({ room_type: "Aposento", beds: "2 Single Beds or 1 King Bed", occupancy: 2, size: "322 ft²/30 m².", building_id: 14})
 
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 15})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 15})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 15})
+Room.create({ room_type: "Dawn Room", beds: "2 Double Beds", occupancy: 3, size: "430 ft²/39 m²", building_id: 15})
+Room.create({ room_type: "Bungalow", beds: "2 Single Beds", occupancy: 2, size: "484 ft²/45 m²", building_id: 15})
+Room.create({ room_type: "Park Family Suite", beds: "1 Double & 2 Single Beds", occupancy: 5, size: "645 ft²/60 m²", building_id: 15})
 
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 16})
-Room.create({ room_type: "", beds: "", occupancy: , size: "", building_id: 16})
+Room.create({ room_type: "One Bedroom Tent", beds: "2 Single Beds or 1 King Bed", occupancy: 2, size: "42 ft²/3 m²", building_id: 16})
+Room.create({ room_type: "Backyward Winetank Suite", beds: "1 King Bed", occupancy: 3, size: "322 ft²/30 m²", building_id: 16})
 
 
 ## ************* RESERVATION SEEDS ************* ##
