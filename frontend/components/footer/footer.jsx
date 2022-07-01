@@ -1,6 +1,6 @@
 import React from "react";
 
-const FooterIndex = props => {
+const FooterIndex = (props) => {
     // list technologies
     // developer section with personal links
     // link to original site
@@ -27,6 +27,7 @@ const FooterIndex = props => {
             </section>
             
             <section>
+                <h1>About</h1>
                 <p>Terra l'Hotel is a clone of Tablet Hotels</p>
                 <p>Images belong to Tablet Hotels</p>
             </section>

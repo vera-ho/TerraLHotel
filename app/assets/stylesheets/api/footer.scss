@@ -22,3 +22,15 @@ div.footer-index-container > section {
     width: 33%;
     
 }
+
+div.footer-index-container > section > h1 { 
+    font-size:  20px;
+    padding-bottom: 10px;
+}
+
+div.footer-index-container > section > ul > li, 
+div.footer-index-container > section > p {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
