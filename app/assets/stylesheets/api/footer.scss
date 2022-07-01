@@ -1,6 +1,24 @@
-.footer,
-.footer-index-container {
+.footer{
     background-color: #333;
+    color: #eee;
     padding: 50px;
     flex: 1;
+}
+
+.footer-index-container {
+    background-color: #333;
+    color: #eee;
+
+    max-width: 960px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // flex: 1;
+}
+
+div.footer-index-container > section {
+    width: 33%;
+    
 }
