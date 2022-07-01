@@ -45,7 +45,8 @@ class Hotel extends React.Component {
                 <main className="hotel-details-content">
                     <section className="hotel-content-left">
                         <section className="hotel-details-images">
-                            <img src="https://cdn.discordapp.com/attachments/862515957842706475/991821545553006752/hotel_image.jpeg" />
+                            {/* <img src="https://cdn.discordapp.com/attachments/862515957842706475/991821545553006752/hotel_image.jpeg" /> */}
+                            <img src={hotel.img1} />
                         </section>
                     
                         {/* <section className="hotel-details-misc">

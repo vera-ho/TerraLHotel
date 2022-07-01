@@ -12,7 +12,7 @@ const HotelListing = props => {
     return (
         <section className='hotel-listing-description'>
             <Link to={`/hotels/${props.hotel.id}`} >
-                <img src='https://cdn.discordapp.com/attachments/862515957842706475/989262659801219072/unknown.png'
+                <img src={props.hotel.img1}
                     width='160px'
                     height='160px'
                 />

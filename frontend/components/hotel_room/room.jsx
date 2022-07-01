@@ -72,7 +72,7 @@ const RoomItem = props => {
             </section>
 
             <section className="room-photo">
-                <img src="https://cdn.discordapp.com/attachments/862515957842706475/990009654094475284/hotel-room-double.jpeg"
+                <img src={props.room.img1}
                     alt="hotel-room">
                 </img>
             </section>

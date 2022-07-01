@@ -45,7 +45,7 @@ Hotel.create({
 
 Hotel.create({
     name: "Mint House", country: "USA", state: "NY", city: "New York City", address: "25 W 39th Street, Suite 700" , rooms: 155,
-    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186036375535666/hotel009_th.jpeg", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186081376223253/hotel013_th.jpeg", img2: ""
 }) # building_id: 5
 
 Hotel.create({
@@ -100,7 +100,7 @@ Hotel.create({
 
 Hotel.create({
     name: "Zannier Hotels Omaanda", country: "Namibia", state: "", city: "Windhoek East", address: "Omaanda Lodge, Farm n° 78", rooms: 10,
-    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186081028087808/hotel012_th.jpeg", img2: ""
+    img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186082642886736/hotel016_th.jpeg", img2: ""
 }) # building_id: 16
 
 ## ************* ROOM SEEDS ************* ##
