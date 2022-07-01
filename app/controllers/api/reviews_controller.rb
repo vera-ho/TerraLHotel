@@ -38,4 +38,9 @@ class Api::ReviewsController < ApplicationController
             render json: ['Something went wrong! Review could not be deleted'], status 422
         end
     end
+
+    private
+    def review_params
+        params.require(:review).permit(:reviewer_id, :reviewed_hotel_id, :rating, :title, :body)
+    end
 end
