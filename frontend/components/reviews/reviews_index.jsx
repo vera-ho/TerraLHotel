@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 
 const ReviewsIndex = props => {
-
-    const {user, hotel, reviews} = props;
+    debugger
+    const {hotel} = props;
+    let reviews = Object.values({})
 
     useEffect( () => {
 

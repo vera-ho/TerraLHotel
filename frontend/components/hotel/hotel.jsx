@@ -1,11 +1,12 @@
 import React from "react";
 import RoomsIndex from "../hotel_room/room_index";
+import ReviewsIndex from "../reviews/reviews_index";
 import HotelMap from "../map/map";
 
 class Hotel extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.hotel;
+        // this.state = this.props.hotel;
     }
 
     componentDidMount() {
@@ -13,7 +14,7 @@ class Hotel extends React.Component {
     }
 
     render() {
-        const hotel = this.props.hotel;
+        const hotel = this.props.hotel || {};
         let amentities = ["100% non-smoking hotel", "24 hour front desk", 
             "Central air conditioning", "Free wi-fi", "Lounge", "Luggage Storage", 
             "Multi-lingual Staff", "Restaurant", "Room service", "Shopping nearby", 
@@ -23,9 +24,9 @@ class Hotel extends React.Component {
             return (<li key={idx}>{amenity}</li>)
         })
 
-        if(!(hotel)) {
-            return (<h2 className="loading">Loading...</h2>)
-        } 
+        // if(!(hotel)) {
+        //     return (<h2 className="loading">Loading...</h2>)
+        // } 
 
         let reservation = {
             hotel_id: hotel.id
@@ -65,6 +66,7 @@ class Hotel extends React.Component {
                         <HotelMap hotel={hotel} />
 
                         <div className="hotel-details-reviews">
+                            <ReviewsIndex hotel={hotel} />
                         </div>
 
                         <div className="hotel-details-amenities">
