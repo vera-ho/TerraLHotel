@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 
-const ReviewsItem = props => {
+const ReviewItem = props => {
     
 
     useEffect( () => {
@@ -15,4 +15,4 @@ const ReviewsItem = props => {
     )
 }
 
-export default ReviewsItem;
+export default ReviewItem;
