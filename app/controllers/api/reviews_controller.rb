@@ -22,7 +22,7 @@ class Api::ReviewsController < ApplicationController
 
         if @review.save
             # render :show
-            render json: ['Success'], status: 200
+            render json: ['Successfully created'], status: 200
         else
             render json: ['Review could not be saved. Please try again.'], status: 422
         end
@@ -32,7 +32,7 @@ class Api::ReviewsController < ApplicationController
         @review = current_user.reviews.find_by(id: params[:id])
         if @review && @review.update(review_params)
             # render :show
-            render json: ['Success'], status: 200
+            render json: ['Successfully updated'], status: 200
         else
             render json: ['Review could not be updated. Please try again.'], status: 422
         end
@@ -41,7 +41,7 @@ class Api::ReviewsController < ApplicationController
     def destroy
         @review = current_user.reviews.find_by(id: params[:id])
         if @review && @review.delete
-            render json: [params[:id]], status: 200
+            render json: ['Review successfully deleted'], status: 200
         else
             render json: ['Something went wrong! Review could not be deleted'], status: 422
         end
