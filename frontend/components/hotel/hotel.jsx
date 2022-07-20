@@ -15,6 +15,8 @@ class Hotel extends React.Component {
 
     render() {
         const hotel = this.props.hotel || {};
+        const reviews = this.props.reviews || {};
+
         let amentities = ["100% non-smoking hotel", "24 hour front desk", 
             "Central air conditioning", "Free wi-fi", "Lounge", "Luggage Storage", 
             "Multi-lingual Staff", "Restaurant", "Room service", "Shopping nearby", 
@@ -66,7 +68,7 @@ class Hotel extends React.Component {
                         <HotelMap hotel={hotel} />
 
                         <div className="hotel-details-reviews">
-                            <ReviewsIndex hotel={hotel} />
+                            <ReviewsIndex hotel={hotel} reviews={reviews} />
                         </div>
 
                         <div className="hotel-details-amenities">

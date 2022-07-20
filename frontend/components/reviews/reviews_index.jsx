@@ -1,31 +1,27 @@
 import React, { useEffect } from "react";
 
 const ReviewsIndex = props => {
-    debugger
-    const {hotel} = props;
-    let reviews = Object.values({})
-
-    useEffect( () => {
-
-    }, [])
+    // debugger
+    const {hotel, reviews} = props;
 
     // const options = { month: 'long'};
     // console.log(new Intl.DateTimeFormat('en-US', options).format(Xmas95));
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth
 
-    const reviewItems = reviews.map( (review, idx) => {
-        let month = review.createdAt.getMonth();
-        let year = review.createdAt.getFullYear();
+    const reviewItems = Object.values(reviews).map( (review, idx) => {
+        // let month = review.createdAt.getMonth();
+        // let year = review.createdAt.getFullYear();
+        debugger
         return (
             <li key={idx} className="review-item-container">
                 <h2>What I liked:</h2>
-                <p>{review.pros}</p>
+                <p>{review.body}</p>
         
                 <h2>What the hotel could do better:</h2>
-                <p>{review.cons}</p>
+                {/* <p>{review.cons}</p> */}
                 <div className="review-item-reviewer-info">
-                    <p>{review.reviewer.fname}</p>
-                    <p>{month + " " + year}</p>
+                    {/* <p>{review.reviewer.fname}</p> */}
+                    {/* <p>{month + " " + year}</p> */}
                 </div>
             </li>
         )
