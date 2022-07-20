@@ -1,6 +1,6 @@
 class Api::ReviewsController < ApplicationController
 
-    # before_action :require_logged_in, only: [:create, :update, :destroy]
+    before_action :require_logged_in, only: [:create, :update, :destroy]
 
     # index and show may not be needed since json.jbuilder grabs reviews as part of the user's and hotel's show
 

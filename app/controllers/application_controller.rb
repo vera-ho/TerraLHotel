@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    skip_before_action :verify_authenticity_token   # remove before deployment!
+    # skip_before_action :verify_authenticity_token   # remove before deployment!
     helper_method :current_user, :logged_in?
 
     ## CHRRLL
