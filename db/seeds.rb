@@ -210,7 +210,7 @@ Room.create({ room_type: "One Bedroom Tent", beds: "2 Single Beds or 1 King Bed"
 Room.create({ room_type: "Backyward Winetank Suite", beds: "1 King Bed", occupancy: 3, size: "322 ft²/30 m²", building_id: 16, 
     img1: "https://cdn.discordapp.com/attachments/862515957842706475/992186127584870481/room001_th.jpeg"})
 
-## ************* RESERVATION SEEDS ************* ##
+## *********** RESERVATION SEEDS *********** ##
 Reservation.destroy_all
 Reservation.create({ hotel_id: 1, room_id: 1, customer_id: 1, checkin: "July 1, 2022", checkout: "July 3, 2022", status: "booked" })
 Reservation.create({ hotel_id: 2, room_id: 3, customer_id: 1, checkin: "July 22, 2022", checkout: "July 25, 2022", status: "booked" })
@@ -224,3 +224,22 @@ Reservation.create({ hotel_id: 12, room_id: 29, customer_id: 2, checkin: "Januar
 Reservation.create({ hotel_id: 13, room_id: 30, customer_id: 2, checkin: "January 19, 2023", checkout: "February 14, 2023", status: "booked" })
 Reservation.create({ hotel_id: 15, room_id: 33, customer_id: 1, checkin: "January 12, 2023", checkout: "January 19, 2023", status: "booked" })
 Reservation.create({ hotel_id: 16, room_id: 35, customer_id: 2, checkin: "May 5, 2023", checkout: "December 12, 2023", status: "updated" })
+
+## ************* REVIEW SEEDS ************* ##
+Review.destroy_all
+Review.create({ reviewed_hotel_id: 1, reviewer_id: 1,  rating: 3, title: "Decent", pros: "Great location", cons: ""})
+Review.create({ reviewed_hotel_id: 2, reviewer_id: 1,  rating: 4, title: "Comfortable", pros: "Glamorous", cons: ""})
+Review.create({ reviewed_hotel_id: 2, reviewer_id: 2,  rating: 5, title: "Loved it", pros: "Fantastic customer service", cons: ""})
+Review.create({ reviewed_hotel_id: 3, reviewer_id: 2,  rating: 5, title: "Would stay again", pros: "Love the food around here.", cons: ""})
+Review.create({ reviewed_hotel_id: 4, reviewer_id: 1,  rating: 4, title: "Fancy", pros: "Very upscale", cons: ""})
+Review.create({ reviewed_hotel_id: 4, reviewer_id: 2,  rating: 2, title: "Pleasant stay", pros: "Staff is very nice", cons: "Needs a heated pool"})
+Review.create({ reviewed_hotel_id: 5, reviewer_id: 1,  rating: 4, title: "Huge rooms", pros: "Like staying at home", cons: ""})
+Review.create({ reviewed_hotel_id: 6, reviewer_id: 2,  rating: 3, title: "I wish I spoke Japanese", pros: "Beautiful area", cons: ""})
+Review.create({ reviewed_hotel_id: 8, reviewer_id: 1,  rating: 3, title: "I love it here!", pros: "Really good seafood", cons: ""})
+Review.create({ reviewed_hotel_id: 9, reviewer_id: 2,  rating: 3, title: "Mountains upon mountains", pros: "The most peaceful experience I've ever had. Beautiful scenery", cons: ""})
+Review.create({ reviewed_hotel_id: 10, reviewer_id: 1,  rating: 5, title: "Very french", pros: "Great wine selection", cons: ""})
+Review.create({ reviewed_hotel_id: 11, reviewer_id: 2,  rating: 5, title: "Beautiful", pros: "I didn't want to leave", cons: ""})
+Review.create({ reviewed_hotel_id: 12, reviewer_id: 1,  rating: 2, title: "Cute village!", pros: "Very quaint!", cons: "We were kind of bored"})
+Review.create({ reviewed_hotel_id: 13, reviewer_id: 2,  rating: 3, title: "Tiny tent", pros: "Absolutely worth it. We saw amazing animals!", cons: ""})
+Review.create({ reviewed_hotel_id: 14, reviewer_id: 1,  rating: 4, title: "Never gets old", pros: "Very canyon-y", cons: ""})
+Review.create({ reviewed_hotel_id: 16, reviewer_id: 2,  rating: 5, title: "Pack light!", pros: "Stunning, tiny tent", cons: "Can get a little cramped"})

@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
 
-    validates :reviewed_hotel_id, :reviewer_id, :rating, :title, :body, presence: true
+    validates :reviewed_hotel_id, :reviewer_id, :rating, :title, :pros, presence: true
     validates :rating, inclusion: 1..5
     validates :title, length: { maximum: 200 }
 

@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 const ReviewForm = props => {
     const {reviewed_hotel_id, reviewer_id, makeReview } = props;
     let [title, setTitle] = useState("");
-    let [body, setBody] = useState("");
+    let [pros, setPros] = useState("");
+    let [cons, setCons] = useState("");
     let [rating, setRating] = useState(0);
 
     useEffect( () => {
@@ -17,14 +18,16 @@ const ReviewForm = props => {
             reviewer_id: reviewer_id,
             rating: rating,
             title: title,
-            body: body
+            pros: pros,
+            cons: cons
         }
 
         makeReview(review);
 
         // Reset default
         setTitle("");
-        setBody("");
+        setPros("");
+        setCons("");
         setRating("");
     }
 
@@ -46,11 +49,19 @@ const ReviewForm = props => {
                         />                    
                     </label>
 
-                    <label className="review-form-body">Review: <br></br>
+                    <label className="review-form-pros">What did you like? <br></br>
                         <textarea 
-                            className="review-form-body-input"
-                            value={body}
-                            onChange={ e => setBody(e.target.value) }
+                            className="review-form-pros-input"
+                            value={pros}
+                            onChange={ e => setPros(e.target.value) }
+                        />
+                    </label>
+
+                    <label className="review-form-cons">What could the hotel do better? <br></br>
+                        <textarea 
+                            className="review-form-cons-input"
+                            value={cons}
+                            onChange={ e => setCons(e.target.value) }
                         />
                     </label>
 
