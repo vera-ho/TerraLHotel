@@ -1,3 +1,4 @@
+import { RECEIVE_HOTEL } from "../actions/hotel_actions";
 import {
     RECEIVE_ALL_REVIEWS, 
     RECEIVE_REVIEW,
@@ -9,10 +10,11 @@ const reviewsReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign( {}, state);
 
+
     switch(action.type) {
-        case RECEIVE_ALL_REVIEWS:
-            Object.assign(nextState, action.reviews);
-            return nextState
+        case RECEIVE_HOTEL:
+            Object.assign(nextState, action.hotel_info.reviews);
+            return nextState;
         case RECEIVE_REVIEW: 
             nextState[action.review.id] = action.review;
             return nextState;
