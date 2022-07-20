@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
 
 const ReviewForm = props => {
-    // const {reviewed_hotel_id, reviewer_id, makeReview } = props;
+    const {reviewed_hotel_id, reviewer_id, makeReview } = props;
     let [title, setTitle] = useState("");
     let [body, setBody] = useState("");
     let [rating, setRating] = useState(0);
 
     useEffect( () => {
         // clear errors?
-
     }, [])
 
-    handleSubmit = e => {
+    const handleSubmit = e => {
         e.preventDefault();
         let review = {
-            // reviewed_hotel_id: reviewed_hotel_id,
-            // reviewer_id: reviewer_id,
+            reviewed_hotel_id: reviewed_hotel_id,
+            reviewer_id: reviewer_id,
             rating: rating,
             title: title,
             body: body
         }
 
-        // makeReview(review);
+        makeReview(review);
 
         // Reset default
         setTitle("");
@@ -32,9 +31,13 @@ const ReviewForm = props => {
     return (
         <section className="reviews-form-container">
             <div className="reviews-form-content">
-                <h1 className="reviews-content-title">Write a Review!</h1>
+                <div className="reviews-form-content-header">
+                    <h1>Write a Review!</h1>
+                    <h1 onClick={ () => console.log("hello")}>X</h1>      
+                </div>
+                
                 <form onSubmit={handleSubmit} className="reviews-form">
-                    <label className="review-form-title">Title:
+                    <label className="review-form-title">Title:<br></br>
                         <input
                             className="review-form-title-input"
                             type="text"
@@ -43,14 +46,15 @@ const ReviewForm = props => {
                         />                    
                     </label>
 
-                    <label className="review-form-body">Review: 
-                        <input 
-                            type="text"
+                    <label className="review-form-body">Review: <br></br>
+                        <textarea 
                             className="review-form-body-input"
                             value={body}
                             onChange={ e => setBody(e.target.value) }
                         />
                     </label>
+
+                    <input type="submit" className="review-form-button" />
                 </form>
             </div>
         </section>
