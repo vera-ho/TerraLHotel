@@ -1,13 +1,19 @@
 class Api::ReviewsController < ApplicationController
 
-    before_action :require_logged_in, only: [:create, :update, :destroy]
+    # before_action :require_logged_in, only: [:create, :update, :destroy]
 
+    # index and show may not be needed since json.jbuilder grabs reviews as part of the user's and hotel's show
+
+    # list all reviews for specific hotel
     def index
         @reviews = Review.all
+        # @reviews = Review.find_by(reviewed_hotel_id: params[:reviewed_hotel_id])
     end
 
+    # list all reviews for specific user
     def show
         @review = Review.find_by(id: params[:id])
+        # @reviews = Review.find_by(reviewer_id: params[:reviewer_id])
     end
 
     def create
@@ -15,7 +21,8 @@ class Api::ReviewsController < ApplicationController
         @review.reviewer_id = current_user.id
 
         if @review.save
-            render :show
+            # render :show
+            render json: ['Success'], status: 200
         else
             render json: ['Review could not be saved. Please try again.'], status: 422
         end
@@ -24,7 +31,8 @@ class Api::ReviewsController < ApplicationController
     def update
         @review = current_user.reviews.find_by(id: params[:id])
         if @review && @review.update(review_params)
-            render :show
+            # render :show
+            render json: ['Success'], status: 200
         else
             render json: ['Review could not be updated. Please try again.'], status: 422
         end
@@ -35,7 +43,7 @@ class Api::ReviewsController < ApplicationController
         if @review && @review.delete
             render json: [params[:id]], status: 200
         else
-            render json: ['Something went wrong! Review could not be deleted'], status 422
+            render json: ['Something went wrong! Review could not be deleted'], status: 422
         end
     end
 
