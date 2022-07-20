@@ -23,5 +23,6 @@ json.reviews do
                 json.extract! user, :fname, :lname, :email
             end
         end
+        
     end
 end
