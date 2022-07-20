@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 
-
 const ReviewsIndex = props => {
 
     useEffect( () => {
