@@ -6,7 +6,6 @@ import HotelMap from "../map/map";
 class Hotel extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = this.props.hotel;
     }
 
     componentDidMount() {
@@ -26,10 +25,6 @@ class Hotel extends React.Component {
             return (<li key={idx}>{amenity}</li>)
         })
 
-        // if(!(hotel)) {
-        //     return (<h2 className="loading">Loading...</h2>)
-        // } 
-
         let reservation = {
             hotel_id: hotel.id
         }
@@ -48,7 +43,6 @@ class Hotel extends React.Component {
                 <main className="hotel-details-content">
                     <section className="hotel-content-left">
                         <section className="hotel-details-images">
-                            {/* <img src="https://cdn.discordapp.com/attachments/862515957842706475/991821545553006752/hotel_image.jpeg" /> */}
                             <img src={hotel.img1} />
                         </section>
                     
