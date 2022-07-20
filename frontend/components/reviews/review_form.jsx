@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-const ReviewsForm = props => {
-    const {reviewed_hotel_id, reviewer_id, makeReview } = props;
+const ReviewForm = props => {
+    // const {reviewed_hotel_id, reviewer_id, makeReview } = props;
     let [title, setTitle] = useState("");
     let [body, setBody] = useState("");
     let [rating, setRating] = useState(0);
@@ -14,14 +14,14 @@ const ReviewsForm = props => {
     handleSubmit = e => {
         e.preventDefault();
         let review = {
-            reviewed_hotel_id: reviewed_hotel_id,
-            reviewer_id: reviewer_id,
+            // reviewed_hotel_id: reviewed_hotel_id,
+            // reviewer_id: reviewer_id,
             rating: rating,
             title: title,
             body: body
         }
 
-        makeReview(review);
+        // makeReview(review);
 
         // Reset default
         setTitle("");
@@ -39,12 +39,22 @@ const ReviewsForm = props => {
                             className="review-form-title-input"
                             type="text"
                             value={title}
-                            onChange={ e => { setTitle(e.target.value)} } 
-                        />                    </label>
+                            onChange={ e => setTitle(e.target.value) } 
+                        />                    
+                    </label>
+
+                    <label className="review-form-body">Review: 
+                        <input 
+                            type="text"
+                            className="review-form-body-input"
+                            value={body}
+                            onChange={ e => setBody(e.target.value) }
+                        />
+                    </label>
                 </form>
             </div>
         </section>
     )
 }
 
-export default ReviewsForm;
+export default ReviewForm;

@@ -11,6 +11,7 @@ import EditReservationContainer from "./reservations/edit_reservation_container"
 
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import ReviewForm from "./reviews/review_form";
 
 const App = () => (
   <div className="body">
@@ -25,6 +26,7 @@ const App = () => (
     {/* <ProtectedRoute path="/account/stays" component={ReservationsContainer} /> */}
     <ProtectedRoute path="/user/:userId" component={ReservationsContainer} />
     <ProtectedRoute path="/reservation/edit/:reservationId" component={EditReservationContainer} />
+    <Route path="/review" component={ReviewForm} />
 
     <Switch>
       <Route exact path="/hotels" component={HotelsContainer} />

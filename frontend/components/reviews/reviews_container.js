@@ -4,10 +4,10 @@ import ReviewsIndex from "./reviews_index";
 
 const mSTP = (state, ownProps) => {
     return {
-        hotel: ownProps.match.params.hotel,  // wrong but filler till we get to this part
-        user: ownProps.match.params.user,
-        reviewer_id: user.id,
-        reviewed_hotel_id: hotel.id  
+        // hotel: ownProps.match.params.hotel,  // wrong but filler till we get to this part
+        // user: ownProps.match.params.user,
+        // reviewer_id: user.id,
+        // reviewed_hotel_id: hotel.id  
     }
 }
 
