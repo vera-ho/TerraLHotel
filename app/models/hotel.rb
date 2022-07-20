@@ -29,7 +29,7 @@ class Hotel < ApplicationRecord
         foreign_key: :hotel_id,
         class_name: :Reservation
 
-    has_many :reviewers,
+    has_many :reviews,
         foreign_key: :reviewed_hotel_id,
         class_name: :Review
 end
