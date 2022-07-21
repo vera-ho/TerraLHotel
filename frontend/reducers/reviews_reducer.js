@@ -10,10 +10,11 @@ const reviewsReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign( {}, state);
 
-
     switch(action.type) {
         case RECEIVE_HOTEL:
-            Object.assign(nextState, action.hotel_info.reviews);
+            // debugger
+            // needs clear prev state, not add to it
+            nextState = Object.assign({}, action.hotel_info.reviews);
             return nextState;
         case RECEIVE_REVIEW: 
             nextState[action.review.id] = action.review;
@@ -22,6 +23,7 @@ const reviewsReducer = (state = {}, action) => {
             delete nextState[action.reviewId];
             return nextState;
         case RECEIVE_CURRENT_USER:
+            // debugger
             Object.assign(nextState, action.user_info.reviews);
             return nextState;
         default:
