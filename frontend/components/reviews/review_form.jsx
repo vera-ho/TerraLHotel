@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 const ReviewForm = props => {
-    const {reviewed_hotel_id, reviewer_id, makeReview } = props;
-    let [title, setTitle] = useState("");
-    let [pros, setPros] = useState("");
-    let [cons, setCons] = useState("");
-    let [rating, setRating] = useState(0);
+    const {reviewed_hotel_id, reviewer_id, submitForm, closeModal } = props;
+    const { title } = props;
 
-    useEffect( () => {
-        // clear errors?
-    }, [])
+    let [pros, setPros] = useState(pros);
+    let [cons, setCons] = useState(cons);
+    let [rating, setRating] = useState(5);
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -17,38 +14,24 @@ const ReviewForm = props => {
             reviewed_hotel_id: reviewed_hotel_id,
             reviewer_id: reviewer_id,
             rating: rating,
-            title: title,
+            title: "",
             pros: pros,
             cons: cons
         }
 
-        makeReview(review);
-
-        // Reset default
-        setTitle("");
-        setPros("");
-        setCons("");
-        setRating("");
+        submitForm(review);
+        closeModal();
     }
 
     return (
         <section className="reviews-form-container">
             <div className="reviews-form-content">
                 <div className="reviews-form-content-header">
-                    <h1>Write a Review!</h1>
-                    <h1 onClick={ () => console.log("hello")}>X</h1>      
+                    <h1>{title}</h1>
+                    <h1 onClick={closeModal}>X</h1>      
                 </div>
                 
                 <form onSubmit={handleSubmit} className="reviews-form">
-                    <label className="review-form-title">Title:<br></br>
-                        <input
-                            className="review-form-title-input"
-                            type="text"
-                            value={title}
-                            onChange={ e => setTitle(e.target.value) } 
-                        />                    
-                    </label>
-
                     <label className="review-form-pros">What did you like? <br></br>
                         <textarea 
                             className="review-form-pros-input"

@@ -23,7 +23,9 @@ const ReservationsIndex = props => {
                 <ReservationItem key={index} reservation={reservation} user={props.user}
                     requestHotel={props.requestHotel} hotels={props.hotels} 
                     editReservation={props.editReservation}
-                    cancelReservation={props.cancelReservation} />
+                    cancelReservation={props.cancelReservation} 
+                    openModal = {props.openModal}
+                    closeModal = {props.closeModal} />
             )
         }
     })

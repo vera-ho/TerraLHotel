@@ -5,6 +5,9 @@ import { checkStay, updateStatus } from "./reservation_mgmt";
 const ReservationItem = props => {
     const { cancelReservation, requestHotel } = props;
     const { reservation, hotels } = props;
+    const { openModal, closeModal } = props;
+
+    // console.log(props);
 
     useEffect( () => {
         requestHotel(reservation.hotelId);
@@ -17,11 +20,12 @@ const ReservationItem = props => {
 
     const handleWriteReview = () => {
         console.log("Write review!")
-        
+        openModal("writeReview");
     }
 
     const handleEditReview = () => {
         console.log("Edit review!")
+        openModal("editReview");
     }
 
     const hotel = hotels[reservation.hotelId] || {};

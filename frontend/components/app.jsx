@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "./modal/modal";
 import HeaderContainer from "./header/header_container";
 import FooterContainer from "./footer/footer_container";
 import LoginFormContainer from "./session/login_form_container";
@@ -17,6 +18,7 @@ import ReviewForm from "./reviews/review_form";
 
 const App = () => (
   <div className="body">
+    <Modal />
     <header className="header">
       <HeaderContainer />
     </header>
@@ -26,8 +28,6 @@ const App = () => (
     <AuthRoute path="/signin" component={LoginFormContainer} />
     <AuthRoute path="/register" component={SignupFormContainer} />
     
-    {/* <ProtectedRoute path="/account/stays" component={ReservationsContainer} /> */}
-    {/* <ProtectedRoute path="/user/:userId" component={ReservationsContainer} /> */}
     <ProtectedRoute path="/user/:userId" component={User} />
     <ProtectedRoute path="/reservation/edit/:reservationId" component={EditReservationContainer} />
     <Route path="/review" component={ReviewForm} />
