@@ -20,7 +20,7 @@ json.reviews do
         json.set! review.id do
             json.partial! 'api/reviews/review', review: review
             json.reviewer do
-                json.extract! user: :fname, :lname, :email
+                json.extract! user, :fname, :lname, :email
             end
         end
     end
