@@ -28,3 +28,26 @@
         font-style: normal;
     }
 }
+
+.review-item-reviewer-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    font-size: 14px;
+
+    .reviewer-icon {
+        background-image: url("default_profile_image.png");
+        background-size: cover;
+        height: 70px;
+        width: 70px;
+        border: 1px solid #333;
+        margin-right: 1em;
+        border-radius: 50%;
+    }
+
+    .reviewer-details p:first-child {
+        color: #d95700;
+        padding-bottom: 3px;
+    }
+}

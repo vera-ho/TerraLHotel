@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const ReviewsIndex = props => {
     const {hotel, reviews} = props;
@@ -25,8 +25,11 @@ const ReviewsIndex = props => {
                 ) : (<></>)}
                 
                 <div className="review-item-reviewer-info">
-                    <p>{review.reviewer.fname}</p>
-                    <p>{month + " " + year}</p>
+                    <div className="reviewer-icon"></div>
+                    <div className="reviewer-details">
+                        <p>{review.reviewer.fname} {review.reviewer.lname}</p>
+                        <p>{month + " " + year}</p>
+                    </div>
                 </div>
             </li>
         )
