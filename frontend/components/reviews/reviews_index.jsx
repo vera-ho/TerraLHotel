@@ -11,11 +11,19 @@ const ReviewsIndex = props => {
 
         return (
             <li key={idx} className="review-item-container">
-                <h2>What I liked:</h2>
-                <p>{review.pros}</p>
-        
-                <h2>What the hotel could do better:</h2>
-                <p>{review.cons}</p>
+                <div className="review-item-details">
+                    <h2>What I liked:</h2>
+                    {review.pros}
+                </div>
+
+                {/* Only display cons and cons header if there are any */}
+                {review.cons.length > 0 ? (
+                    <div className="review-item-details">
+                        <h2>What the hotel could do better:</h2>
+                        {review.cons}
+                    </div>
+                ) : (<></>)}
+                
                 <div className="review-item-reviewer-info">
                     <p>{review.reviewer.fname}</p>
                     <p>{month + " " + year}</p>

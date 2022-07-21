@@ -61,16 +61,16 @@ class Hotel extends React.Component {
 
                         <HotelMap hotel={hotel} />
 
-                        <div className="hotel-details-reviews">
+                        <section className="hotel-details-reviews">
                             <ReviewsIndex hotel={hotel} reviews={reviews} />
-                        </div>
+                        </section>
 
-                        <div className="hotel-details-amenities">
+                        <section className="hotel-details-amenities">
                             <h3>Hotel Amenities and Services</h3>
                             <ul className="hotel-amentities">
                                 {amentities}
                             </ul>
-                        </div>
+                        </section>
                     </section>
                     
                     <section className="hotel-content-right">
