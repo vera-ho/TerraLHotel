@@ -28,7 +28,20 @@ section.reservations-index-container > header > h3 {
     border-bottom: 3px solid #ccc;
 }
 
-.reservation-item-actions {
+.reservation-item-mgmt {
+    display: flex;
+    flex-direction: row;
+
+    .reservation-item-review-actions {
+        font-size: 14px;
+        text-decoration: none;
+        color: inherit;
+        margin: 0px 10px;
+    }
+}
+
+.reservation-item-actions,
+.reservation-item-review-actions {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

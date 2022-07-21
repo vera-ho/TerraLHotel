@@ -2,32 +2,39 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const ReservationItem = props => {
+    const { cancelReservation, requestHotel } = props;
+    const { reservation, hotels } = props;
 
     useEffect( () => {
-        props.requestHotel(props.reservation.hotelId);
+        requestHotel(reservation.hotelId);
     }, [])
 
 
     const handleCancelClick = e => {
         e.preventDefault();
-        props.cancelReservation(props.reservation.id);
+        cancelReservation(reservation.id);
     }
 
-    const hotel = props.hotels[props.reservation.hotelId];
+    const hotel = hotels[reservation.hotelId] || {};
     const locale =  navigator.language || navigator.browserLanguage || (navigator.languages || ["en"])[0];
-    const checkin = new Date(props.reservation.checkin);
-    const checkout = new Date(props.reservation.checkout);
+    const checkin = new Date(reservation.checkin);
+    const checkout = new Date(reservation.checkout);
     const options = {
         month: "long",
         year: "numeric",
         day: "2-digit"
     }
- 
-    if(!hotel) return <p>Loading...</p>
-    return (
+    const stayed = checkout.getTime() < Date.now();
+    const reviewActions = (
+        <div className="reservation-item-review-actions">
+            <p>Write Review</p>
+            <p>Edit Review</p>
+        </div>
+    )
+
+     return (
         <li className="reservation-item-container">
             <div>
-                {/* <p>Name: {props.user.fname + " " + props.user.lname}</p> */}
                 <p>
                     <Link to={`/hotels/${hotel.id}`} className="reservation-item-hotel">
                         {hotel.name}
@@ -35,13 +42,17 @@ const ReservationItem = props => {
                 </p>
                 <p>Check-in: {checkin.toLocaleDateString(locale, options)}</p>
                 <p>Check-out: {checkout.toLocaleDateString(locale, options)}</p>
-                <p>Status: {props.reservation.status}</p>
+                <p>Status: {reservation.status}</p>
             </div>
-            <div className="reservation-item-actions">
-                <Link to={`/reservation/edit/${props.reservation.id}`}
-                    className="btn">Edit Reservation</Link>
-                <Link to={{}} onClick={handleCancelClick}
-                    className="btn">Cancel Reservation</Link>
+
+            <div className="reservation-item-mgmt">
+                { stayed ? reviewActions : <></> }
+                <div className="reservation-item-actions">
+                    <Link to={`/reservation/edit/${reservation.id}`}
+                        className="btn">Edit Reservation</Link>
+                    <Link to={{}} onClick={handleCancelClick}
+                        className="btn">Cancel Reservation</Link>
+                </div>
             </div>
         </li>
     )
