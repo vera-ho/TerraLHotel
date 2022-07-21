@@ -227,14 +227,14 @@ Reservation.create({ hotel_id: 16, room_id: 35, customer_id: 2, checkin: "May 5,
 
 ## ************* REVIEW SEEDS ************* ##
 Review.destroy_all
-Review.create({ reviewed_hotel_id: 1, reviewer_id: 1,  rating: 3, title: "Decent", pros: "Great location", cons: ""})
-Review.create({ reviewed_hotel_id: 2, reviewer_id: 1,  rating: 4, title: "Comfortable", pros: "Glamorous", cons: ""})
-Review.create({ reviewed_hotel_id: 2, reviewer_id: 2,  rating: 5, title: "Loved it", pros: "Fantastic customer service", cons: ""})
+Review.create({ reviewed_hotel_id: 1, reviewer_id: 1,  rating: 3, title: "Decent", pros: "Great location", cons: "Wish there was a heated pool."})
+Review.create({ reviewed_hotel_id: 2, reviewer_id: 1,  rating: 4, title: "Comfortable", pros: "Welcome and service was extremely pleasant. Very generous extras each day, including bar in the room, cheese plate, etc. A charming oasis. The room was very spacious, a suite with balcony, well designed and furnished space.", cons: ""})
+Review.create({ reviewed_hotel_id: 2, reviewer_id: 2,  rating: 5, title: "Loved it", pros: "Room was fabulous but the food was phenomenal.", cons: "Service at reception is usually kind but could be improved and be more helpful for directions/information."})
 Review.create({ reviewed_hotel_id: 3, reviewer_id: 2,  rating: 5, title: "Would stay again", pros: "Love the food around here.", cons: ""})
 Review.create({ reviewed_hotel_id: 4, reviewer_id: 1,  rating: 4, title: "Fancy", pros: "Very upscale", cons: ""})
-Review.create({ reviewed_hotel_id: 4, reviewer_id: 2,  rating: 2, title: "Pleasant stay", pros: "Staff is very nice", cons: "Needs a heated pool"})
+Review.create({ reviewed_hotel_id: 4, reviewer_id: 2,  rating: 2, title: "Pleasant stay", pros: "Staff is very nice", cons: "I felt the menu was a little too elaborate, especially when one wants something in the room. If it were possible to have a few simpler dishes for hotel guests that would be nice."})
 Review.create({ reviewed_hotel_id: 5, reviewer_id: 1,  rating: 4, title: "Huge rooms", pros: "Like staying at home", cons: ""})
-Review.create({ reviewed_hotel_id: 6, reviewer_id: 2,  rating: 3, title: "I wish I spoke Japanese", pros: "Beautiful area", cons: ""})
+Review.create({ reviewed_hotel_id: 6, reviewer_id: 2,  rating: 3, title: "I wish I spoke Japanese", pros: "The hotel is located in a residential and quiet neighborhood. The staff is very respectful and will make you feel welcomed from check-in to check-out. The hotel has an amazing restaurant with divine cuisine. I highly recommend booking a table there during your stay.", cons: "The bedrooms have great amenities (A/C, complimentary mini-bar, fast internet, steam room...) but the furniture and the design of the bathroom could be improved in the standard rooms."})
 Review.create({ reviewed_hotel_id: 8, reviewer_id: 1,  rating: 3, title: "I love it here!", pros: "Really good seafood", cons: ""})
 Review.create({ reviewed_hotel_id: 9, reviewer_id: 2,  rating: 3, title: "Mountains upon mountains", pros: "The most peaceful experience I've ever had. Beautiful scenery", cons: ""})
 Review.create({ reviewed_hotel_id: 10, reviewer_id: 1,  rating: 5, title: "Very french", pros: "Great wine selection", cons: ""})
