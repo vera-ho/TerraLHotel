@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     resources :hotels, only: [:index, :show]
     resources :rooms, only: [:index]
     resources :reservations, only: [:index, :show, :create, :update, :destroy]
+    resources :reviews, only: [:index, :show, :create, :update, :destroy]
     resource :session, only: [:create, :destroy]
   end
 

@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // for testing only
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
 
   // Render Application
   root.render(<Root store={store} />)
