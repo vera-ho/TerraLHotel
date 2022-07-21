@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { checkStay, updateStatus } from "./reservation_mgmt";
 
 const ReservationItem = props => {
     const { cancelReservation, requestHotel } = props;
@@ -9,10 +10,18 @@ const ReservationItem = props => {
         requestHotel(reservation.hotelId);
     }, [])
 
-
     const handleCancelClick = e => {
         e.preventDefault();
         cancelReservation(reservation.id);
+    }
+
+    const handleWriteReview = () => {
+        console.log("Write review!")
+        
+    }
+
+    const handleEditReview = () => {
+        console.log("Edit review!")
     }
 
     const hotel = hotels[reservation.hotelId] || {};
@@ -24,15 +33,17 @@ const ReservationItem = props => {
         year: "numeric",
         day: "2-digit"
     }
-    const stayed = checkout.getTime() < Date.now();
+    const stayed = checkStay(checkout);
     const reviewActions = (
         <div className="reservation-item-review-actions">
-            <p>Write Review</p>
-            <p>Edit Review</p>
+            <p onClick={handleWriteReview}>Write Review</p>
+            <p onClick={handleEditReview}>Edit Review</p>
         </div>
     )
 
-     return (
+    if(stayed && reservation.status !== "stayed") updateStatus(reservation);
+
+    return (
         <li className="reservation-item-container">
             <div>
                 <p>

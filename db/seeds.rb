@@ -212,7 +212,7 @@ Room.create({ room_type: "Backyward Winetank Suite", beds: "1 King Bed", occupan
 
 ## *********** RESERVATION SEEDS *********** ##
 Reservation.destroy_all
-Reservation.create({ hotel_id: 1, room_id: 1, customer_id: 1, checkin: "July 1, 2022", checkout: "July 3, 2022", status: "booked" })
+Reservation.create({ hotel_id: 1, room_id: 1, customer_id: 1, checkin: "April 1, 2022", checkout: "April 3, 2022", status: "stayed" })
 Reservation.create({ hotel_id: 2, room_id: 3, customer_id: 1, checkin: "July 22, 2022", checkout: "July 25, 2022", status: "booked" })
 Reservation.create({ hotel_id: 3, room_id: 5, customer_id: 1, checkin: "July 7, 2022", checkout: "July 8, 2022", status: "updated" })
 Reservation.create({ hotel_id: 4, room_id: 7, customer_id: 1, checkin: "July 30, 2022", checkout: "August 15, 2022", status: "updated" })

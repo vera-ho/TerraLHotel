@@ -17,13 +17,13 @@ const ReservationForm = props => {
             id: props.reservation.id,
             hotelId: props.hotel.id,
             customerId: props.user.id,
-            roomId: 7,
+            roomId: props.reservation.roomId,
             checkin: checkin,
             checkout: checkout,
             status: "updated"
         }
         props.editReservation(editedReservation);
-        window.location = `/#/user/${props.user.id}`
+        window.location = `/#/user/${props.user.id}/stays`
     }
 
     let checkinDate, checkoutDate;
@@ -33,6 +33,7 @@ const ReservationForm = props => {
         year: "numeric",
         day: "2-digit"
     }
+
     checkinDate = new Date(props.reservation.checkin);
     checkoutDate = new Date(props.reservation.checkout);
     checkinDate = checkinDate.toLocaleDateString(locale, options);
