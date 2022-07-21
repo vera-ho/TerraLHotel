@@ -6,6 +6,7 @@ import SignupFormContainer from "./session/signup_form_container";
 import SearchContainer from "./search/search_container";
 import HotelContainer from "./hotel/hotel_container";
 import ReservationsContainer from "./reservations/reservations_container";
+import UserContainer from "./user/user_container";
 import HotelsContainer from "./hotel/hotels_container";
 import EditReservationContainer from "./reservations/edit_reservation_container";
 
@@ -23,8 +24,10 @@ const App = () => (
     <Route exact path="/" component={SearchContainer} />
     <AuthRoute path="/signin" component={LoginFormContainer} />
     <AuthRoute path="/register" component={SignupFormContainer} />
+    
     {/* <ProtectedRoute path="/account/stays" component={ReservationsContainer} /> */}
-    <ProtectedRoute path="/user/:userId" component={ReservationsContainer} />
+    {/* <ProtectedRoute path="/user/:userId" component={ReservationsContainer} /> */}
+    <ProtectedRoute path="/user/:userId" component={UserContainer} />
     <ProtectedRoute path="/reservation/edit/:reservationId" component={EditReservationContainer} />
     <Route path="/review" component={ReviewForm} />
 

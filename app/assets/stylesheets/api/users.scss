@@ -4,8 +4,24 @@
 
 // For when user account info page is made - right now stays (reservations) takes the whole space instead of rendering a user container in app.jsx
 
-// .user-index-container {
-//     max-width: 960px;
-//     padding: 60px 0px;
-//     margin: 0 auto;
-// }
+.user-account-container{
+    max-width: 960px;
+    // padding: 60px 0px;
+    margin: 0 auto;
+}
+
+.user-account-sections-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user-account-navigation {
+    padding: 60px 0px;
+
+    width: 25%;
+}
+
+.user-account-main {
+    width: 75%;
+}
