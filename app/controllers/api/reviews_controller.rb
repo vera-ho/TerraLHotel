@@ -21,8 +21,7 @@ class Api::ReviewsController < ApplicationController
         @review.reviewer_id = current_user.id
 
         if @review.save
-            # render :show
-            render json: ['Successfully created'], status: 200
+            render @review
         else
             render json: ['Review could not be saved. Please try again.'], status: 422
         end
@@ -31,8 +30,8 @@ class Api::ReviewsController < ApplicationController
     def update
         @review = current_user.reviews.find_by(id: params[:id])
         if @review && @review.update(review_params)
-            # render :show
-            render json: ['Successfully updated'], status: 200
+            render @review
+            # render json: ['Successfully updated'], status: 200
         else
             render json: ['Review could not be updated. Please try again.'], status: 422
         end
