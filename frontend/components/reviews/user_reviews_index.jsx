@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { connect } from 'react-redux';
-import { receiveCurrentUser } from "../../actions/session_actions";
+import { getUser } from "../../actions/session_actions";
 
 const UserReviewsIndex = props => {
+
+    const { user, getUser } = props;
+
+    console.log(props)
+     
+    useEffect( () => {
+        getUser(user.id);
+    }, [])
 
     // const reviewsList = Object.values(props.reviews).map( (review, index) => {
 
@@ -29,15 +37,16 @@ const UserReviewsIndex = props => {
     )
 }
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
     return {
-
+        user: state.entities.users[ownProps.match.params.userId],
+        reviews: state.entities.reviews
     }
 }
 
 const mDTP = dispatch => {
     return {
-
+        getUser: userId => dispatch(getUser(userId))
     }
 }
 
