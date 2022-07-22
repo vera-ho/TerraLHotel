@@ -6,21 +6,17 @@ const ReviewForm = props => {
 
     let [pros, setPros] = useState(pros);
     let [cons, setCons] = useState(cons);
-    let [rating, setRating] = useState(5);
 
     const handleSubmit = e => {
         e.preventDefault();
         let review = {
             reviewed_hotel_id: reviewed_hotel_id,
             reviewer_id: reviewer_id,
-            rating: rating,
-            title: "",
             pros: pros,
             cons: cons
         }
 
-        submitForm(review);
-        closeModal();
+        submitForm(review).then(closeModal());
     }
 
     return (
