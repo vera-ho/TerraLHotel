@@ -33,24 +33,6 @@ export const receiveReviewErrors = errors => {
     }
 }
 
-export const requestAllReviews = () => dispatch => {
-    return ReviewUtil.fetchAllReviews()
-        .then( reviews => dispatch(receiveAllReviews(reviews)), 
-            errors => dispatch(receiveReviewErrors(errors)))
-}
-
-export const requestReview = review => dispatch => {
-    return ReviewUtil.fetchReview(review.id)
-        .then( review => dispatch(receiveReview(review)),
-            errors => dispatch(receiveReviewErrors(errors)))
-}
-
-export const pullReview = reviewId => dispatch => {
-    return ReviewUtil.fetchReview(reviewId)
-        .then( review => dispatch(receiveReview(review)),
-            errors => dispatch(receiveReviewErrors(errors)))
-}
-
 export const makeReview = review => dispatch => {
     return ReviewUtil.createReview(review)
         .then( review => dispatch(receiveReview(review)), 
