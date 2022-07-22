@@ -43,9 +43,7 @@ const User = props => {
                     <main className="user-account-main">
                         <div className="user-aacount-main-content">
                             <Switch>
-                                {/* <ProtectedRoute exact path="/user/:userId/reviews/write" component={ReviewForm} /> */}
-                                {/* <ProtectedRoute path="/user/:userId/reviews" component={ReviewsContainer} /> */}
-
+                                <ProtectedRoute path="/user/:userId/reviews" component={ReviewsContainer} />
                                 <ProtectedRoute exact path="/user/:userId/stays" component={ReservationsContainer} />
                                 <ProtectedRoute path="/user/:userId" component={UserContainer} />
                             </Switch>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReviewsIndex = props => {
+const HotelReviewsIndex = props => {
     const {hotel, reviews} = props;
     const options = { month: 'long'};
 
@@ -52,4 +52,4 @@ const ReviewsIndex = props => {
     )
 }
 
-export default ReviewsIndex;
+export default HotelReviewsIndex;

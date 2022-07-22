@@ -1,6 +1,6 @@
 import React from "react";
 import RoomsIndex from "../hotel_room/room_index";
-import ReviewsIndex from "../reviews/reviews_index";
+import HotelReviewsIndex from "../reviews/hotel_reviews_index";
 import HotelMap from "../map/map";
 
 class Hotel extends React.Component {
@@ -62,7 +62,7 @@ class Hotel extends React.Component {
                         <HotelMap hotel={hotel} />
 
                         <section className="hotel-details-reviews">
-                            <ReviewsIndex hotel={hotel} reviews={reviews} />
+                            <HotelReviewsIndex hotel={hotel} reviews={reviews} />
                         </section>
 
                         <section className="hotel-details-amenities">
