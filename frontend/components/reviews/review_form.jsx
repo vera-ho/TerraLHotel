@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const ReviewForm = props => {
-    const {reviewed_hotel_id, reviewerId, submitForm, closeModal } = props;
-    const { title } = props;
+    const {hotelId, reviewerId, title} = props;
+    const { closeModal, submitForm } = props;
 
     let [pros, setPros] = useState(pros || "");
     let [cons, setCons] = useState(cons || "");
@@ -10,7 +10,7 @@ const ReviewForm = props => {
     const handleSubmit = e => {
         e.preventDefault();
         let review = {
-            reviewed_hotel_id: reviewed_hotel_id,
+            reviewed_hotel_id: hotelId,
             reviewer_id: reviewerId,
             pros: pros,
             cons: cons
@@ -37,6 +37,7 @@ const ReviewForm = props => {
                             onChange={ e => setPros(e.target.value) }
                         />
                     </label>
+                    <br></br>
 
                     <label className="review-form-cons">What could the hotel do better? <br></br>
                         <textarea 

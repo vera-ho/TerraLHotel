@@ -30,22 +30,16 @@ section.reservations-index-container > header > h3 {
 
 .reservation-item-mgmt {
     display: flex;
-    flex-direction: row;
-
-    .reservation-item-review-actions {
-        font-size: 14px;
-        text-decoration: none;
-        color: inherit;
-        margin: 0px 15px;
-
-    }
 }
 
-.reservation-item-actions,
-.reservation-item-review-actions {
+.reservation-item-actions {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
+    .btn {
+        text-align: right;
+    }
 }
 
 li.reservation-item-container > div > p {

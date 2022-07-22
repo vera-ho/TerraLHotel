@@ -3,6 +3,7 @@ import { Switch } from "react-router-dom";
 import { ProtectedRoute } from "../../util/route_util";
 import ReservationsContainer from "../reservations/reservations_container";
 import UserContainer from "./user_container";
+// import ReviewForm from "../reviews/review_form";
 
 const User = props => {
     const userId = props.match.params.userId;
@@ -42,7 +43,9 @@ const User = props => {
                     <main className="user-account-main">
                         <div className="user-aacount-main-content">
                             <Switch>
+                                {/* <ProtectedRoute exact path="/user/:userId/reviews/write" component={ReviewForm} /> */}
                                 {/* <ProtectedRoute path="/user/:userId/reviews" component={ReviewsContainer} /> */}
+
                                 <ProtectedRoute exact path="/user/:userId/stays" component={ReservationsContainer} />
                                 <ProtectedRoute path="/user/:userId" component={UserContainer} />
                             </Switch>

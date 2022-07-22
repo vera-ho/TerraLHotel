@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import { checkStay, updateStatus } from "./reservation_mgmt";
-// import WriteButtonContainer from "../reviews/write_button";
-
+import { makeReview } from "../../actions/review_actions";
+import ReviewForm from "../reviews/review_form";
 
 const ReservationItem = props => {
     const { cancelReservation, requestHotel } = props;
     const { reservation, hotels } = props;
-    const { openModal, closeModal } = props;
 
-    // console.log(props);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect( () => {
         requestHotel(reservation.hotelId);
@@ -21,13 +21,7 @@ const ReservationItem = props => {
     }
 
     const handleWriteReview = () => {
-        console.log("Write review!")
-        openModal("writeReview");
-    }
-
-    const handleEditReview = () => {
-        console.log("Edit review!")
-        openModal("editReview");
+        setShowModal(true);
     }
 
     const hotel = hotels[reservation.hotelId] || {};
@@ -40,13 +34,6 @@ const ReservationItem = props => {
         day: "2-digit"
     }
     const stayed = checkStay(checkout);
-    const reviewActions = (
-        <div className="reservation-item-review-actions">
-            {/* <WriteButtonContainer reservation={reservation} /> */}
-            <p onClick={handleWriteReview}>Write Review</p>
-            <p onClick={handleEditReview}>Edit Review</p>
-        </div>
-    )
 
     if(stayed && reservation.status !== "stayed") updateStatus(reservation);
 
@@ -64,13 +51,37 @@ const ReservationItem = props => {
             </div>
 
             <div className="reservation-item-mgmt">
-                { stayed ? reviewActions : <></> }
-                <div className="reservation-item-actions">
-                    <Link to={`/reservation/edit/${reservation.id}`}
-                        className="btn">Edit Reservation</Link>
-                    <Link to={{}} onClick={handleCancelClick}
-                        className="btn">Cancel Reservation</Link>
-                </div>
+                { stayed ? (
+                    <div className="reservation-item-actions">
+                        <p onClick={handleWriteReview} className="btn">Write Review</p>
+                        <Modal
+                            className="reservation-write-review-form-modal"
+                            isOpen={showModal}
+                            ariaHideApp={false}
+                            style={{
+                                overlay: {
+                                backgroundColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }}
+                            shouldCloseOnOverlayClick={true}
+                        >
+                            <ReviewForm
+                                closeModal={ () => setShowModal(false) }
+                                hotelId={reservation.hotelId}
+                                reviewerId={reservation.customerId}
+                                title="Tell Us What You Think!"
+                                submitForm={ review => dispatch(makeReview(review))}
+                            />
+                        </Modal>
+                    </div>
+                ) : (
+                    <div className="reservation-item-actions">
+                        <Link to={`/reservation/edit/${reservation.id}`}
+                            className="btn">Edit Reservation</Link>
+                        <Link to={{}} onClick={handleCancelClick}
+                            className="btn">Cancel Reservation</Link>
+                    </div>
+                )}
             </div>
         </li>
     )
