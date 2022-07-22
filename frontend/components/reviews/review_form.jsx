@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const ReviewForm = props => {
     const {reviewed_hotel_id, reviewer_id, submitForm, closeModal } = props;

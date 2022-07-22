@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from "./modal/modal";
+import ModalContainer from "./modal/modal";
 import HeaderContainer from "./header/header_container";
 import FooterContainer from "./footer/footer_container";
 import LoginFormContainer from "./session/login_form_container";
@@ -18,7 +18,7 @@ import ReviewForm from "./reviews/review_form";
 
 const App = () => (
   <div className="body">
-    <Modal />
+    <ModalContainer />
     <header className="header">
       <HeaderContainer />
     </header>

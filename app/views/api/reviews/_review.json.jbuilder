@@ -1,1 +1,1 @@
-json.extract! review, :id, :reviewer_id, :reviewed_hotel_id, :rating, :title, :pros, :cons, :created_at
+json.extract! review, :id, :reviewer_id, :reviewed_hotel_id, :pros, :cons, :created_at
