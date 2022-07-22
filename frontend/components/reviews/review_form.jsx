@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 
 const ReviewForm = props => {
-    const {reviewed_hotel_id, reviewer_id, submitForm, closeModal } = props;
+    const {reviewed_hotel_id, reviewerId, submitForm, closeModal } = props;
     const { title } = props;
 
-    let [pros, setPros] = useState(pros);
-    let [cons, setCons] = useState(cons);
+    let [pros, setPros] = useState(pros || "");
+    let [cons, setCons] = useState(cons || "");
 
     const handleSubmit = e => {
         e.preventDefault();
         let review = {
             reviewed_hotel_id: reviewed_hotel_id,
-            reviewer_id: reviewer_id,
+            reviewer_id: reviewerId,
             pros: pros,
             cons: cons
         }
 
+        console.log("review obj")
+        console.log(review)
         submitForm(review).then(closeModal());
     }
 

@@ -5,7 +5,9 @@ import ReviewForm from "./review_form";
 
 const mSTP = (state = {}, ownProps) => {
     return {
-        title: "Write a Review!"
+        title: "Write a Review!",
+        reviewerId: state.session.id, 
+        reservation: {} // how to get from reservation item?
     }
 }
 

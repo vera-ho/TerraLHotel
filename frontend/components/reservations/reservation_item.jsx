@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { checkStay, updateStatus } from "./reservation_mgmt";
+// import WriteButtonContainer from "../reviews/write_button";
+
 
 const ReservationItem = props => {
     const { cancelReservation, requestHotel } = props;
@@ -40,6 +42,7 @@ const ReservationItem = props => {
     const stayed = checkStay(checkout);
     const reviewActions = (
         <div className="reservation-item-review-actions">
+            {/* <WriteButtonContainer reservation={reservation} /> */}
             <p onClick={handleWriteReview}>Write Review</p>
             <p onClick={handleEditReview}>Edit Review</p>
         </div>

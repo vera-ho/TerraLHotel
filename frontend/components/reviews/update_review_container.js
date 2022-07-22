@@ -17,4 +17,4 @@ const mDTP = dispatch => {
     }
 }
 
-// export default connect(mSTP, mDTP)(ReviewForm);
+export default connect(mSTP, mDTP)(ReviewForm);
