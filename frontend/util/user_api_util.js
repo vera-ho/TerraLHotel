@@ -13,6 +13,7 @@ export const showUser = userId => {
     })
 }
 
+// internal use only
 export const updateUser = user => {
     return $.ajax({
         method: "PATCH",
