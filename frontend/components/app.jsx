@@ -1,13 +1,10 @@
 import React from "react";
-// import ModalContainer from "./modal/modal";
 import HeaderContainer from "./header/header_container";
 import FooterContainer from "./footer/footer_container";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import SearchContainer from "./search/search_container";
 import HotelContainer from "./hotel/hotel_container";
-// import ReservationsContainer from "./reservations/reservations_container";
-// import UserContainer from "./user/user_container";
 import User from "./user/user";
 import HotelsContainer from "./hotel/hotels_container";
 import EditReservationContainer from "./reservations/edit_reservation_container";
@@ -18,7 +15,6 @@ import ReviewForm from "./reviews/review_form";
 
 const App = () => (
   <div className="body">
-    {/* <ModalContainer /> */}
     <header className="header">
       <HeaderContainer />
     </header>

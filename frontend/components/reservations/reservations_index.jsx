@@ -24,8 +24,6 @@ const ReservationsIndex = props => {
                     requestHotel={props.requestHotel} hotels={props.hotels} 
                     editReservation={props.editReservation}
                     cancelReservation={props.cancelReservation} />
-                    // openModal = {props.openModal}
-                    // closeModal = {props.closeModal} />
             )
         }
     })
