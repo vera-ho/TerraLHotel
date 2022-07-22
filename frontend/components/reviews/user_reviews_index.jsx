@@ -1,25 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { connect } from 'react-redux';
+import { requestAllHotels } from "../../actions/hotel_actions";
 import { getUser } from "../../actions/session_actions";
+// import UserReviewItemContainer from "./user_review_item_container";
 
 const UserReviewsIndex = props => {
-
     const { user, getUser } = props;
+    const { reviews, requestAllHotels, hotels} = props || {};
 
-    console.log(props)
-     
     useEffect( () => {
         getUser(user.id);
+        requestAllHotels();
     }, [])
 
-    // const reviewsList = Object.values(props.reviews).map( (review, index) => {
-
-    //     return (
-    //         <div>
-
-    //         </div>
-    //     )
-    // })
+    const reviewsList = Object.values(reviews).map( (review, idx) => {
+        return (
+            <li key={idx}>
+                {/* <p>{hotel.name}</p> */}
+                <p>pro: {review.pros}</p>
+                <p>cons: {review.cons}</p>
+                <br></br>
+            </li>
+            
+            // <UserReviewItemContainer review={review} key={idx}
+            //     hotel={hotels[review.reviewedHotelId]} />
+        )
+    })
 
     return (
         <section className="user-reviews-index-container">
@@ -27,12 +33,11 @@ const UserReviewsIndex = props => {
                 <h3>Reviews</h3>
             </header>
 
-            <main>
-                {/* <p>You have {numReservations} reservations.</p> */}
+            <div className="user-reviews-index">
                 <ul>
-                    {/* {reviewsList} */}
+                    {reviewsList}
                 </ul>
-            </main>
+            </div>
         </section>
     )
 }
@@ -40,13 +45,15 @@ const UserReviewsIndex = props => {
 const mSTP = (state, ownProps) => {
     return {
         user: state.entities.users[ownProps.match.params.userId],
-        reviews: state.entities.reviews
+        reviews: state.entities.reviews,
+        hotels: state.entities.hotels
     }
 }
 
 const mDTP = dispatch => {
     return {
-        getUser: userId => dispatch(getUser(userId))
+        getUser: userId => dispatch(getUser(userId)),
+        requestAllHotels: () => dispatch(requestAllHotels())
     }
 }
 
