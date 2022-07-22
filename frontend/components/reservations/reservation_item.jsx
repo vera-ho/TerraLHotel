@@ -57,19 +57,20 @@ const ReservationItem = props => {
                         <Modal
                             className="reservation-write-review-form-modal"
                             isOpen={showModal}
+                            shouldCloseOnOverlayClick={true}
+                            onRequestClose={() => setShowModal(false) }
                             ariaHideApp={false}
                             style={{
                                 overlay: {
                                 backgroundColor: 'rgba(0, 0, 0, 0.5)'
                                 }
                             }}
-                            shouldCloseOnOverlayClick={true}
                         >
                             <ReviewForm
                                 closeModal={ () => setShowModal(false) }
                                 hotelId={reservation.hotelId}
                                 reviewerId={reservation.customerId}
-                                title="Tell Us What You Think!"
+                                title={`Tell Us What You Think About ${hotel.name}!`}
                                 submitForm={ review => dispatch(makeReview(review))}
                             />
                         </Modal>
