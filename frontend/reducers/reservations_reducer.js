@@ -11,7 +11,7 @@ const reservationsReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_CURRENT_USER:
-            Object.assign(nextState, action.user_info.reservations)
+            Object.assign(nextState, action.userInfo.reservations)
             return nextState;
         case RECEIVE_ALL_RESERVATIONS:
             Object.assign(nextState, action.reservations);
