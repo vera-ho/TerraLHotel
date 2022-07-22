@@ -2,20 +2,6 @@ class Api::ReviewsController < ApplicationController
 
     before_action :require_logged_in, only: [:create, :update, :destroy]
 
-    # index and show may not be needed since json.jbuilder grabs reviews as part of the user's and hotel's show
-
-    # list all reviews for specific hotel
-    def index
-        @reviews = Review.all
-        # @reviews = Review.find_by(reviewed_hotel_id: params[:reviewed_hotel_id])
-    end
-
-    # list all reviews for specific user
-    def show
-        @review = Review.find_by(id: params[:id])
-        # @reviews = Review.find_by(reviewer_id: params[:reviewer_id])
-    end
-
     def create
         @review = Review.new(review_params)
         @review.reviewer_id = current_user.id
