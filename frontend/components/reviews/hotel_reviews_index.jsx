@@ -1,7 +1,7 @@
 import React from "react";
 
 const HotelReviewsIndex = props => {
-    const {hotel, reviews} = props;
+    const {hotel, reviews} = props || {};
     const options = { month: 'long'};
 
     const reviewItems = Object.values(reviews).map( (review, idx) => {
