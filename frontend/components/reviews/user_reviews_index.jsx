@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
+import Modal from 'react-modal';
+import ReviewForm from "./review_form";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { requestAllHotels } from "../../actions/hotel_actions";
 import { getUser } from "../../actions/session_actions";
-import { deleteReview } from "../../actions/review_actions";
+import { editReview, deleteReview } from "../../actions/review_actions";
 // import UserReviewItemContainer from "./user_review_item_container";
 
 const UserReviewsIndex = props => {
     const { requestAllHotels, getUser, deleteReview } = props;
     const { user, reviews, hotels} = props || {};
+    const [showModal, setShowModal] = useState(false);
 
     useEffect( () => {
         getUser(user.id);
@@ -19,7 +22,7 @@ const UserReviewsIndex = props => {
 
     const handleEditReview = () => {
         console.log("edit review")
-        // open modal
+        setShowModal(true);
     }
 
     const reviewsList = Object.values(reviews).map( (review, idx) => {
@@ -39,6 +42,27 @@ const UserReviewsIndex = props => {
                     <div className="user-review-item-actions">
                         <Link to={{}} onClick={handleEditReview}
                             className='btn'>Edit Review</Link>
+                        <Modal
+                            className="edit-review-form-modal"
+                            isOpen={showModal}
+                            shouldCloseOnOverlayClick={true}
+                            onRequestClose={() => setShowModal(false) }
+                            ariaHideApp={false}
+                            style={{
+                                overlay: {
+                                backgroundColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }}
+                        >
+                            <ReviewForm
+                                closeModal={ () => setShowModal(false) }
+                                hotelId={review.reviewedHotelId}
+                                reviewerId={review.id}
+                                title={`Update Your Thoughts For ${hotel.name}!`}
+                                submitForm={ review => dispatch(editReview(review))}
+                                review={review}
+                            />
+                        </Modal>
                         
                         <Link to={{}} onClick={() => deleteReview(review.id)} 
                             className='btn'>Delete Review</Link>                       

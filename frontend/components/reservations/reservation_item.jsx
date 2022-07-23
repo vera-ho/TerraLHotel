@@ -71,6 +71,7 @@ const ReservationItem = props => {
                                 reviewerId={reservation.customerId}
                                 title={`Tell Us What You Think About ${hotel.name}!`}
                                 submitForm={ review => dispatch(makeReview(review))}
+                                review={{}}
                             />
                         </Modal>
                     </div>

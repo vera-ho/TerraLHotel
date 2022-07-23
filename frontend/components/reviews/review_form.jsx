@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 const ReviewForm = props => {
-    const {hotelId, reviewerId, title} = props;
+    const {hotelId, reviewerId, title, review} = props;
     const { closeModal, submitForm } = props;
 
-    let [pros, setPros] = useState(pros || "");
-    let [cons, setCons] = useState(cons || "");
+    let [pros, setPros] = useState(review.pros || "");
+    let [cons, setCons] = useState(review.cons || "");
 
     const handleSubmit = e => {
         e.preventDefault();
