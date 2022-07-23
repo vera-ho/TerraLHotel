@@ -8,7 +8,6 @@ import ReviewForm from "../reviews/review_form";
 const ReservationItem = props => {
     const { cancelReservation, requestHotel } = props;
     const { reservation, hotels } = props;
-
     const [showModal, setShowModal] = useState(false);
 
     useEffect( () => {
@@ -34,7 +33,7 @@ const ReservationItem = props => {
         day: "2-digit"
     }
     const stayed = checkStay(checkout);
-
+    
     if(stayed && reservation.status !== "stayed") updateStatus(reservation);
 
     return (

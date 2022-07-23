@@ -45,7 +45,7 @@ export const editReview = review => dispatch => {
             errors => dispatch(receiveReviewErrors(errors)))
 }
 
-export const cancelReview = reviewId => dispatch => { 
+export const deleteReview = reviewId => dispatch => { 
     return ReviewUtil.deleteReview(reviewId)
         .then( reviewId => dispatch(removeReview(reviewId)),
             errors => dispatch(receiveReviewErrors(errors)))

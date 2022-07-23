@@ -26,7 +26,7 @@ class Api::ReviewsController < ApplicationController
     def destroy
         @review = current_user.reviews.find_by(id: params[:id])
         if @review && @review.delete
-            render json: ['Review successfully deleted'], status: 200
+            render json: @review.id
         else
             render json: ['Something went wrong! Review could not be deleted'], status: 422
         end
