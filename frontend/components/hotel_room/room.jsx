@@ -10,7 +10,6 @@ const RoomItem = props => {
     const handleDateClick = e => {
         e.preventDefault();
         setShowCalendar(true);
-        // showCalendar ? setShowCalendar(false) : setShowCalendar(true);
     }
 
     const handleClick = e => {
@@ -34,6 +33,7 @@ const RoomItem = props => {
         
     const datePicker = (
         <div className="room-daterange-picker">
+            <h4>Select your dates below</h4>
             <label>
                 Check-in date
                 <input type="date"
@@ -66,7 +66,7 @@ const RoomItem = props => {
                         <li>{props.room.beds}</li>
                         <li>{props.room.size}</li>
                     </ul>
-                    {/* <button>Check Prices</button> */}
+
                     <button onClick={handleDateClick}>Select Dates</button>
                     <Modal
                         className="book-room-modal"
@@ -83,8 +83,6 @@ const RoomItem = props => {
                         {datePicker}
                     </Modal>
                 </div>
-
-                
             </section>
 
             <section className="room-photo">
