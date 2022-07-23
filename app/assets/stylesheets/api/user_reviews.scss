@@ -11,5 +11,17 @@ CSS for the following are in reservations.scss
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
+
+    .user-review-item-content {
+        width: 60%;
+    }
 }
 
+.user-review-item-actions {
+    justify-content: center;
+    
+    .btn:first-child {
+        margin-bottom: 20px;
+    }
+}

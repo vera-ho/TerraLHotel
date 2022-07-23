@@ -40,7 +40,6 @@ const UserReviewsIndex = props => {
                             {review.pros}</p>
                         <p>What the hotel could have done better: <br/> 
                             {review.cons}</p>
-                        <br/>
                     </div>
                     <div className="user-review-item-actions">
                         <Link to={{}} onClick={handleEditReview}
