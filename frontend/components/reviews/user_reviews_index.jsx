@@ -19,7 +19,6 @@ const UserReviewsIndex = props => {
     }, [])
 
     const handleEditReview = () => {
-        console.log("edit review")
         setShowModal(true);
     }
 
