@@ -12,6 +12,7 @@ const UserReviewsIndex = props => {
     const { requestAllHotels, getUser, deleteReview } = props;
     const { user, reviews, hotels} = props || {};
     const [showModal, setShowModal] = useState(false);
+    const numReviews = Object.values(reviews).length;
 
     useEffect( () => {
         getUser(user.id);
@@ -30,7 +31,11 @@ const UserReviewsIndex = props => {
             <li key={idx} className="user-review-item-container">
                 <div>
                     <div className="user-review-item-content">
-                        <h1>{hotel.name}</h1>
+                        <p>
+                            <Link to={`/hotels/${hotel.id}`} className="user-review-item-hotel">
+                                {hotel.name}
+                            </Link>
+                        </p>
                         <p>What you liked: <br/>
                             {review.pros}</p>
                         <p>What the hotel could have done better: <br/> 
@@ -78,6 +83,7 @@ const UserReviewsIndex = props => {
             </header>
 
             <div className="user-reviews-index">
+                <p>You have {numReviews} reviews.</p>
                 <ul>
                     {reviewsList}
                 </ul>

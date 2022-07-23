@@ -1,0 +1,15 @@
+/**
+CSS for the following are in reservations.scss
+    .user-reviews-index-container
+    .user-review-item-container
+    .user-review-item-hotel
+    .user-review-item-content > p
+    .user-review-item-actions
+**/
+
+.user-review-item-container > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+

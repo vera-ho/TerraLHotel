@@ -1,14 +1,15 @@
+.user-reviews-index-container,
 .reservations-index-container {
     max-width: 960px;
     min-height: 100vh;
     padding: 60px 0px;
     margin: 0 auto;
-}
 
-section.reservations-index-container > header > h3 {
-    font-size: 1.75rem;
-    margin: 0 0 25px;
-    width: 90%;
+    header > h3 {
+        font-size: 1.75rem;
+        margin: 0 0 25px;
+        width: 90%;
+    }
 }
 
 .reservation-filter {
@@ -20,18 +21,34 @@ section.reservations-index-container > header > h3 {
     margin: 8px 0px 50px;
 }
 
+.user-review-item-container,
 .reservation-item-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 10px 0px;
-    border-bottom: 3px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+
+.user-review-item-hotel,
+.reservation-item-hotel {
+    font-size: 1.25rem;
+    line-height: 1.1rem;
+    text-decoration: none;
+    color: #333;
+}
+
+.user-review-item-content > p,
+li.reservation-item-container > div > p {
+    font-size: 14px;
+    line-height: 1.1rem;
 }
 
 .reservation-item-mgmt {
     display: flex;
 }
 
+.user-review-item-actions,
 .reservation-item-actions {
     display: flex;
     flex-direction: column;
@@ -42,17 +59,8 @@ section.reservations-index-container > header > h3 {
     }
 }
 
-li.reservation-item-container > div > p {
-    font-size: 14px;
-    line-height: 1.1rem;
-}
 
-.reservation-item-hotel {
-    font-size: 1.25rem;
-    line-height: 1.1rem;
-    text-decoration: none;
-    color: #333;
-}
+
 
 li.reservation-item-container > div > p:first-child {
     padding: 5px 0px;
