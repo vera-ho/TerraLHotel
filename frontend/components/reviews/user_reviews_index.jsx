@@ -36,10 +36,19 @@ const UserReviewsIndex = props => {
                                 {hotel.name}
                             </Link>
                         </p>
-                        <p>What you liked: <br/>
-                            {review.pros}</p>
-                        <p>What the hotel could have done better: <br/> 
-                            {review.cons}</p>
+
+                        <h2>What you liked:</h2>
+                        <p>{review.pros}</p>
+
+                        {review.cons.length > 0 ? (
+                            <>
+                                <h2>What the hotel could have done better:</h2>
+                                <p>{review.cons}</p>
+                            </>
+                        ) : (
+                            <></>
+                        )}
+ 
                     </div>
                     <div className="user-review-item-actions">
                         <Link to={{}} onClick={handleEditReview}

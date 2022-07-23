@@ -1,11 +1,16 @@
-/**
+/*********************************************
 CSS for the following are in reservations.scss
     .user-reviews-index-container
     .user-review-item-container
     .user-review-item-hotel
     .user-review-item-content > p
     .user-review-item-actions
-**/
+    .user-review-item-content > p:first-child
+*********************************************/
+
+// .user-reviews-index > p {
+//     margin-bottom: 10px;
+// }
 
 .user-review-item-container > div {
     display: flex;
@@ -18,6 +23,19 @@ CSS for the following are in reservations.scss
     }
 }
 
+.user-review-item-content > h2 {
+    padding: 5px 0;
+    // font-weight: 500;
+}
+
+.user-review-item-content > p {
+    font-style: italic;
+}
+
+.user-review-item-content > p:first-child {
+    font-style: normal;
+}
+
 .user-review-item-actions {
     justify-content: center;
     
@@ -25,3 +43,4 @@ CSS for the following are in reservations.scss
         margin-bottom: 20px;
     }
 }
+
