@@ -18,8 +18,6 @@ const UserReviewsIndex = props => {
         requestAllHotels();
     }, [])
 
-
-
     const handleEditReview = () => {
         console.log("edit review")
         setShowModal(true);
@@ -57,9 +55,10 @@ const UserReviewsIndex = props => {
                             <ReviewForm
                                 closeModal={ () => setShowModal(false) }
                                 hotelId={review.reviewedHotelId}
-                                reviewerId={review.id}
+                                reviewerId={review.reviewerId}
                                 title={`Update Your Thoughts For ${hotel.name}!`}
                                 submitForm={ review => dispatch(editReview(review))}
+                                formType="edit"
                                 review={review}
                             />
                         </Modal>

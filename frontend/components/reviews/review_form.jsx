@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const ReviewForm = props => {
-    const {hotelId, reviewerId, title, review} = props;
+    const {hotelId, reviewerId, title, review, formType} = props;
     const { closeModal, submitForm } = props;
 
     let [pros, setPros] = useState(review.pros || "");
@@ -9,16 +9,14 @@ const ReviewForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        let review = {
+        let reviewObj = {
             reviewed_hotel_id: hotelId,
             reviewer_id: reviewerId,
             pros: pros,
             cons: cons
         }
-
-        console.log("review obj")
-        console.log(review)
-        submitForm(review).then(closeModal());
+        if(formType === "edit") reviewObj.id = review.id
+        submitForm(reviewObj).then(closeModal());
     }
 
     return (
