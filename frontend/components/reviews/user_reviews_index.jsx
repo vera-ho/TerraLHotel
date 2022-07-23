@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { requestAllHotels } from "../../actions/hotel_actions";
 import { getUser } from "../../actions/session_actions";
 import { editReview, deleteReview } from "../../actions/review_actions";
-// import UserReviewItemContainer from "./user_review_item_container";
 
 const UserReviewsIndex = props => {
     const { requestAllHotels, getUser, deleteReview } = props;
@@ -69,7 +68,7 @@ const UserReviewsIndex = props => {
                                 closeModal={ () => setShowModal(false) }
                                 hotelId={review.reviewedHotelId}
                                 reviewerId={review.reviewerId}
-                                title={`Update Your Thoughts For ${hotel.name}!`}
+                                title={`Update your thoughts for ${hotel.name}!`}
                                 submitForm={ review => dispatch(editReview(review))}
                                 formType="edit"
                                 review={review}
