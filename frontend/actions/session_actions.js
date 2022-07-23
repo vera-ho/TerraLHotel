@@ -6,9 +6,9 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
-export const receiveCurrentUser = (user_info) => ({
+export const receiveCurrentUser = (userInfo) => ({
     type: RECEIVE_CURRENT_USER,
-    user_info
+    userInfo
 });
 
 export const logoutCurrentUser = () => ({
@@ -27,17 +27,23 @@ export const clearErrors = () => ({
 export const login = user => dispatch => (
     SessionUtil.login(user)
         .then( user => dispatch(receiveCurrentUser(user)), 
-                err => dispatch(receiveErrors(err)) )
+            err => dispatch(receiveErrors(err)))
 );
+
+export const getUser = userId => dispatch => (
+    UserUtil.showUser(userId)
+        .then( userInfo => dispatch(receiveCurrentUser(userInfo)), 
+            err => dispatch(receiveErrors(err)))
+)
 
 export const logout = () => dispatch => (
     SessionUtil.logout()
         .then( () => dispatch(logoutCurrentUser()),
-              err => dispatch(receiveErrors(err)) ) 
+            err => dispatch(receiveErrors(err))) 
 );
 
 export const signup = user => dispatch => (
     UserUtil.createUser(user)
         .then( (user) => dispatch(receiveCurrentUser(user)),
-                  err => dispatch(receiveErrors(err)))
+            err => dispatch(receiveErrors(err)))
 );

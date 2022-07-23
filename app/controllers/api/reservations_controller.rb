@@ -16,6 +16,7 @@ class Api::ReservationsController < ApplicationController
     def create
         @reservation = Reservation.new(reservation_params)
         @reservation.customer_id = current_user.id
+
         # @reservation = current_user.reservations.new(reservation_params)
         if @reservation.save
             render :show

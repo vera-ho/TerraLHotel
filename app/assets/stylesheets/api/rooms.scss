@@ -77,11 +77,16 @@ section.room-photo > img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-width: 400px;
-    max-width: 500px;
+    min-width: 500px;
+    max-width: 600px;
     border: 1px solid coral;
 
     background-color: #eee;
     opacity: 1;
     padding: 15px;
+
+    h4 {
+        font-size: 1.65rem;
+        padding-bottom: 15px;
+    }
 }

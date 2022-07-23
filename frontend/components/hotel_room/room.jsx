@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Modal from 'react-modal';
 
 const RoomItem = props => {
 
@@ -6,9 +7,9 @@ const RoomItem = props => {
     const [checkinDate, setCheckinDate] = useState(new Date());
     const [checkoutDate, setCheckoutDate] = useState(new Date());
 
-    const toggleClick = e => {
+    const handleDateClick = e => {
         e.preventDefault();
-        showCalendar ? setShowCalendar(false) : setShowCalendar(true);
+        setShowCalendar(true);
     }
 
     const handleClick = e => {
@@ -24,15 +25,15 @@ const RoomItem = props => {
             }
             Object.assign(props.reservation, resDetails)
             props.makeReservation(props.reservation);
-            window.location = `/#/user/${props.user.id}`;
+            window.location = `/#/user/${props.user.id}/stays`;
         } else {
             window.location = `/#/signin`
         }
     }
         
-
     const datePicker = (
         <div className="room-daterange-picker">
+            <h4>Select your dates below</h4>
             <label>
                 Check-in date
                 <input type="date"
@@ -50,6 +51,7 @@ const RoomItem = props => {
             <button onClick={handleClick}>Book Dates</button>
         </div>
     )
+
     return (
         <div className="room-item-container">
             <section className="room-info">
@@ -64,11 +66,23 @@ const RoomItem = props => {
                         <li>{props.room.beds}</li>
                         <li>{props.room.size}</li>
                     </ul>
-                    {/* <button>Check Prices</button> */}
-                    <button onClick={toggleClick}>Select Dates</button>
-                </div>
 
-                
+                    <button onClick={handleDateClick}>Select Dates</button>
+                    <Modal
+                        className="book-room-modal"
+                        isOpen={showCalendar}
+                        shouldCloseOnOverlayClick={true}
+                        onRequestClose={() => setShowCalendar(false) }
+                        ariaHideApp={false}
+                        style={{
+                            overlay: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }}
+                    >
+                        {datePicker}
+                    </Modal>
+                </div>
             </section>
 
             <section className="room-photo">
@@ -76,8 +90,6 @@ const RoomItem = props => {
                     alt="hotel-room">
                 </img>
             </section>
-
-            { showCalendar && datePicker }
         </div>
     )
 }

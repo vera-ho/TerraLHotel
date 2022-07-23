@@ -1,11 +1,11 @@
 import React from "react";
 import RoomsIndex from "../hotel_room/room_index";
+import HotelReviewsIndex from "../reviews/hotel_reviews_index";
 import HotelMap from "../map/map";
 
 class Hotel extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.hotel;
     }
 
     componentDidMount() {
@@ -13,7 +13,9 @@ class Hotel extends React.Component {
     }
 
     render() {
-        const hotel = this.props.hotel;
+        const hotel = this.props.hotel || {};
+        const reviews = this.props.reviews || {};
+
         let amentities = ["100% non-smoking hotel", "24 hour front desk", 
             "Central air conditioning", "Free wi-fi", "Lounge", "Luggage Storage", 
             "Multi-lingual Staff", "Restaurant", "Room service", "Shopping nearby", 
@@ -22,10 +24,6 @@ class Hotel extends React.Component {
         amentities = amentities.map( (amenity, idx) => {
             return (<li key={idx}>{amenity}</li>)
         })
-
-        if(!(hotel)) {
-            return (<h2 className="loading">Loading...</h2>)
-        } 
 
         let reservation = {
             hotel_id: hotel.id
@@ -45,7 +43,6 @@ class Hotel extends React.Component {
                 <main className="hotel-details-content">
                     <section className="hotel-content-left">
                         <section className="hotel-details-images">
-                            {/* <img src="https://cdn.discordapp.com/attachments/862515957842706475/991821545553006752/hotel_image.jpeg" /> */}
                             <img src={hotel.img1} />
                         </section>
                     
@@ -64,15 +61,16 @@ class Hotel extends React.Component {
 
                         <HotelMap hotel={hotel} />
 
-                        <div className="hotel-details-reviews">
-                        </div>
+                        <section className="hotel-details-reviews">
+                            <HotelReviewsIndex hotel={hotel} reviews={reviews} />
+                        </section>
 
-                        <div className="hotel-details-amenities">
+                        <section className="hotel-details-amenities">
                             <h3>Hotel Amenities and Services</h3>
                             <ul className="hotel-amentities">
                                 {amentities}
                             </ul>
-                        </div>
+                        </section>
                     </section>
                     
                     <section className="hotel-content-right">

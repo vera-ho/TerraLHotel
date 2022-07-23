@@ -4,8 +4,80 @@
 
 // For when user account info page is made - right now stays (reservations) takes the whole space instead of rendering a user container in app.jsx
 
-// .user-index-container {
-//     max-width: 960px;
-//     padding: 60px 0px;
-//     margin: 0 auto;
-// }
+.user-account-container{
+    max-width: 960px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.user-account-sections-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user-account-navigation {
+    padding: 60px 0px;
+    width: 25%;
+}
+
+.user-account-nav-list li {
+    margin-bottom: 10px;
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+.user-account-nav-list li.active a {
+    color: #666;
+}
+
+.user-account-nav-list li a:hover {
+    color: #f60;
+}
+
+.user-account-main {
+    width: 75%;
+}
+
+.user-account-info {
+    padding: 60px 0px;
+}
+
+.user-info-header {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    p {
+        margin: 15px 0 30px;
+        font-size: 1rem;
+    }
+}
+
+.user-info-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .user-info-icon {
+        background-image: url("default_profile_image.png");
+        background-size: cover;
+        width: 160px;
+        height: 160px;
+        border: 1px solid #ccc;
+        margin-right: 1em;
+        border-radius: 200px;
+    }
+
+    .user-details p {
+        margin: 10px 0;
+    }
+
+    .user-details p:last-child {
+        color: #f60;
+    }
+}
+

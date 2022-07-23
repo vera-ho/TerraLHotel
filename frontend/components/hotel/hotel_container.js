@@ -6,9 +6,10 @@ import Hotel from "./hotel"
 const mSTP = (state, ownProps) => {
     return {
         hotel: state.entities.hotels[ownProps.match.params.hotelId],
+        reviews: state.entities.reviews,
         rooms: state.entities.rooms,
         loggedIn: Boolean(state.session.id),
-        user: state.entities.users[state.session.id]        
+        user: state.entities.users[state.session.id]       
     }
 }
 
