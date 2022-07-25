@@ -5,7 +5,8 @@ import HotelsIndex from "./hotels_index"
 
 const mSTP = state => {
     return {
-        hotels: selectAllHotels(state)
+        hotels: selectAllHotels(state),
+        searchCount: state.entities.searchResults
     }
 }
 
