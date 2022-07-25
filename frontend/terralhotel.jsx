@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client"
 import Root from "./components/root";
 import configureStore from "./store/store";
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const rootElement = document.getElementById("root");
   const root = createRoot(rootElement);
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // for testing only
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  
 
   // Render Application
   root.render(<Root store={store} />)
