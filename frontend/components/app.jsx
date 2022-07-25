@@ -1,6 +1,6 @@
 import React from "react";
 import HeaderContainer from "./header/header_container";
-import FooterContainer from "./footer/footer_container";
+import Footer from "./footer/footer";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import SearchContainer from "./search/search_container";
@@ -35,7 +35,7 @@ const App = () => (
     </Switch>
 
     <footer className="footer">
-      <FooterContainer />
+      <Footer />
     </footer>
   </div>
 );
