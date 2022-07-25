@@ -5,13 +5,10 @@ const Search = props => {
     const [searchValue, setSearchValue] = useState("");
     const { searchHotels } = props;
 
-    const handleSearch = e => {
+    const handleSearch = async e => {
         e.preventDefault();
-        // debugger
-        // props.location.push("hotels");
-        searchHotels(searchValue);
-        window.location = `/#/hotels`
-
+        await searchHotels(searchValue)
+        window.location = "/#/hotels";
     }
 
     return (
@@ -21,7 +18,8 @@ const Search = props => {
                     <span className="search-greeting">The hotel experts at the MICHELIN Guide</span>
                     <div className="search-input-field">
                         <label className="search-input-label">Where to?</label>
-                        <input type="text"
+                        <input 
+                            type="text"
                             className="search-input"
                             placeholder="Destination or Hotel"
                             value={searchValue}
@@ -31,8 +29,6 @@ const Search = props => {
                     
                     <span className="explore-question">Just want to explore hotels?</span>
                     <span className="browse">Browse by your interests, styles, locations and more.</span>
-
-                    {/* <Link to='/hotels' className="search-button" onClick={handleSearch}>Search</Link> */}
                     <p className="search-button" onClick={handleSearch}>Search</p>
                 </section>
             </div>

@@ -5,14 +5,13 @@ import HotelsIndex from "./hotels_index"
 
 const mSTP = state => {
     return {
-        // hotels: state.entities.hotels
         hotels: selectAllHotels(state)
     }
 }
 
 const mDTP = dispatch => {
     return {
-        // requestAllHotels: () => dispatch(requestAllHotels()),
+        requestAllHotels: () => dispatch(requestAllHotels()),
         searchHotels: searchParam => dispatch(searchHotels(searchParam))
     }
 }

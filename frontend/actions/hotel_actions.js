@@ -1,12 +1,20 @@
 import * as HotelUtil from "../util/hotel_api_util"
 
 export const RECEIVE_ALL_HOTELS = "RECEIVE_ALL_HOTELS";
+export const RECEIVE_HOTEL_SEARCH = "RECEIVE_HOTEL_SEARCH";
 export const RECEIVE_HOTEL = "RECEIVE_HOTEL";
-    export const RECEIVE_HOTEL_ERRORS = "RECEIVE_HOTEL_ERRORS";
+export const RECEIVE_HOTEL_ERRORS = "RECEIVE_HOTEL_ERRORS";
 
 export const receiveAllHotels = hotels => {
     return {
         type: RECEIVE_ALL_HOTELS,
+        hotels
+    }
+}
+
+export const receiveHotelSearch = hotels => {
+    return {
+        type: RECEIVE_HOTEL_SEARCH,
         hotels
     }
 }
@@ -39,6 +47,6 @@ export const requestHotel = hotelId => dispatch => {
 
 export const searchHotels = searchParam => dispatch => {
     return HotelUtil.searchHotels(searchParam)
-        .then( hotels => dispatch(receiveAllHotels(hotels)),
+        .then( hotels => dispatch(receiveHotelSearch(hotels)),
             err => dispatch(receiveHotelErrors(err)))
 }
