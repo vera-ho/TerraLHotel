@@ -35,9 +35,11 @@ export const apiRequestHotels = () => {
         method: "GET",
         url: `https://api.test.hotelbeds.com/hotel-api/1.0/status`,
         headers: {
-            "Accept": "application/json",
+            "Content-Type": "application/json",
             "Api-key": window.HOTELBED_API_KEY,
-            "X-Signature": xsignature
+            "X-Signature": xsignature,
+            "Access-Control-Allow-Origin": "*",
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
         }
     })
 }
@@ -48,7 +50,9 @@ export const impalaRequestHotels = () => {
         url: `https://sandbox.impala.travel/v1/hotels`,
         headers: {
             "Content-Type": "application/json",
-            "x-api-key": window.IMPALA_API_KEY
+            "x-api-key": window.IMPALA_API_KEY,
+            "Access-Control-Allow-Origin": "*",
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
         }
     })
 }

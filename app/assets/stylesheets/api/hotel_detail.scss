@@ -1,5 +1,5 @@
 .hotel-details-container {
-    // min-height: 100vh;
+    min-height: 100vh;
     // max-height: fit-content;
     max-width: 960px;
     margin: 0 auto;
@@ -30,6 +30,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    padding-top: 1.25rem;
 }
 
 .hotel-content-left {
@@ -38,11 +39,17 @@
     box-sizing: inherit;
 }
 
-.hotel-content-left div {
+.hotel-content-left > div {
     width: 95%;
     margin: 20px auto 20px;
     line-height: 1.625rem;
     box-sizing: inherit;
+}
+
+.hotel-details-images > img {
+    width: 100%;
+    height: auto;
+    
 }
 
 .hotel-content-right {

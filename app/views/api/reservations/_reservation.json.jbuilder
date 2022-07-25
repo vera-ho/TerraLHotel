@@ -1,0 +1,1 @@
+json.extract! reservation, :id, :hotel_id, :room_id, :customer_id, :checkin, :checkout, :status

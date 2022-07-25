@@ -6,7 +6,7 @@ const roomsReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_HOTEL:
-            nextState = action.hotel_info.rooms;
+            nextState = action.hotelInfo.rooms;
             return nextState;
         default:
             return state;

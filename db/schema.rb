@@ -10,29 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_24_144915) do
+ActiveRecord::Schema.define(version: 2022_07_22_123443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "hotels", force: :cascade do |t|
     t.string "name", null: false
-    t.string "email", null: false
-    t.string "phone_number", null: false
     t.string "country", null: false
     t.string "city", null: false
     t.string "address", null: false
     t.integer "rooms", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "img1", default: ""
+    t.string "img2", default: ""
+    t.string "img3", default: ""
+    t.string "state", default: ""
     t.index ["city"], name: "index_hotels_on_city"
     t.index ["country"], name: "index_hotels_on_country"
-    t.index ["email"], name: "index_hotels_on_email"
     t.index ["name"], name: "index_hotels_on_name"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.integer "hotel_id", null: false
+    t.integer "room_id", null: false
+    t.integer "customer_id", null: false
+    t.datetime "checkin", null: false
+    t.datetime "checkout", null: false
+    t.string "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["checkin"], name: "index_reservations_on_checkin"
+    t.index ["checkout"], name: "index_reservations_on_checkout"
+    t.index ["customer_id"], name: "index_reservations_on_customer_id"
+    t.index ["hotel_id"], name: "index_reservations_on_hotel_id"
+    t.index ["room_id"], name: "index_reservations_on_room_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "reviewed_hotel_id", null: false
+    t.integer "reviewer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "pros", null: false
+    t.text "cons", default: ""
+    t.index ["reviewed_hotel_id"], name: "index_reviews_on_reviewed_hotel_id"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
+  end
+
   create_table "rooms", force: :cascade do |t|
-    t.string "name"
     t.string "room_type", null: false
     t.integer "occupancy", null: false
     t.string "size"
@@ -40,6 +67,7 @@ ActiveRecord::Schema.define(version: 2022_06_24_144915) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "building_id"
+    t.string "img1", default: ""
     t.index ["beds"], name: "index_rooms_on_beds"
     t.index ["building_id"], name: "index_rooms_on_building_id"
     t.index ["occupancy"], name: "index_rooms_on_occupancy"

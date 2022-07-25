@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import ErrorItem from './error_item';
 import * as DemoUser from "./demo_user_login"
 
@@ -28,7 +27,10 @@ export default class SessionForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         const user = Object.assign( {}, this.state );
-        this.props.processForm(user); 
+        this.props.processForm(user);
+        // if(!this.props.errors.responseJSON) {
+        //     window.history.back();
+        // }
     }
 
     handleDemoUser = e => {
@@ -52,9 +54,7 @@ export default class SessionForm extends React.Component {
     }
 
     render() {
-        const otherFormType = (this.props.formType === "Sign In") ? ("Register") : ("Sign In");
-        const otherFormLink = (this.props.formType === "Sign In") ? ("register") : ("signin");
-        
+       
         const name = (
             <>
                 <label className="fname-label">First Name
@@ -90,7 +90,7 @@ export default class SessionForm extends React.Component {
             errors = this.props.errors.responseJSON.map( (error, idx) => (
                 <ErrorItem key={idx} error={error} />
             )
-        )}
+        )} 
 
         return (
             <div className="session-form-container">

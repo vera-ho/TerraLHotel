@@ -1,1 +1,1 @@
-json.extract! room, :id, :room_type, :occupancy, :size, :beds
+json.extract! room, :id, :room_type, :occupancy, :size, :beds, :img1

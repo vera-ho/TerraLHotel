@@ -11,7 +11,7 @@ class Api::HotelsController < ApplicationController
 
     private
     def hotel_params
-        # only searchable by name, country, city
-        params.require(:hotel).permit(:name, :country, :city)
+        # only searchable by name, country, state, city
+        params.require(:hotel).permit(:name, :country, :state, :city)
     end
 end
