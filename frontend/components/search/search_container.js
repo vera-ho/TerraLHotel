@@ -1,16 +1,11 @@
 import { connect } from "react-redux";
 import Search from "./search"
-
-const mapStateToProps = state => {
-    return {
-
-    }
-}
+import { searchHotels } from "../../actions/hotel_actions";
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        searchHotels: searchParam => dispatch(searchHotels(searchParam))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(null, mapDispatchToProps)(Search);
