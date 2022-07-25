@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Search = () => {
-    
+const Search = props => {
     const [searchValue, setSearchValue] = useState("");
+    const { searchHotels } = props;
+
+    const handleSearch = e => {
+        e.preventDefault();
+        // debugger
+        // props.location.push("hotels");
+        searchHotels(searchValue);
+        window.location = `/#/hotels`
+
+    }
 
     return (
         <section className="search-container"> {/* section tag might not be needed */}
@@ -23,7 +32,8 @@ const Search = () => {
                     <span className="explore-question">Just want to explore hotels?</span>
                     <span className="browse">Browse by your interests, styles, locations and more.</span>
 
-                    <Link to='/hotels' className="search-button">Search</Link>
+                    {/* <Link to='/hotels' className="search-button" onClick={handleSearch}>Search</Link> */}
+                    <p className="search-button" onClick={handleSearch}>Search</p>
                 </section>
             </div>
         </section>

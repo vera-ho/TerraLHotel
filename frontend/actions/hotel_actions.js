@@ -2,7 +2,7 @@ import * as HotelUtil from "../util/hotel_api_util"
 
 export const RECEIVE_ALL_HOTELS = "RECEIVE_ALL_HOTELS";
 export const RECEIVE_HOTEL = "RECEIVE_HOTEL";
-export const RECEIVE_HOTEL_ERRORS = "RECEIVE_HOTEL_ERRORS";
+    export const RECEIVE_HOTEL_ERRORS = "RECEIVE_HOTEL_ERRORS";
 
 export const receiveAllHotels = hotels => {
     return {

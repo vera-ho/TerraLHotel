@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { requestAllHotels } from "../../actions/hotel_actions";
+import { requestAllHotels, searchHotels } from "../../actions/hotel_actions";
 import { selectAllHotels } from "../../reducers/selectors";
 import HotelsIndex from "./hotels_index"
 
@@ -12,7 +12,8 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return {
-        requestAllHotels: () => dispatch(requestAllHotels()),
+        // requestAllHotels: () => dispatch(requestAllHotels()),
+        searchHotels: searchParam => dispatch(searchHotels(searchParam))
     }
 }
 

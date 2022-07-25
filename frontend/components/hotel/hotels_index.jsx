@@ -5,7 +5,7 @@ const HotelsIndex = props => {
     const [filterValue, setFilterValue] = useState("");
 
     useEffect( () => {
-        props.requestAllHotels();
+        // props.requestAllHotels();
     }, [])
 
     const hotelsList = Object.values(props.hotels).map( (hotel, index) => {
