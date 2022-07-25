@@ -12,7 +12,6 @@ const mSTP = state => {
 const mDTP = dispatch => {
     return {
         requestAllHotels: () => dispatch(requestAllHotels()),
-        searchHotels: searchParam => dispatch(searchHotels(searchParam))
     }
 }
 
