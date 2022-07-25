@@ -8,7 +8,7 @@ const HotelsIndex = props => {
 
     useEffect( () => {
         if(hotels.length === 0) {
-            searchLength = 0;
+            // searchLength = 0;
             requestAllHotels();
         }
     }, [hotels])
@@ -29,9 +29,9 @@ const HotelsIndex = props => {
             <header className="hotel-listings-header">
                 <img src="https://d1xyolhen8fnqh.cloudfront.net/media/ecs/tma/TMA-small-en.svg"/>
                 <section className='hotel-filter'>
-                    { searchLength ? (<></>) : (
+                    {/* { searchLength ? (<></>) : (
                         <p className="zero-hotels-found">No results found. Showing all hotels.</p>
-                    )}
+                    )} */}
                     <span>{props.hotels.length} hotels recommended.</span>
 
                     <label>Filter the list by: 
