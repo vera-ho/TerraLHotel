@@ -28,11 +28,17 @@ export const receiveHotelErrors = errors => {
 export const requestAllHotels = () => dispatch => {
     return HotelUtil.fetchAllHotels()
         .then( hotels => dispatch(receiveAllHotels(hotels)), 
-                  err => dispatch(receiveHotelErrors(err)))
+            err => dispatch(receiveHotelErrors(err)))
 }
 
 export const requestHotel = hotelId => dispatch => {
     return HotelUtil.fetchHotel(hotelId)
         .then( hotelInfo => dispatch(receiveHotel(hotelInfo)), 
-                 err => dispatch(receiveHotelErrors(err)))
+            err => dispatch(receiveHotelErrors(err)))
+}
+
+export const searchHotels = searchParam => dispatch => {
+    return HotelUtil.searchHotels(searchParam)
+        .then( hotels => dispatch(receiveAllHotels(hotels)),
+            err => dispatch(receiveHotelErrors(err)))
 }

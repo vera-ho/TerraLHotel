@@ -3,6 +3,9 @@ import { createRoot } from "react-dom/client"
 import Root from "./components/root";
 import configureStore from "./store/store";
 
+//testing only
+import { searchHotels } from "./actions/hotel_actions"
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const rootElement = document.getElementById("root");
@@ -25,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // for testing only
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.searchHotels = searchHotels;
   
 
   // Render Application
