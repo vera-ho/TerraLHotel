@@ -24,31 +24,32 @@ const FooterIndex = (props) => {
                     <ul>
                         <li>
                             <a href="https://github.com/vh71886/">
-                                <img src="icons8-github-50.png"/>
+                                {/* <img src="icons8-github-50.png"/> */}
+                                GitHub
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/vh71886/">
-                                <img src=""/>
+                                {/* <img src=""/> */}
                                 LinkedIn
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/vh71886/">
-                                <img src=""/>
+                                {/* <img src=""/> */}
                                 Angel List
                             </a>
                         </li>
                         <li>
                             <a href="https://github.com/vh71886/">
-                                <img src=""/>
+                                {/* <img src=""/> */}
                                 Portfolio
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    Project Repository
+                    {/* Project Repository */}
                 </div>
             </section>
             
