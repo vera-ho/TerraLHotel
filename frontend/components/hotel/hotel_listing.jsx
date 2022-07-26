@@ -12,6 +12,7 @@ const HotelListing = props => {
                     width='160px'
                     height='160px'
                 />
+                {/* <img src={} width='' height='' /> */}
                 <div id='hotel-card-1'></div>
                 <div id='hotel-card-2'></div>
             </Link>
