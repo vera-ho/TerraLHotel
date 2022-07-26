@@ -53,8 +53,8 @@ group :development do
   gem 'binding_of_caller'
   gem 'figaro'
   gem 'pry-rails'
-  # gem 'rack-cors', :require => 'rack/cors'
-  # gem 'dotenv-rails'
+  gem 'rack-cors', :require => 'rack/cors'
+  gem 'dotenv-rails'
   gem 'httparty'
 end
 
