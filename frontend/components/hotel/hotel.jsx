@@ -45,9 +45,6 @@ class Hotel extends React.Component {
                         <section className="hotel-details-images">
                             <img src={hotel.img1} />
                         </section>
-                    
-                        {/* <section className="hotel-details-misc">
-                        </section> */}
 
                         <div className="hotel-details-description">
                             <p>Praesent feugiat nisl cursus, bibendum ligula id, dignissim lacus. Sed vel facilisis justo. Aliquam tincidunt lorem eget congue dictum. Nullam non est at nisi vulputate feugiat. Morbi sit amet massa a diam malesuada pulvinar. Phasellus elementum, ante ut pharetra pellentesque, augue odio commodo risus, eu feugiat quam neque eget elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut finibus dignissim ex, nec egestas lacus tempus sed. Pellentesque tincidunt vulputate fermentum. Donec convallis ligula condimentum massa accumsan, quis bibendum quam condimentum. Ut dictum enim vel libero venenatis feugiat.</p>
@@ -62,7 +59,10 @@ class Hotel extends React.Component {
                         <HotelMap hotel={hotel} />
 
                         <section className="hotel-details-reviews">
-                            <HotelReviewsIndex hotel={hotel} reviews={reviews} />
+                            <HotelReviewsIndex 
+                                hotel={hotel} 
+                                reviews={reviews} 
+                            />
                         </section>
 
                         <section className="hotel-details-amenities">
@@ -74,14 +74,15 @@ class Hotel extends React.Component {
                     </section>
                     
                     <section className="hotel-content-right">
-                        <RoomsIndex rooms={this.props.rooms} 
+                        <RoomsIndex 
+                            rooms={this.props.rooms} 
                             makeReservation={this.props.makeReservation}
-                            reservation={reservation} loggedIn={this.props.loggedIn}
+                            reservation={reservation} 
+                            loggedIn={this.props.loggedIn}
                             user={this.props.user}
                         />
                     </section>
                 </main>
-               
             </section>
         )
     }
