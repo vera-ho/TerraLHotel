@@ -78,8 +78,14 @@
     }
 }
 
-.hotel-details-description p::first-letter {
-    font-size: 35px;
+.hotel-details-description {
+    p {
+        margin: 10px 0;
+    }
+
+    p:first-child::first-letter {
+        font-size: 35px;
+    }
 }
 
 .hotel-details-bullets p {
