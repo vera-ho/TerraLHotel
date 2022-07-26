@@ -105,7 +105,15 @@
     padding: 3px 0px;
 }
 
-.hotel-listing-description > img {
+// .hotel-listing-description > img {
+//     padding-top: 30px;
+//     cursor: pointer;
+// }
+
+.hotel-favorite-icon {
+    color: #ccc;
+    width: 60px;
+    height: 60px;
     padding-top: 30px;
     cursor: pointer;
 }
