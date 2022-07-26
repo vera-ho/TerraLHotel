@@ -2,7 +2,7 @@ import React from "react";
 import { BsGithub, BsLinkedin, BsPersonCircle } from 'react-icons/bs';
 import { SiAngellist } from 'react-icons/si';
 
-const FooterIndex = (props) => {
+const FooterIndex = () => {
     
     return (
         <div className="footer-index-container">
