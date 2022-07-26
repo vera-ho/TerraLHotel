@@ -16,15 +16,32 @@
     flex-direction: row;
     justify-content: space-between;
     // flex: 1;
+
+    @media screen and (max-width: 750px) {
+        flex-direction: column;
+    }
 }
 
 .footer-index-container > section {
     width: 33%;
+
+    @media screen and (max-width: 750px) {
+        width: 90%;
+        margin: 15px 0;
+    }
 }
 
 .footer-developer-info-container,
 .footer-about {
-    transform: translate(25%, 0);
+    transform: translate(25%, 0%);
+
+    @media screen and (max-width: 1200px) {
+        transform: translate(10%, 0%);
+    }
+
+    @media screen and (max-width: 900px) {
+        transform: translate(0%, 0%);
+    }
 }
 
 .footer-technologies-used > h1,
@@ -56,6 +73,8 @@
     li {
         padding: 0 5px;
     }
+
+
 }
 
 .developer-icon {
