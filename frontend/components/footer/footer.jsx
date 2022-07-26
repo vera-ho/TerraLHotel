@@ -1,4 +1,6 @@
 import React from "react";
+import { BsGithub, BsLinkedin, BsPersonCircle } from 'react-icons/bs';
+import { SiAngellist } from 'react-icons/si';
 
 const FooterIndex = (props) => {
     // list technologies
@@ -24,26 +26,22 @@ const FooterIndex = (props) => {
                     <ul>
                         <li>
                             <a href="https://github.com/vh71886/">
-                                {/* <img src="icons8-github-50.png"/> */}
-                                GitHub
+                                <BsGithub  className="developer-icon" />
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/vh71886/">
-                                {/* <img src=""/> */}
-                                LinkedIn
+                            <a href="https://www.linkedin.com/in/veraho/">
+                                <BsLinkedin className="developer-icon" />
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/vh71886/">
-                                {/* <img src=""/> */}
-                                Angel List
+                            <a href="https://angel.co/u/vera-ho-1">
+                                <SiAngellist className="developer-icon" />
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/vh71886/">
-                                {/* <img src=""/> */}
-                                Portfolio
+                            <a href="#">
+                                <BsPersonCircle className="developer-icon" />
                             </a>
                         </li>
                     </ul>
