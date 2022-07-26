@@ -26,7 +26,6 @@ const HotelListing = props => {
             </li>
             <TiHeartFullOutline className='hotel-favorite-icon' />
         </section>
-
     )
 }
 

@@ -2,9 +2,6 @@ import { RECEIVE_ALL_HOTELS, RECEIVE_HOTEL_SEARCH } from "../actions/hotel_actio
 
 const searchReducer = (state = null, action) => {
     Object.freeze(state);
-    console.log("search reducer")
-    console.log(state)
-    console.log(action)
     
     switch(action.type) {
         case RECEIVE_HOTEL_SEARCH:
