@@ -1,6 +1,7 @@
 import React from "react";
 import { BsGithub, BsLinkedin, BsPersonCircle } from 'react-icons/bs';
 import { SiAngellist } from 'react-icons/si';
+import { FaRegCopyright } from 'react-icons/fa';
 
 const FooterIndex = () => {
     
@@ -21,7 +22,7 @@ const FooterIndex = () => {
                     <h1>Developer</h1>
                     <ul className="footer-developer-info-list">
                         <li className="footer-developer-info-list-item">
-                            <a href="https://github.com/vh71886/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/vh71886/TerraLHotel" target="_blank" rel="noopener noreferrer">
                                 <BsGithub  className="developer-icon" />
                             </a>
                         </li>
@@ -47,8 +48,13 @@ const FooterIndex = () => {
             
             <section className="footer-about">
                 <h1>About</h1>
-                <p>Terra l'Hotel is a clone of Tablet Hotels</p>
+                <p>Terra l'Hotel is a clone of&nbsp;
+                    <a href="https://www.tablethotels.com/" target="_blank" rel="noopener noreferrer">
+                        Tablet Hotels
+                    </a>
+                </p>
                 <p>Images belong to Tablet Hotels</p>
+                <p><FaRegCopyright className="copyright-icon"/> &nbsp;Vera Ho</p>
             </section>
         </div>
     )

@@ -22,6 +22,11 @@
     width: 33%;
 }
 
+.footer-developer-info-container,
+.footer-about {
+    transform: translate(25%, 0);
+}
+
 .footer-technologies-used > h1,
 .footer-developer-info-content > h1,
 .footer-about > h1 { 
@@ -31,11 +36,17 @@
 
 .footer-developer-info-list-item > a,
 .footer-technologies-list > li,
-.footer-about > p {
+.footer-about > p,
+.footer-about > p > a {
     color: #999;
     font-size: 14px;
     margin-bottom: 5px;
     text-decoration: none;
+}
+
+.footer-about > p:last-child {
+    display: flex;
+    align-items: center;
 }
 
 .footer-developer-info-list {
@@ -50,4 +61,9 @@
 .developer-icon {
     width: 40px;
     height: 40px;
+}
+
+.copyright-icon {
+    width: 15px;
+    height: 15px;
 }
