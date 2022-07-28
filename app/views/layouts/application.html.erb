@@ -4,12 +4,6 @@
     <title>Terra l'Hotel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <script type='text/javascript'>
-      window.HOTELBED_API_KEY = "<%= Rails.application.credentials.hotelbed_api_key %>"
-      window.HOTELBED_SECRET = "<%= Rails.application.credentials.hotelbed_secret %>"
-      window.IMPALA_API_KEY =  "<%= Rails.application.credentials.impala_api_key %>"
-    </script>
     
     <%= favicon_link_tag asset_path('tablet_favicon.ico') %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['MAPS_API_KEY']}" %>

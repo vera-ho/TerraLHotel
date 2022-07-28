@@ -7,17 +7,18 @@ export const fetchAllHotels = () => {
     })
 }
 
-// export const fetchHotel = hotel => {
-//     return $.ajax({
-//         method: "GET",
-//         url: `/api/hotels/${hotel.id}`,
-//     })
-// }
-
 export const fetchHotel = hotelId => {
     return $.ajax({
         method: "GET",
         url: `/api/hotels/${hotelId}`,
+    })
+}
+
+export const searchHotels = searchParam => {
+    return $.ajax({
+        method: "GET", 
+        url: "/api/hotels",
+        data: { searchParam }
     })
 }
 
@@ -54,5 +55,6 @@ export const impalaRequestHotels = () => {
             "Access-Control-Allow-Origin": "*",
             'Access-Control-Allow-Headers': 'Content-Type, Authorization'
         }
-    })
+
+})
 }

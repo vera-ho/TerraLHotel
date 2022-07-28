@@ -3,10 +3,13 @@ import HotelListing from './hotel_listing';
 
 const HotelsIndex = props => {
     const [filterValue, setFilterValue] = useState("");
+    const { hotels, requestAllHotels, searchCount } = props;
 
     useEffect( () => {
-        props.requestAllHotels();
-    }, [])
+        if(hotels.length === 0) {
+            requestAllHotels();
+        }
+    }, [hotels])
 
     const hotelsList = Object.values(props.hotels).map( (hotel, index) => {
         let filter = filterValue.toLowerCase();
@@ -24,7 +27,9 @@ const HotelsIndex = props => {
             <header className="hotel-listings-header">
                 <img src="https://d1xyolhen8fnqh.cloudfront.net/media/ecs/tma/TMA-small-en.svg"/>
                 <section className='hotel-filter'>
-                    {/* <span>{Object.values(props.hotels).length} hotels recommended.</span> */}
+                    { searchCount ? (<></>) : (
+                        <p className="zero-hotels-found">No results found. Showing all hotels.</p>
+                    )}
                     <span>{props.hotels.length} hotels recommended.</span>
 
                     <label>Filter the list by: 

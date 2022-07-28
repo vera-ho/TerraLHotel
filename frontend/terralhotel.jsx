@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client"
 import Root from "./components/root";
 import configureStore from "./store/store";
 
-import { apiRequestHotels, impalaRequestHotels } from "./util/hotel_api_util"
+// import { apiRequestHotels, impalaRequestHotels } from "./util/hotel_api_util"
 
 document.addEventListener("DOMContentLoaded", () => {
   const rootElement = document.getElementById("root");
@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
-  window.apiRequestHotels = apiRequestHotels;
-  window.impalaRequestHotels = impalaRequestHotels;
+  // window.apiRequestHotels = apiRequestHotels;
+  // window.impalaRequestHotels = impalaRequestHotels;
 
   // Render Application
   root.render(<Root store={store} />)
