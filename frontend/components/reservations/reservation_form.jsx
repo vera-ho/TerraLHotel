@@ -6,24 +6,28 @@ const ReservationForm = props => {
     // --- Reservation: Check in and out dates
     // --- Hotel: hotel name, city, country
     // --- User: Name, email
+    const { hotel, room, user, reservation } = props || {};
+    const { editReservation } = props;
 
     // Set to previously selected dates from room item component
-    const [checkin, setCheckin] = useState(props.reservation.checkin);
-    const [checkout, setCheckout] = useState(props.reservation.checkout);
+    const startDate = new Date(reservation.checkin).toISOString().slice(0,10);
+    const endDate = new Date(reservation.checkout).toISOString().slice(0,10);
+    const [checkin, setCheckin] = useState(startDate);
+    const [checkout, setCheckout] = useState(endDate);
 
     const handleSubmit = e => {
         e.preventDefault();
         const editedReservation = {
-            id: props.reservation.id,
-            hotelId: props.hotel.id,
-            customerId: props.user.id,
-            roomId: props.reservation.roomId,
+            id: reservation.id,
+            hotelId: hotel.id,
+            customerId: user.id,
+            roomId: reservation.roomId,
             checkin: checkin,
             checkout: checkout,
             status: "updated"
         }
-        props.editReservation(editedReservation);
-        window.location = `/#/user/${props.user.id}/stays`
+        editReservation(editedReservation);
+        window.location = `/#/user/${user.id}/stays`
     }
 
     let checkinDate, checkoutDate;
@@ -34,8 +38,8 @@ const ReservationForm = props => {
         day: "2-digit"
     }
 
-    checkinDate = new Date(props.reservation.checkin);
-    checkoutDate = new Date(props.reservation.checkout);
+    checkinDate = new Date(reservation.checkin);
+    checkoutDate = new Date(reservation.checkout);
     checkinDate = checkinDate.toLocaleDateString(locale, options);
     checkoutDate = checkoutDate.toLocaleDateString(locale, options);
 
@@ -63,7 +67,7 @@ const ReservationForm = props => {
         <div className="reservation-form-container">
              <section className="reservation-form-left">
                 <header>
-                    <h4>Welcome back, {props.user.fname}</h4>
+                    <h4>Welcome back, {user.fname}</h4>
                 </header>
 
                 <div className="reservation-form-main">
@@ -74,8 +78,8 @@ const ReservationForm = props => {
                         <h5>Free cancellation</h5> */}
 
                         <p>Guest</p>
-                        <p>{props.user.fname + " " + props.user.lname}</p>
-                        <p>{props.user.email}</p>
+                        <p>{user.fname + " " + user.lname}</p>
+                        <p>{user.email}</p>
                     </div>
                     {/* <p>Number of nights</p>
                     <p>Room type and pricing</p> */}
@@ -84,12 +88,11 @@ const ReservationForm = props => {
             </section>
 
             <section className="reservation-form-right">
-                <h4>{props.hotel.name}</h4>
-                <p>{props.hotel.city + ", " + props.hotel.country}</p>
+                <h4>{hotel.name}</h4>
+                <p>{hotel.city + ", " + hotel.country}</p>
                 {/* <p>Booked Dates:</p> */}
                 <p>{checkinDate + " - " + checkoutDate}</p>
                 {datePicker}
-
             </section>
         </div>
     )
