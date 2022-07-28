@@ -2,6 +2,8 @@
 Check out the live app [here.](https://terralhotel.herokuapp.com/) \
 For design documentation, see wiki [here.](https://github.com/vh71886/TerraLHotel/wiki)
 
+![Demo](./app/assets/images/terra-lhotel-demo.gif)
+
 ## Introduction
 [Terra l'Hotel](https://terralhotel.herokuapp.com/) is a full-stack clone of the [Tablet Hotels](http://www.tablethotels.com) website. It is created for educational purposes only. Please do not enter any sensitive data while exploring Terra l'Hotel.
 
@@ -77,3 +79,5 @@ On the home page, there is a search form where users are able to search for hote
 ### Favorites
 Bonus feature: TBD
 
+### Search with Live API
+Bonus feature: TBD
