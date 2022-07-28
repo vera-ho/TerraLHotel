@@ -24,7 +24,7 @@ const HotelListing = props => {
                 <p>Total Rooms: {hotel.rooms}</p>
                 <br></br>
             </li>
-            <TiHeartFullOutline className='hotel-favorite-icon' />
+            {/* <TiHeartFullOutline className='hotel-favorite-icon' /> */}
         </section>
     )
 }
