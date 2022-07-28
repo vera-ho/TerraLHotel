@@ -24,16 +24,10 @@ const ReservationItem = props => {
     }
 
     const hotel = hotels[reservation.hotelId] || {};
-    const locale =  navigator.language || navigator.browserLanguage || (navigator.languages || ["en"])[0];
-    const checkin = new Date(reservation.checkin);
-    const checkout = new Date(reservation.checkout);
-    const options = {
-        month: "long",
-        year: "numeric",
-        day: "2-digit"
-    }
+    const checkin = new Date(reservation.checkin).toUTCString().slice(0,16);
+    const checkout = new Date(reservation.checkout).toUTCString().slice(0,16);
     const stayed = checkStay(checkout);
-    
+
     if(stayed && reservation.status !== "stayed") updateStatus(reservation);
 
     return (
@@ -44,8 +38,8 @@ const ReservationItem = props => {
                         {hotel.name}
                     </Link>
                 </p>
-                <p>Check-in: {checkin.toLocaleDateString(locale, options)}</p>
-                <p>Check-out: {checkout.toLocaleDateString(locale, options)}</p>
+                <p>Check-in: {checkin}</p>
+                <p>Check-out: {checkout}</p>
                 <p>Status: {reservation.status}</p>
             </div>
 

@@ -6,7 +6,7 @@ const ReservationForm = props => {
     // --- Reservation: Check in and out dates
     // --- Hotel: hotel name, city, country
     // --- User: Name, email
-    const { hotel, room, user, reservation } = props || {};
+    const { hotel, user, reservation } = props || {};
     const { editReservation } = props;
 
     // Set to previously selected dates from room item component
@@ -30,10 +30,8 @@ const ReservationForm = props => {
         window.location = `/#/user/${user.id}/stays`
     }
 
-    let checkinDate = new Date(reservation.checkin);
-    let checkoutDate = new Date(reservation.checkout);
-    checkinDate = checkinDate.toUTCString().slice(0, 16);
-    checkoutDate = checkoutDate.toUTCString().slice(0, 16);
+    let checkinDate = new Date(reservation.checkin).toUTCString().slice(0, 16);;
+    let checkoutDate = new Date(reservation.checkout).toUTCString().slice(0, 16);;
 
     const datePicker = (
         <div className="edit-reservation-daterange-picker">
