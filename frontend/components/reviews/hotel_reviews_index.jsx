@@ -8,6 +8,7 @@ const HotelReviewsIndex = props => {
         let date = new Date(review.createdAt);
         let month = new Intl.DateTimeFormat('en-US', options).format(date);
         let year = date.getFullYear();
+        let reviewer = review.reviewer || {};
 
         return (
             <li key={idx} className="review-item-container">
@@ -16,18 +17,18 @@ const HotelReviewsIndex = props => {
                     {review.pros}
                 </div>
 
-                {/* Only display cons and cons header if there are any */}
-                {review.cons.length > 0 ? (
+                {/* Only display cons if there are any */}
+                {review.cons.length > 0 && (
                     <div className="review-item-details">
                         <h2>What the hotel could do better:</h2>
                         {review.cons}
                     </div>
-                ) : (<></>)}
+                )}
                 
                 <div className="review-item-reviewer-info">
                     <div className="reviewer-icon"></div>
                     <div className="reviewer-details">
-                        <p>{review.reviewer.fname} {review.reviewer.lname}</p>
+                        <p>{reviewer.fname} {reviewer.lname}</p>
                         <p>{month + " " + year}</p>
                     </div>
                 </div>
