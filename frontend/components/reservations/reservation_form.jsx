@@ -30,18 +30,10 @@ const ReservationForm = props => {
         window.location = `/#/user/${user.id}/stays`
     }
 
-    let checkinDate, checkoutDate;
-    const locale =  navigator.language || navigator.browserLanguage || (navigator.languages || ["en"])[0];
-    const options = {
-        month: "long",
-        year: "numeric",
-        day: "2-digit"
-    }
-
-    checkinDate = new Date(reservation.checkin);
-    checkoutDate = new Date(reservation.checkout);
-    checkinDate = checkinDate.toLocaleDateString(locale, options);
-    checkoutDate = checkoutDate.toLocaleDateString(locale, options);
+    let checkinDate = new Date(reservation.checkin);
+    let checkoutDate = new Date(reservation.checkout);
+    checkinDate = checkinDate.toUTCString().slice(0, 16);
+    checkoutDate = checkoutDate.toUTCString().slice(0, 16);
 
     const datePicker = (
         <div className="edit-reservation-daterange-picker">
