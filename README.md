@@ -65,14 +65,15 @@ Users are able to register for an account, login, and logout as needed on the we
 ### Hotels
 Users are able to search, view listings and details. 
 
-### Reservations
+### Reservations (CRUD)
+Users are able to create, read, update and destroy reservation entries.
 
-
-### Reviews
-In-progress
-
-### Favorites
-TBD
+### Reviews (CRUD)
+Users are able to create, read, update and destroy review entries. Users may only edit and delete their own reviews.
 
 ### Search
-TBD
+On the home page, there is a search form where users are able to search for hotels by name or location (city, state, and country). If the search returns zero entries, the web application will return all listings available in the database. 
+
+### Favorites
+Bonus feature: TBD
+
