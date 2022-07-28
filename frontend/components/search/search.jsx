@@ -11,7 +11,7 @@ const Search = props => {
     }
 
     return (
-        <section className="search-container"> {/* section tag might not be needed */}
+        <section className="search-container">
             <div className="search-background">
                 <section className="search-input-container">
                     <span className="search-greeting">The hotel experts at the MICHELIN Guide</span>

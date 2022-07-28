@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ErrorItem from "../session/error_item";
 
 const ReviewForm = props => {
     const {hotelId, reviewerId, title, review, formType} = props;
@@ -6,6 +7,7 @@ const ReviewForm = props => {
 
     let [pros, setPros] = useState(review.pros || "");
     let [cons, setCons] = useState(review.cons || "");
+    let [error, setError] = useState(false);
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -16,7 +18,13 @@ const ReviewForm = props => {
             cons: cons
         }
         if(formType === "edit") reviewObj.id = review.id
-        submitForm(reviewObj).then(closeModal());
+
+        if(pros && !error) {
+            submitForm(reviewObj).then(closeModal());
+            setError(false)
+        } else {
+            setError(true)
+        }
     }
 
     return (
@@ -32,6 +40,7 @@ const ReviewForm = props => {
                         <textarea 
                             className="review-form-pros-input"
                             value={pros}
+                            placeholder="Required"
                             onChange={ e => setPros(e.target.value) }
                         />
                     </label>
@@ -41,10 +50,11 @@ const ReviewForm = props => {
                         <textarea 
                             className="review-form-cons-input"
                             value={cons}
+                            placeholder="Optional"
                             onChange={ e => setCons(e.target.value) }
                         />
                     </label>
-
+                    { error && <ErrorItem error="Your likes cannot be empty" /> }
                     <input type="submit" className="review-form-button" />
                 </form>
             </div>

@@ -63,7 +63,7 @@ const RoomItem = props => {
 
             <ul>
                 { new Date(checkinDate).getTime() >= new Date(checkoutDate).getTime() 
-                    && <ErrorItem error="Check in must be before check out" /> }
+                    && <ErrorItem error="Check in must be before check out!" /> }
             </ul>
 
             <button onClick={handleClick}>Book Dates</button>
