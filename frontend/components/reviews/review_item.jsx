@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ReviewForm from "./review_form";
 import Modal from 'react-modal';
 import { Link } from "react-router-dom";
@@ -25,16 +25,15 @@ const UserReviewItem = props => {
                     <h2>What you liked:</h2>
                     <p>{review.pros}</p>
 
-                    {review.cons.length > 0 ? (
+                    {review.cons.length > 0 && (
                         <>
                             <h2>What the hotel could have done better:</h2>
                             <p>{review.cons}</p>
                         </>
-                    ) : (
-                        <></>
                     )}
 
                 </div>
+                
                 <div className="user-review-item-actions">
                     <Link to={{}} onClick={handleEditReview}
                         className='btn'>Edit Review</Link>
