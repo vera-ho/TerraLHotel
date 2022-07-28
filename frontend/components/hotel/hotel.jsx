@@ -10,6 +10,7 @@ class Hotel extends React.Component {
 
     componentDidMount() {
         this.props.requestHotel(this.props.match.params.hotelId);
+        window.scrollTo(0,0);
     }
 
     render() {

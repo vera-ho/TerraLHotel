@@ -8,6 +8,7 @@ const ReservationsIndex = props => {
 
     useEffect( () => {
         props.requestAllReservations();
+        window.scrollTo(0,0);
     }, [])
 
     const reservationsList = Object.values(props.reservations).map( (reservation, index) => {

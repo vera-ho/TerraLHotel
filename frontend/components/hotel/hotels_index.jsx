@@ -9,7 +9,8 @@ const HotelsIndex = props => {
         if(hotels.length === 0) {
             requestAllHotels();
         }
-    }, [hotels])
+        window.scrollTo(0,0);
+    }, [])
 
     const hotelsList = Object.values(props.hotels).map( (hotel, index) => {
         let filter = filterValue.toLowerCase();
