@@ -16,22 +16,24 @@ const Search = props => {
                 <section className="search-input-container">
                     <span className="search-greeting">The hotel experts at the MICHELIN Guide</span>
                     <div className="search-input-field">
-                        <form onSubmit={handleSearch} className="search-form">
-                            <label className="search-input-label">Where to?</label>
-                            <input 
-                                type="text"
-                                className="search-input"
-                                placeholder="Destination or Hotel"
-                                value={searchValue}
-                                onChange={ (e) => setSearchValue(e.target.value)}
-                            />
-                            <input type="submit" className="search-button" value="Search" />
+                        <form onSubmit={handleSearch}>
+                            <div className="search-form-fields">
+                                <label className="search-input-label">Where to?</label>
+                                <input 
+                                    type="text"
+                                    className="search-input"
+                                    placeholder="Destination or Hotel"
+                                    value={searchValue}
+                                    onChange={ (e) => setSearchValue(e.target.value)}
+                                />
+                            </div>
+                            <div className="search-form-details">
+                                <p>Just want to explore hotels? <br/>
+                                Browse by your interests, styles, locations and more.</p>
+                                <input type="submit" className="search-button" value="Search" />
+                            </div>
                         </form>
                     </div>
-                    
-                    <span className="explore-question">Just want to explore hotels?</span>
-                    <span className="browse">Browse by your interests, styles, locations and more.</span>
-                    {/* <p className="search-button" onClick={handleSearch}>Search</p> */}
                 </section>
             </div>
         </section>
