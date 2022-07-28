@@ -1,4 +1,4 @@
-module Openweather
+module Impala
   class Search
     def self.by_location(location)
       url = 'https://sandbox.impala.travel/v1/hotels'
