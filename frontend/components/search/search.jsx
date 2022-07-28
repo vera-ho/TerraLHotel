@@ -16,19 +16,22 @@ const Search = props => {
                 <section className="search-input-container">
                     <span className="search-greeting">The hotel experts at the MICHELIN Guide</span>
                     <div className="search-input-field">
-                        <label className="search-input-label">Where to?</label>
-                        <input 
-                            type="text"
-                            className="search-input"
-                            placeholder="Destination or Hotel"
-                            value={searchValue}
-                            onChange={ (e) => setSearchValue(e.target.value)}
-                        />
+                        <form onSubmit={handleSearch} className="search-form">
+                            <label className="search-input-label">Where to?</label>
+                            <input 
+                                type="text"
+                                className="search-input"
+                                placeholder="Destination or Hotel"
+                                value={searchValue}
+                                onChange={ (e) => setSearchValue(e.target.value)}
+                            />
+                            <input type="submit" className="search-button" value="Search" />
+                        </form>
                     </div>
                     
                     <span className="explore-question">Just want to explore hotels?</span>
                     <span className="browse">Browse by your interests, styles, locations and more.</span>
-                    <p className="search-button" onClick={handleSearch}>Search</p>
+                    {/* <p className="search-button" onClick={handleSearch}>Search</p> */}
                 </section>
             </div>
         </section>
