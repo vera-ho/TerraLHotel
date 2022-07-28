@@ -57,6 +57,10 @@ li.reservation-item-container > div > p {
     .btn {
         text-align: right;
     }
+
+    .btn:hover {
+        color: #f60;
+    }
 }
 
 .user-review-item-content > p:first-child,

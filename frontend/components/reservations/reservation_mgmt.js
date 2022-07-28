@@ -1,7 +1,7 @@
 import { editReservation } from "../../actions/reservation_actions";
 
 export const checkStay = checkout => {
-    const stayed = checkout.getTime() < Date.now();
+    const stayed = Date.parse(checkout) < Date.now();
     return stayed;
 }
 
