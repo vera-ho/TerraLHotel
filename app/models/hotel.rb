@@ -32,4 +32,8 @@ class Hotel < ApplicationRecord
     has_many :reviews,
         foreign_key: :reviewed_hotel_id,
         class_name: :Review
+
+    has_many :favorites,
+        foreign_key: :favorited_id,
+        class_name: :Favorite
 end
