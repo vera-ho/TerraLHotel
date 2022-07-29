@@ -10,6 +10,7 @@
 #
 class Favorite < ApplicationRecord
     validates :favorited_id, :favoriter_id, presence: true
+    validates :favoriter_id, uniqueness: { scope: :favorited_id }
 
     belongs_to :user,
         foreign_key: :favoriter_id,
