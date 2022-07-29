@@ -29,6 +29,10 @@ class User < ApplicationRecord
     has_many :reviews,
         foreign_key: :reviewer_id,
         class_name: :Review
+    
+    has_many :favorites, 
+        foreign_key: :favoriter_id,
+        class_name: :Favorite
 
     # SPIRE - session functions
     def self.find_by_credentials(email, password)
