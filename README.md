@@ -71,7 +71,7 @@ On the home page, there is a search form where users are able to search for hote
 
 ## Bonus Features
 ### Favorites
-Bonus feature: TBD
+Bonus feature: In-progress
 
 ### Search with Live API
-Bonus feature: TBD
+Bonus feature: In progress
