@@ -37,7 +37,7 @@ const FooterIndex = () => {
                             </a>
                         </li>
                         <li className="footer-developer-info-list-item">
-                            <a href="#" target="_blank" rel="noopener noreferrer">
+                            <a href="https://vera-ho.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
                                 <BsPersonCircle className="developer-icon" />
                             </a>
                         </li>
