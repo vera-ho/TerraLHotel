@@ -16,15 +16,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vh71886/TerraLHotel.git"
+    "url": "git+https://github.com/vera-ho/TerraLHotel.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vh71886/TerraLHotel/issues"
+    "url": "https://github.com/vera-ho/TerraLHotel/issues"
   },
-  "homepage": "https://github.com/vh71886/TerraLHotel#readme",
+  "homepage": "https://github.com/vera-ho/TerraLHotel#readme",
   "dependencies": {
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",

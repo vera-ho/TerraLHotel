@@ -1,6 +1,6 @@
 # Terra l'Hotel
 Check out the live app [here.](https://terralhotel.herokuapp.com/) \
-For design documentation, see wiki [here.](https://github.com/vh71886/TerraLHotel/wiki)
+For design documentation, see wiki [here.](https://github.com/vera-ho/TerraLHotel/wiki)
 
 ![Demo](./app/assets/images/terra-lhotel-demo.gif)
 

@@ -22,7 +22,7 @@ const FooterIndex = () => {
                     <h1>Developer</h1>
                     <ul className="footer-developer-info-list">
                         <li className="footer-developer-info-list-item">
-                            <a href="https://github.com/vh71886/TerraLHotel" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/vera-ho/TerraLHotel" target="_blank" rel="noopener noreferrer">
                                 <BsGithub  className="developer-icon" />
                             </a>
                         </li>
