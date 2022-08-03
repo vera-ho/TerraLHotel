@@ -17,12 +17,12 @@ export const removeFavorite = favoriteId => {
     }
 }
 
-export const createFavorite = favorite => dispatch => {
-    return FavoriteUtil.createFavorite(favorite)
-        .then( favorite => dispatch(receiveFavorite(favorite)))
-}
+// export const createFavorite = favorite => dispatch => {
+//     return FavoriteUtil.createFavorite(favorite)
+//         .then( favorite => dispatch(receiveFavorite(favorite)))
+// }
 
-export const deleteFavorite = favoriteId => dispatch => {
-    return FavoriteUtil.deleteFavorite(favoriteId)
-        .then( favoriteId => dispatch(removeFavorite(favoriteId)))
-}
+// export const deleteFavorite = favoriteId => dispatch => {
+//     return FavoriteUtil.deleteFavorite(favoriteId)
+//         .then( favoriteId => dispatch(removeFavorite(favoriteId)))
+// }

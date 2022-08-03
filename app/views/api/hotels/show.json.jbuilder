@@ -4,7 +4,12 @@ json.hotel do
     favorites = @hotel.favorites
     json.count favorites.length
     if current_user
-        json.currentUserFav !!hotel.favorites.find_by(favoriter_id: current_user.id)
+        currentFavorite = favorites.find_by(favoriter_id: current_user.id)
+        json.currentUserFav !!currentFavorite
+        
+        if currentFavorite
+            json.favoriteId currentFavorite.id
+        end
     end
 end
 
