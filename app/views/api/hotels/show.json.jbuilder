@@ -1,5 +1,3 @@
-# json.partial! 'hotel', hotel: @hotel
-
 json.hotel do 
     json.partial! 'hotel', hotel: @hotel
 end
@@ -23,6 +21,10 @@ json.reviews do
                 json.extract! user, :fname, :lname, :email
             end
         end
-        
     end
+end
+
+json.favorites do 
+    favorites = @hotel.favorites
+    json.set! :count, favorites.length
 end

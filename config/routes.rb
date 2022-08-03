@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 #       api_hotels GET    /api/hotels(.:format)                api/hotels#index {:default=>{:format=>:json}}
 #        api_hotel GET    /api/hotels/:id(.:format)            api/hotels#show {:default=>{:format=>:json}}
 
+#    api_favorites POST   /api/favorites(.:format)             api/favorites#create {:default=>{:format=>:json}}
+#     api_favorite DELETE /api/favorites/:id(.:format)         api/favorites#destroy {:default=>{:format=>:json}}
+
 # api_reservations GET    /api/reservations(.:format)          api/reservations#index {:default=>{:format=>:json}}
 #                  POST   /api/reservations(.:format)          api/reservations#create {:default=>{:format=>:json}}
 #  api_reservation GET    /api/reservations/:id(.:format)      api/reservations#show {:default=>{:format=>:json}}
@@ -29,7 +32,7 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
     resources :reservations, only: [:index, :show, :create, :update, :destroy]
     resources :reviews, only: [:index, :show, :create, :update, :destroy]
-    resource :session, only: [:create, :destroy]
+    resource  :session, only: [:create, :destroy]
   end
 
 end

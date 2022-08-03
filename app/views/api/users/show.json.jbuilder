@@ -1,5 +1,3 @@
-# json.partial! '/api/users/user', user: @user
-
 json.user do
     json.partial! '/api/users/user', user: @user
 end
@@ -22,6 +20,15 @@ json.reviews do
             json.reviewer do
                 json.extract! user, :fname, :lname, :email
             end
+        end
+    end
+end
+
+json.favorites do
+    favorites = @user.favorites
+    favorites.each do |favorite|
+        json.set! favorite.id do
+            json.extract! favorite, :favorited_id
         end
     end
 end
