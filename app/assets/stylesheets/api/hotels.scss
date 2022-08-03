@@ -103,8 +103,16 @@
     padding: 3px 0px;
 }
 
-.hotel-favorite-icon {
+.hotel-unfavorited-icon {
     color: #ccc;
+    width: 60px;
+    height: 60px;
+    padding-top: 30px;
+    cursor: pointer;
+}
+
+.hotel-favorited-icon {
+    color: rgb(224, 101, 101);
     width: 60px;
     height: 60px;
     padding-top: 30px;

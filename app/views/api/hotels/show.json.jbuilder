@@ -1,5 +1,11 @@
 json.hotel do 
     json.partial! 'hotel', hotel: @hotel
+
+    favorites = @hotel.favorites
+    json.count favorites.length
+    if current_user
+        json.currentUserFav !!hotel.favorites.find_by(favoriter_id: current_user.id)
+    end
 end
 
 json.rooms do
@@ -22,9 +28,4 @@ json.reviews do
             end
         end
     end
-end
-
-json.favorites do 
-    favorites = @hotel.favorites
-    json.count favorites.length
 end

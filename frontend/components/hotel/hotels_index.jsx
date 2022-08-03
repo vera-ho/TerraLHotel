@@ -3,13 +3,11 @@ import HotelListing from './hotel_listing';
 
 const HotelsIndex = props => {
     const [filterValue, setFilterValue] = useState("");
-    const { hotels, requestAllHotels, searchCount } = props;
+    const { hotels, requestAllHotels, requestHotel, searchCount } = props;
 
     useEffect( () => {
-        if(hotels.length === 0) {
             requestAllHotels();
-        }
-    }, [hotels])
+    }, [])
 
     const hotelsList = Object.values(props.hotels).map( (hotel, index) => {
         let filter = filterValue.toLowerCase();
@@ -17,7 +15,7 @@ const HotelsIndex = props => {
            hotel.city.toLowerCase().includes(filter) ||
            hotel.country.toLowerCase().includes(filter)) {
             return (
-                <HotelListing key={index} hotel={hotel} />
+                <HotelListing key={index} hotel={hotel} requestHotel={requestHotel} />
             )
         }
     })

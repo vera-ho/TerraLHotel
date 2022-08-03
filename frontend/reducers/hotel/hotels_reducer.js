@@ -3,9 +3,9 @@ import { RECEIVE_ALL_HOTELS, RECEIVE_HOTEL, RECEIVE_HOTEL_SEARCH } from "../../a
 const hotelsReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign( {}, state);
+    
     switch(action.type) {
         case RECEIVE_ALL_HOTELS:
-            // Object.assign(nextState, action.hotels);
             nextState = Object.assign( {}, action.hotels);
             return nextState;
         case RECEIVE_HOTEL_SEARCH:

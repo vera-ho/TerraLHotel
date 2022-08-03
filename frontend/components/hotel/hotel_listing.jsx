@@ -3,7 +3,15 @@ import { Link } from "react-router-dom";
 import { TiHeartFullOutline } from 'react-icons/ti'
 
 const HotelListing = props => {
-    const { hotel } = props; 
+    const { hotel } = props || {}; 
+
+    const favoriteIcon = hotel.currentUserFav ? (
+        <TiHeartFullOutline className='hotel-favorited-icon' />
+    ) : (
+        <TiHeartFullOutline className='hotel-unfavorited-icon' />
+    );
+    
+    console.log(hotel.name + " " + hotel.currentUserFav)
     
     return (
         <section className='hotel-listing-description'>
@@ -25,7 +33,8 @@ const HotelListing = props => {
                 <p>Total Rooms: {hotel.rooms}</p>
                 <br></br>
             </li>
-            <TiHeartFullOutline className='hotel-favorite-icon' />
+            {favoriteIcon}
+            {/* <TiHeartFullOutline className='hotel-favorite-icon' /> */}
         </section>
     )
 }
