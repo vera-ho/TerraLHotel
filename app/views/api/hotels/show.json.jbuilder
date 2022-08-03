@@ -26,5 +26,5 @@ end
 
 json.favorites do 
     favorites = @hotel.favorites
-    json.set! :count, favorites.length
+    json.count favorites.length
 end
