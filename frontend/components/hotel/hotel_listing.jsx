@@ -6,26 +6,27 @@ import { createFavorite, deleteFavorite } from '../../util/favorite_api_util';
 import { receiveFavorite, removeFavorite } from '../../actions/favorite_actions';
 
 const HotelListing = props => {
-    const { hotel } = props || {}; 
+    const { hotel, current_user } = props || {}; 
 
-    // useEffect( () => {
-    // }, [hotel.currentUserFav])
+    useEffect( () => {
+        debugger
+    }, [hotel.currentUserFav])
 
     const removeFavoriteHotel = async () => {
-        let fav = await deleteFavorite(favorite.id);
-        dispatch(removeFavorite(favorite.id))
+        await deleteFavorite(hotel.favoriteId);
+        dispatch(removeFavorite(hotel.favoriteId))
+        hotel.currentUserFav = false;
     }
 
     const addFavoriteHotel = async () => {
-        let fav = await createFavorite();
-        dispatch(receiveFavorite());
-    }
+        let favorite = {
+            favoriter_id: current_user,
+            favorited_id: hotel.id
+        }
 
-    const fetchData = async () => {
-        let pets = await getPets();
-        dispatch(receiveAllPets(pets));
-        let cart = await fetchCart();
-        dispatch(receiveCart(cart.data))
+        await createFavorite(favorite);
+        dispatch(receiveFavorite(favorite));
+        hotel.currentUserFav = true;
     }
 
     const favoriteIcon = hotel.currentUserFav ? (

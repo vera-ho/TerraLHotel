@@ -1,8 +1,4 @@
 class Api::HotelsController < ApplicationController
-    # def index
-    #     @hotels = Hotel.all
-    #     render :index
-    # end
 
     def index
         if(params[:searchParam])

@@ -1,6 +1,6 @@
 @hotels.each do |hotel|
     json.set! hotel.id do
-        json.partial! 'hotel', hotel: hotel
+        json.partial! 'api/hotels/hotel', hotel: hotel
 
         if current_user
             currentFavorite = hotel.favorites.find_by(favoriter_id: current_user.id)

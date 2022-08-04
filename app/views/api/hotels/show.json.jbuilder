@@ -1,12 +1,12 @@
 json.hotel do 
-    json.partial! 'hotel', hotel: @hotel
+    json.partial! 'api/hotels/hotel', hotel: @hotel
 
     favorites = @hotel.favorites
     json.count favorites.length
     if current_user
         currentFavorite = favorites.find_by(favoriter_id: current_user.id)
         json.currentUserFav !!currentFavorite
-        
+
         if currentFavorite
             json.favoriteId currentFavorite.id
         end

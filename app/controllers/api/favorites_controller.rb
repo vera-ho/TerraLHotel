@@ -3,9 +3,11 @@ class Api::FavoritesController < ApplicationController
 
     def create
         @favorite = Favorite.new(favorite_params)
+        @hotel = @favorite.hotel
 
         if @favorite.save
-            render @favorite
+            puts "SAVED **************"
+            render 'api/hotels/show'
         else
             render json: @favorite.errors.full_messages, status: 422
         end
@@ -13,8 +15,10 @@ class Api::FavoritesController < ApplicationController
 
     def destroy
         @favorite = current_user.favorites.find_by(id: params[:id])
+        @hotel = @favorite.hotel
         if @favorite && @favorite.delete
-            render json: @favorite.id
+            puts "DELETED **************"
+            render 'api/hotels/show'
         else 
             render json: @favorite.errors.full_messages, status: 422
         end
