@@ -4,18 +4,20 @@ import { TiHeartFullOutline } from 'react-icons/ti'
 import { useEffect } from 'react';
 import { createFavorite, deleteFavorite } from '../../util/favorite_api_util';
 import { receiveFavorite, removeFavorite } from '../../actions/favorite_actions';
+import { useState } from 'react';
 
 const HotelListing = props => {
-    const { hotel, current_user } = props || {}; 
+    const { hotel, current_user, requestHotel } = props || {}; 
+    const [favorite, setFavorite] = useState(hotel.currentUserFav)
 
     useEffect( () => {
-        debugger
-    }, [hotel.currentUserFav])
+        requestHotel(hotel.id);
+    }, [favorite])
 
     const removeFavoriteHotel = async () => {
         await deleteFavorite(hotel.favoriteId);
         dispatch(removeFavorite(hotel.favoriteId))
-        hotel.currentUserFav = false;
+        setFavorite(false);
     }
 
     const addFavoriteHotel = async () => {
@@ -26,10 +28,10 @@ const HotelListing = props => {
 
         await createFavorite(favorite);
         dispatch(receiveFavorite(favorite));
-        hotel.currentUserFav = true;
+        setFavorite(true);
     }
 
-    const favoriteIcon = hotel.currentUserFav ? (
+    const favoriteIcon = favorite ? (
         <TiHeartFullOutline className='hotel-favorited-icon' onClick={removeFavoriteHotel} />
     ) : (
         <TiHeartFullOutline className='hotel-unfavorited-icon' onClick={addFavoriteHotel} />

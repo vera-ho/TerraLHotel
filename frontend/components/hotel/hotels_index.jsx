@@ -3,7 +3,7 @@ import HotelListing from './hotel_listing';
 
 const HotelsIndex = props => {
     const [filterValue, setFilterValue] = useState("");
-    const { hotels, current_user, requestAllHotels, searchCount } = props;
+    const { hotels, current_user, requestAllHotels, requestHotel, searchCount } = props;
 
     useEffect( () => {
         requestAllHotels();
@@ -15,7 +15,12 @@ const HotelsIndex = props => {
            hotel.city.toLowerCase().includes(filter) ||
            hotel.country.toLowerCase().includes(filter)) {
             return (
-                <HotelListing key={index} hotel={hotel} current_user={current_user} />
+                <HotelListing 
+                    key={index} 
+                    hotel={hotel} 
+                    current_user={current_user}
+                    requestHotel={requestHotel} 
+                />
             )
         }
     })
