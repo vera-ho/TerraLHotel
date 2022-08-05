@@ -5,6 +5,7 @@ import { combineReducers } from 'redux';
 import reservationsReducer from "./reservations_reducer";
 import reviewsReducer from "./reviews_reducer";
 import searchReducer from "./search_reducer";
+import favoritesReducer from "./favorites_reducer";
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
@@ -12,7 +13,8 @@ const entitiesReducer = combineReducers({
     hotels: hotelsReducer,
     searchResults: searchReducer,
     rooms: roomsReducer,
-    reviews: reviewsReducer
+    reviews: reviewsReducer, 
+    favorites: favoritesReducer
 })
 
 export default entitiesReducer;
