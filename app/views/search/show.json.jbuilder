@@ -1,3 +1,3 @@
-@response.body.data.each do |hotel|
+# @response.body.data.each do |hotel|
     
-end
+# end

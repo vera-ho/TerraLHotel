@@ -4,7 +4,7 @@ module HotelBeds
         url = 'https://api.test.hotelbeds.com/hotel-api/1.0/status'
         puts "TIME *********** "
         puts DateTime.now
-        xsignature = generateHash(ENV['API_KEY'] + ENV['SECRET'] + DateTime.now)
+        xsignature = generateHash(ENV['API_KEY'] + ENV['SECRET'] + DateTime.now.strftime("%Q"))
         puts xsignature
         HTTParty.get(
             url,
