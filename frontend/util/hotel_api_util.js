@@ -27,34 +27,34 @@ export const generateHash = string => {
     return createHash.create(string).hex();
 }
 
-export const apiRequestHotels = () => {
-    const seconds = new Date().getTime() / 1000;
-    const key = window.HOTELBED_API_KEY + window.HOTELBED_SECRET + seconds;
-    const xsignature = generateHash(key);
+// export const apiRequestHotels = () => {
+//     const seconds = new Date().getTime() / 1000;
+//     const key = window.HOTELBED_API_KEY + window.HOTELBED_SECRET + seconds;
+//     const xsignature = generateHash(key);
 
-    return $.ajax({
-        method: "GET",
-        url: `https://api.test.hotelbeds.com/hotel-api/1.0/status`,
-        headers: {
-            "Content-Type": "application/json",
-            "Api-key": window.HOTELBED_API_KEY,
-            "X-Signature": xsignature,
-            "Access-Control-Allow-Origin": "*",
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-        }
-    })
-}
+//     return $.ajax({
+//         method: "GET",
+//         url: `https://api.test.hotelbeds.com/hotel-api/1.0/status`,
+//         headers: {
+//             "Content-Type": "application/json",
+//             "Api-key": window.HOTELBED_API_KEY,
+//             "X-Signature": xsignature,
+//             "Access-Control-Allow-Origin": "*",
+//             'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+//         }
+//     })
+// }
 
-export const impalaRequestHotels = () => {
-    return $.ajax({
-        method: "GET",
-        url: `https://sandbox.impala.travel/v1/hotels`,
-        headers: {
-            "Content-Type": "application/json",
-            "x-api-key": window.IMPALA_API_KEY,
-            "Access-Control-Allow-Origin": "*",
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-        }
+// export const impalaRequestHotels = () => {
+//     return $.ajax({
+//         method: "GET",
+//         url: `https://sandbox.impala.travel/v1/hotels`,
+//         headers: {
+//             "Content-Type": "application/json",
+//             "x-api-key": window.IMPALA_API_KEY,
+//             "Access-Control-Allow-Origin": "*",
+//             'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+//         }
 
-})
-}
+// })
+// }
