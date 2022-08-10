@@ -1,6 +1,7 @@
 module Impala
   class Search
     def self.by_location(location)
+      # puts "***** Impala API ******"
       url = 'https://sandbox.impala.travel/v1/hotels'
       HTTParty.get(
           url,

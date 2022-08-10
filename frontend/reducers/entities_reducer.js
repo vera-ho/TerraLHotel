@@ -12,7 +12,8 @@ const entitiesReducer = combineReducers({
     hotels: hotelsReducer,
     searchResults: searchReducer,
     rooms: roomsReducer,
-    reviews: reviewsReducer
+    reviews: reviewsReducer, 
+    
 })
 
 export default entitiesReducer;

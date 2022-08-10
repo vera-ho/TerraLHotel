@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # Route for API calls
   # get 'search/index'
   get '/search' => 'search#index', :as => 'search'
-  
 
 #                 Prefix Verb   URI Pattern                                     Controller#Action
 #                 search GET    /search(.:format)                               search#index
