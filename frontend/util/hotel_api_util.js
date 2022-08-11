@@ -22,10 +22,14 @@ export const searchHotels = searchParam => {
     })
 }
 
-//  For use with API calls
-export const generateHash = string => {
-    return createHash.create(string).hex();
+export const hotelBedsAPI = () => {
+    
 }
+
+//  For use with API calls
+// export const generateHash = string => {
+//     return createHash.create(string).hex();
+// }
 
 // export const apiRequestHotels = () => {
 //     const seconds = new Date().getTime() / 1000;

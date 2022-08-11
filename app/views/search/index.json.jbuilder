@@ -3,3 +3,5 @@
         json.extract! :hotelId, :name, :starRating, :description, :images, :address, :location, :amenities, :roomCount, :roomTypes
     end
 end
+
+# hotelId, name, currency, starRating, description, phoneNumbers, emails, images, address, location, amenities, roomCount, roomTypes
