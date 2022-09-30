@@ -5,7 +5,7 @@ For design documentation, see wiki [here.](https://github.com/vera-ho/TerraLHote
 ![Demo](./app/assets/images/terra-lhotel-demo.gif)
 
 ## Introduction
-[Terra l'Hotel](https://terralhotel.herokuapp.com/) is a full-stack clone of the [Tablet Hotels](http://www.tablethotels.com) website. It is created for educational purposes only. Please do not enter any sensitive data while exploring Terra l'Hotel.
+[Terra l'Hotel](https://terralhotel.herokuapp.com/) is a pixel perfect full stack clone of the [Tablet Hotels](http://www.tablethotels.com) website. It is created for educational purposes only. Please do not enter any sensitive data while exploring Terra l'Hotel.
 
 ### Technologies Used
 * Frontend: `React and Redux`
@@ -13,7 +13,7 @@ For design documentation, see wiki [here.](https://github.com/vera-ho/TerraLHote
     - `redux-thunk`
     - `react hooks`
 * Backend: `Ruby on Rails`
-    - `bcrypt` - user authentication`
+    - `bcrypt` - user authentication
 * Database: `PostgreSQL`
 * Languages
     - `Javascript`
@@ -24,13 +24,14 @@ For design documentation, see wiki [here.](https://github.com/vera-ho/TerraLHote
     - `babel` - JavaScript ES6 compliler
 * Additional APIs:
     - `Google Maps API`
-* Hosting: Heroku
+* Hosting: `Heroku`
 
 ## Functionality and Features
-There are currently 3 of 6 completed features for Terra l'Hotel:
+There are currently 4 of 6 completed features for Terra l'Hotel:
 * `User` authenticaion
 * `Hotel` listing and details
 * `Reservation` creation, lists, editing and cancellation
+* `Review` creation, lists, editing and deletion
 
 Key features for the completed project, including 2 full `CRUD` cycles: 
 ### Users 
@@ -60,10 +61,10 @@ Users are able to create, read, update and destroy reservation entries.
 - Hotel information for booking is dervived from the hotel details page, not the user input
 
 ### Reviews
-Users are able to create, read, update and destroy review entries. Users may only edit and delete their own reviews.
-- Reviews for a hotel are shown on the hotel's details page, from all users
-- Reviews for a hotel can be written from the reservation listing page
-- Reviews can be edited and deleted from the user's reviews listing page
+Users are able to create, read, update and destroy review entries. Users can view all reviews for any hotel, and only edit and delete their own reviews.
+- Reviews for a hotel are shown on the hotel's details page
+- Reviews for a hotel can be written from the user's reservation page
+- Reviews are shown and can be edited or deleted from the user's reviews listing page
 - To create a reservation, a user must be logged in and the dates of the stay must be before the current date
 
 ### Search
