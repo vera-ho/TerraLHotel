@@ -5,7 +5,7 @@ For design documentation, see wiki [here.](https://github.com/vera-ho/TerraLHote
 ![Demo](./app/assets/images/terra-lhotel-demo.gif)
 
 ## Introduction
-[Terra l'Hotel](https://terralhotel.herokuapp.com/) is a pixel perfect full stack clone of the [Tablet Hotels](http://www.tablethotels.com) website. It is created for educational purposes only. Please do not enter any sensitive data while exploring Terra l'Hotel.
+[Terra l'Hotel](https://terralhotel.herokuapp.com/) is a pixel perfect full stack clone of the [Tablet Hotels](http://www.tablethotels.com) website from 2022. It is created for educational purposes only. Please do not enter any sensitive data while exploring Terra l'Hotel.
 
 ### Technologies Used
 * Frontend: `React and Redux`
@@ -69,10 +69,3 @@ Users are able to create, read, update and destroy review entries. Users can vie
 
 ### Search
 On the home page, there is a search form where users are able to search for hotels by name or location (city, state, and country). If the search returns zero entries, the web application will return all listings available in the database. 
-
-## Bonus Features
-### Favorites
-Bonus feature: In-progress
-
-### Search with Live API
-Bonus feature: In progress
