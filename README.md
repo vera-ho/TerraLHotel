@@ -28,7 +28,7 @@ For design documentation, see wiki [here.](https://github.com/vera-ho/TerraLHote
 
 ## Functionality and Features
 There are currently 4 of 6 completed features for Terra l'Hotel:
-* `User` authenticaion
+* `User` authentication
 * `Hotel` listing and details
 * `Reservation` creation, lists, editing and cancellation
 * `Review` creation, lists, editing and deletion
