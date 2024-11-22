@@ -12,6 +12,10 @@ Quick Links: \
 ## Introduction
 [Terra l'Hotel](https://terralhotel.herokuapp.com/) is a pixel perfect full stack clone of the [Tablet Hotels](http://www.tablethotels.com) website from 2022. It is created for educational purposes only. Please do not enter any sensitive data while exploring Terra l'Hotel.
 
+```
+Note as of Nov 2024: Ruby and Ruby on Rails versions used in this project are deprecated and no longer compatible with the Heroku platform. Some images/reservations/reviews are no longer functional until the versions on Heroku are updated or I've completed migration to a different backend. In the meantime, the demo animation above demonstrates the functionality and notes have been added to run the project for those who would like to interact with the full project. 
+```
+
 ### Technologies Used
 * Frontend: `React and Redux`
     - `react-redux`
@@ -76,15 +80,19 @@ Users are able to create, read, update and destroy review entries. Users can vie
 On the home page, there is a search form where users are able to search for hotels by name or location (city, state, and country). If the search returns zero entries, the web application will return all listings available in the database. 
 
 ## Running the Project
-If the project is cloned and you want to run it locally, a PostgreSQL server must be set up and seeded using `bundle exec rails db:seed`.
+If the project is cloned and you want to run it locally, a PostgreSQL server must be set up and seeded using:
+```
+bundle exec rails db:create db:migrate
+bundle exec rails db:seed
+```
 
 Two terminals are needed to run the Rails server and to start npm:
 ```
-npm run watch
-```
-and
-```
 rails s
+```
+and 
+```
+npm run watch
 ```
 
 The project can then be viewed at `localhost:3000`.
