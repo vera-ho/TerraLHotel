@@ -1,6 +1,11 @@
 # Terra l'Hotel
 Check out the live app [here.](https://terralhotel.herokuapp.com/) \
-For design documentation, see wiki [here.](https://github.com/vera-ho/TerraLHotel/wiki)
+For design documentation, see wiki [here.](https://github.com/vera-ho/TerraLHotel/wiki) 
+
+Quick Links: \
+[Introduction](#introduction) \
+[Functionality and Features](#functionality-and-features) \
+[Running the Project](#running-the-project)
 
 ![Demo](./app/assets/images/terra-lhotel-demo.gif)
 
@@ -27,7 +32,7 @@ For design documentation, see wiki [here.](https://github.com/vera-ho/TerraLHote
 * Hosting: `Heroku`
 
 ## Functionality and Features
-There are currently 4 of 6 completed features for Terra l'Hotel:
+There are completed features for Terra l'Hotel:
 * `User` authentication
 * `Hotel` listing and details
 * `Reservation` creation, lists, editing and cancellation
@@ -69,3 +74,17 @@ Users are able to create, read, update and destroy review entries. Users can vie
 
 ### Search
 On the home page, there is a search form where users are able to search for hotels by name or location (city, state, and country). If the search returns zero entries, the web application will return all listings available in the database. 
+
+## Running the Project
+If the project is cloned and you want to run it locally, a PostgreSQL server must be set up and seeded using `bundle exec rails db:seed`.
+
+Two terminals are needed to run the Rails server and to start npm:
+```
+npm run watch
+```
+and
+```
+rails s
+```
+
+The project can then be viewed at `localhost:3000`.
