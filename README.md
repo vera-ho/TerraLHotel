@@ -13,7 +13,9 @@ Quick Links: \
 [Terra l'Hotel](https://terralhotel.herokuapp.com/) is a pixel perfect full stack clone of the [Tablet Hotels](http://www.tablethotels.com) website from 2022. It is created for educational purposes only. Please do not enter any sensitive data while exploring Terra l'Hotel.
 
 
-**Note as of Nov. 2024:** Ruby and Ruby on Rails versions used in this project are deprecated and no longer compatible with the Heroku platform, preventing updates to build on their platform. Some images/reservations/reviews are no longer functional until the Ruby/Rails versions are updated or I've completed migration to a different backend. In the meantime, the demo animation above demonstrates the functionality and notes have been added to run the project for those who would like to interact with the full project. 
+<strike> **Note as of Nov. 2024:** Ruby and Ruby on Rails versions used in this project are deprecated and no longer compatible with the Heroku platform, preventing updates to build on their platform. Some images/reservations/reviews are no longer functional until the Ruby/Rails versions are updated or I've completed migration to a different backend. In the meantime, the demo animation above demonstrates the functionality and notes have been added to run the project for those who would like to interact with the full project. </strike>
+
+Edit: Ruby and Rails versions have been updated. Heroku deployment now fully functional. [Nov. 23.2024]
 
 
 ### Technologies Used
